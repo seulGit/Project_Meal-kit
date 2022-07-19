@@ -1,0 +1,41 @@
+/*
+=================================
+22/07/19 김정치 신상품 자동 캐로셀 
+=================================
+*/
+
+/* 22/07/19 캐로셀 타이틀 설정 */
+.carouselTitle {
+    text-align: center;
+}
+.itemTitle {
+    font-family: 'SEBANG_Gothic_Regular', sans-serif;
+}
+.itemInfor {
+    font-family: 'BBTreeGR', sans-serif;
+}
+/* 22/07/19 캐로셀 전체 영역 설정 */
+.container {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 800px;
+}
+
+/* 22/07/19 캐로셀 세부 영역 설정 */
+.autoCarousel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    min-width: 800px;
+}
+.itemBox {
+    width: 250px;
+    /* height: 200px; */
+    overflow: hidden;
+}
+.carouselImg {
+    width: 100%;
+    height: 200px;
+}

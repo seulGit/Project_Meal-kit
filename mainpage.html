@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="carousel.css">
+</head>
+
+<body>
+    
+        <!-- 헤더부분 -->
+        <div class="header">
+            <!-- 로고 -->
+            <a href="" class="logo">
+                <img src="logo.png" alt="">
+            </a>
+            <!-- 네비바 메뉴 -->
+            <div class="navbar">
+                <a href="">전체메뉴</a>
+                <a href="">신상품</a>
+                <a href="">한 식</a>
+                <a href="">양 식</a>
+                <a href="">일 식</a>
+                <a href="">중 식</a>
+            </div>
+            <!-- 우측 상단 로그인 회원가입 -->
+            <div class="login">
+                <a href="">로그인</a>
+                <a href="">회원가입</a>
+            </div>
+        </div>
+        <div class="mainImg"></div>
+
+<!--
+22/07/19 김정치 메인페이지의 신상품 자동캐로셀 영역 생성
+-->
+    <div class="container">
+        <h1 class="carouselTitle">신상품</h1>
+        <div class="section Newproduct">
+            <div class="autoCarousel">
+                <!-- 자동 캐로셀1 시작 -->
+                <div class="itemBox">
+                    <!-- 상품 박스 -->
+                    <div class="imgBox"><img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" class="carouselImg" alt=""></div><!-- 상품 이미지 -->
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">아찔떡볶잉</h3>
+                        <p class="itemInfor">가격 : 13,000원</p>
+                    </div>
+                </div>
+                <div class="itemBox">
+                    <!-- 상품 박스 -->
+                    <div class="imgBox"><img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" class="carouselImg" alt=""></div> <!-- 상품 이미지 -->
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">아찔떡볶잉</h3>
+                        <p class="itemInfor">가격 : 13,000원</p>
+                    </div>
+                </div>
+                <div class="itemBox">
+                    <!-- 상품 박스 -->
+                    <div class="imgBox"><img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" class="carouselImg" alt=""></div> <!-- 상품 이미지 -->
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">아찔떡볶잉</h3>
+                        <p class="itemInfor">가격 : 13,000원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section Recommend"></div>
+        <div class="section Review"></div>
+        <div class="section Blogs"></div>
+        <div class="footer"></div>
+    </div>
+    <script src="mainpage.js"></script>
+</body>
+
+</html>
