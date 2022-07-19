@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="blog2.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main"></div>
+        <!-- 상단 메뉴 영역 -->
+        <nav class="topNav">
+            <div>
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div>
+                <p>푸드 파이터 블로거</p>
+            </div>
+            <div>
+                <i class="xi-home topNavIcon" id="home"></i>
+                <i class="xi-lightbulb topNavIcon" id="dark"></i>
+                <i class="xi-lightbulb-o topNavIcon" id="light"></i>
+                <i class="xi-heart-o topNavIcon" id="heart"></i>
+                <i class="xi-share-alt topNavIcon" id="share"></i>
+                <i class="xi-profile topNavIcon" id="profile"></i>
+                <i class="xi-log-out topNavIcon" id="logout"></i>
+                <i class="xi-cog topNavIcon" id="setting"></i>
+            </div>
+        </nav>
+
+        <!-- header 영역 -->
+        <header>
+            <div>우정분식 아찔떡볶잉 먹은 후기</div>
+            <div>내돈내산</div>
+            <div id="headFont">by food July 19 2022</div>
+        </header>
+
+        <div class="con">
+            <!-- 왼쪽 메뉴 영역 -->
+            <nav class="leftNav">
+                <div class="leftTop">
+                    <i class="xi-bars" id="hide"></i>
+                    <i class="xi-close"></i>
+                </div>
+                <div class="leftM">
+                    <ul>
+                        <li>매콤 음식 후기</li>
+                        <li>단짠 음식 후기</li>
+                        <li>달콤 디저트 후기</li>
+                    </ul>
+                </div>
+                <div class="leftBottom">
+                    <div>먹는게 제일 좋아</div>
+                </div>
+            </nav>
+
+            <div class="con2">
+
+
+                <!-- section 영역 -->
+                <section>
+                    <!-- 220719 sec1,sec2 영역 추가 생성 -->
+                    <div class="sec1">
+                        <div>
+                            <p>
+                                안녕하세요~<br>
+                                평소 즐겨먹는 밀키트를 검색해보다가<br>
+                                유투브 크리에이터 우정잉씨가 판매하는 밀키트 사이트를 발견했어요!
+                            </p>
+                        </div>
+                        <div class="imgBox"><img src="logo.png" class="sec1Img" alt=""></div>
+                        <div>
+                            <p>로고도 너무 귀엽지 않나요?!</p>
+                        </div>
+                        <div class="imgBox"><img src="음식소개사진.png" class="secImg2" alt=""></div>
+                        <div>
+                            <p>
+                                어떤 밀키드들이 있나 찾아보고 있었는데 떡볶이 발견!! @_@
+                                푸드 파이터인 제가 떡볶이를 거절할 수 없죠
+                                바로 사먹었습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sec2">
+                        <div>마침 아찔떡볶잉 이벤트도 하고 있었어요~</div>
+
+                    </div>
+                    <div></div>
+                    <div></div>
+                </section>
+
+                <!-- footer 영역 -->
+                <footer>
+
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="blog.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        let topbtn = document.querySelector('#setting');
+        let home = document.querySelector('#home');
+        let heart = document.querySelector('#heart');
+        let share = document.querySelector('#share');
+        let logout = document.querySelector('#logout');
+        let profile = document.querySelector('#profile');
+
+
+        // 상단메뉴의 설정 이모티콘 rotate 효과 설정
+        // 상단메뉴 이모티콘 display='none' 효과 
+        flag = false;
+        topbtn.addEventListener("click", function () {
+            if (flag == true) {
+                topbtn.style.transition = 'all 1s';
+                topbtn.style.color = 'black';
+                topbtn.style.transform = 'rotate(180deg)';
+                home.style.display = 'inline-block';
+                flag = !flag;
+            } else if (flag == false) {
+                topbtn.style.transition = 'all 1s';
+                topbtn.style.color = 'blue';
+                topbtn.style.transform = 'rotate(-180deg)';
+                home.style.display = 'none';
+                flag = !flag;
+            }
+
+        });
+    </script>
+</body>
+
+</html>
