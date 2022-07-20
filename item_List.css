@@ -3,6 +3,11 @@
 2022-07-19 15:53 성선규
 파일 생성 후 기초 작업
 ==================================
+==================================
+2022-07-20 12:45 오슬기
+디자인 일부 수정
+라디오클릭시 속성변경내용 추가
+==================================
 */
 /* 배달의 민족 주아체 */
 @import url('https://fonts.googleapis.com/css?family=Jua:400');
@@ -17,7 +22,7 @@ nav{
 *{
     /* border: 1px solid red; */
     font-family: 'Jua', Arial, Helvetica, sans-serif;
-    transition: all 1s;
+    transition: all .5s; /* 220720 오슬기 수정: 시간 줄였음*/
 }
 /* 페이지 기존 margin 제거 */
 body{
@@ -38,13 +43,14 @@ margin 조정 가능*/
 사용자의 화면에 고정하기 위해 fixed 설정 */
 .basket_box{
     width: 120px;
-    height: 336px;
+    height: 392px; /*220720 오슬기 수정: 늘렸음*/
     display: flex;
     flex-direction: column;
     align-items: center;
     position: fixed;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 1px rgba(128, 128, 128, 0.416);
+    border-radius: 2px; /*220720 오슬기 수정: 줄였음*/
+    border: 1px solid rgba(128, 128, 128, 0.416); /* 220720 오슬기 수정: 사이드바 전체div 보더 수정*/
+    left: 0; /* 220720 오슬기 추가: 사이드바 전체 왼쪽으로 붙임*/
 }
 /* 텍스트 가운데 설정 */
 .basket_box > div{
@@ -66,14 +72,16 @@ input[type=radio]{
 }
 /* label 텍스트에 색상 및 폰트 두께 설정 */
 input[type=radio] ~ label{
-    width: 120px;
-    height: 30px;
-    line-height: 30px;
-    background-color: rgb(255, 218, 71);
-    font-weight: 300;
+    width: 115px;    /*220720 오슬기 수정: 늘렸음*/
+    height: 50px;   /*220720 오슬기 수정: 늘렸음*/
+    line-height: 50px;   /*220720 오슬기 수정: 늘렸음*/
+    /*220720 오슬기 수정: 백그라운드 삭제*/
+    color:rgba(0, 0, 0, 0.728);   /*220720 오슬기 수정: 투명도 설정했음*/
+    font-weight: 100;  /*220720 오슬기 수정: 이 줄 의미없는것 같은데 일단 보류*/
     border-top: 1px solid rgb(255, 255, 255);
-    border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255); 
     border-collapse: collapse;
+    border-radius: 2px; /* 220720 오슬기 추가: 라디오박스 보더*/
 }
 /* 너비 높이 설정 후 요소 숨김 */
 .recent_box{
@@ -101,6 +109,28 @@ input[type=radio] ~ label{
 #select:checked ~ .select_box{
     display: block;
 }
+
+/* 220720 12:45 오슬기 추가 영역 시작*/
+#recent:checked ~ label{
+    display: block;
+    width: 120px;
+    color: black;
+    background-color: rgb(255, 218, 71);
+}
+#like:checked ~ label{
+    display: block;
+    width: 120px;
+    color: black;
+    background-color: rgb(255, 218, 71);
+}
+#select:checked ~ label{
+    display: block;
+    width: 120px;
+    color: black;
+    background-color: rgb(255, 218, 71);
+}
+/* 220720 오슬기 추가 영역 끝*/
+
 /* 
 ======================================
 2022-07-19 18:08 성선규
