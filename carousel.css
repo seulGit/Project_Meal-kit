@@ -4,16 +4,6 @@
 =================================
 */
 
-/* 22/07/19 캐로셀 타이틀 설정 */
-.carouselTitle {
-    text-align: center;
-}
-.itemTitle {
-    font-family: 'SEBANG_Gothic_Regular', sans-serif;
-}
-.itemInfor {
-    font-family: 'BBTreeGR', sans-serif;
-}
 /* 22/07/19 캐로셀 전체 영역 설정 */
 .container {
     margin: 10px 0;
@@ -21,21 +11,47 @@
     flex-direction: column;
     min-width: 800px;
 }
+.container .carouselTitle {
+    text-align: center;
+}
 
 /* 22/07/19 캐로셀 세부 영역 설정 */
 .autoCarousel {
-    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     overflow: hidden;
     min-width: 800px;
 }
-.itemBox {
+.autoCarousel .itemBox {
     width: 250px;
-    /* height: 200px; */
+    height: 300px;
     overflow: hidden;
+    position: relative;
 }
-.carouselImg {
+/* 22/07/19 캐로셀 세부 영역 설정 */
+.autoCarousel .itemBox .slide {
+    /* width: 250px;
+    height: 200px; */
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.autoCarousel .itemBox .imgBox {
+    /* height: 100%; */
+    width: auto;
+}
+.autoCarousel .itemBox .imgBox img {
+    height: auto;
     width: 100%;
-    height: 200px;
+}
+
+/* 22/07/19 캐로셀 타이틀 설정 */
+.autoCarousel .itemBox .itemText .itemTitle {
+    font-family: 'SEBANG_Gothic_Regular', sans-serif;
+}
+.autoCarousel .itemBox .itemText .itemInfor {
+    font-family: 'BBTreeGR', sans-serif;
 }

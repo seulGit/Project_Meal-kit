@@ -37,6 +37,7 @@
     border: 1px solid royalblue;
     text-decoration: none;
 }
+
 body{
     width: 100vw;
     height: 100vh;
@@ -60,15 +61,44 @@ body{
     width: 150px;
     height: 150px;
 }
-/*  22/07/19 노현
-    네비바 메뉴 */
+
+/* 22/07/19 노현
+네비바 메뉴 */
+/*  
+=================================================
+22/07/20 노현 
+수정
+아래에 있던 justify-content: center;랑
+.header>.navbar>a{
+margin: 0 5.8vw;
+}
+마진값 때문에 글씨가 세로로 서지고
+엉켜서 주석처리하고
+justify-content: space-between; 로 바꿈.
+=================================================   
+*/
 .header>.navbar {
-    
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: space-between;
     list-style: none;
     
 }
+/* 22/07/19 노현
+네비바 간격 벌리려고 마진씀
+추후 더 넣을거면 조정
+네비바 메뉴 글씨 색깔 및 폰트사이즈 */
+/* 22/07/20 노현
+수정
+밑에 간격 벌리려고 쓴 마진은 주석처리
+사유는 읽는 위치 기준 위로 20번째줄에 주석 달아둠. */
+.header>.navbar>a {
+    /* margin: 0 5.8vw;  */
+    font-size: 23px;
+    color: black;
+    padding: 12px 6.5px;
+}
+
 /* 22/07/19 노현
    네비바 스크롤 했을때 고정(JS)
    오류떠서 JS에서 직접 fixed값 넣었음 */
@@ -76,19 +106,7 @@ body{
     position: fixed;
 } */
 
-/* 22/07/19 노현
-   네비바 간격 벌리려고 마진씀
-   추후 더 넣을거면 조정
-   네비바 메뉴 글씨 색깔 및 폰트사이즈 */
-.header>.navbar>a{
-    
-    margin: 0 5.8vw;
-    font-size: 23px;
-    color: black;
-    padding: 12px 6.5px;
-    
-    
-}
+
 /* 22/07/19 노현
 우측 상단 로그인 회원가입
 포지션으로 우측 상단 맞춤  */
