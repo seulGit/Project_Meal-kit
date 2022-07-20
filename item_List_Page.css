@@ -1,0 +1,222 @@
+/*
+==============================
+22/07/20 성선규
+메인 섹션 작성
+==============================
+*/
+:root {
+    --point : orangered;
+    --color : rgb(255, 218, 71);
+}
+*{
+    /* border: 1px solid red; */
+}
+/* 사용자 전체화면 */
+.container{
+    width: 100%;
+    padding: 0 10vw;
+}
+/* 가격, 검색어 컨테이너 */
+.search{
+    /* margin-top: 10vh; */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+/* 여백을 주기 위한 패딩 */
+.search .price_box, .search_box{
+    width: 50%;
+    height: 50px;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+}
+/* 가격 검색 부분에 숫자 여백 */
+.price_box span{
+    width: 90px;
+    line-height: 50px;
+    padding: 0 1vw;
+}
+/* 가격 검색 사이 물결표 */
+.price_box span:nth-child(2){
+    width: 30px;
+    padding: 0;
+    text-align: center;
+}
+/* 가격 검색 bar */
+input[type=range]{
+    width: 60%;
+    height: 50px;
+}
+
+/* 아이템 정렬 */
+.container section:nth-child(2){
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+.item_list_sort{
+    width: 100%;
+    height: 25px;
+}
+.item_list_sort span:nth-child(1){
+    border-bottom: 3px solid var(--point);
+}
+/* 애니메이션 속도 조정
+텍스트 가운데 설정
+간격 설정 */
+.item_list_sort span{
+    margin: 0 0.5vw;
+    line-height: 25px;
+    transition: all 100ms;
+}
+/* 아이템 정렬에 hover시 커서 모양 변경 */
+.item_list_sort span:hover{
+    cursor: pointer;
+    border-bottom: 3px solid var(--color);
+}
+/* 아이템 정렬에 active시 폰트 색상 변경 */
+.item_list_sort span:active{
+    color: var(--color);
+}
+
+/* 아이템 검색 
+input 요소를 잡아주기 위한 포지션*/
+.search_box{
+    position: relative;
+}
+/* input 컨테이너에 position 설정 
+안쪽 텍스트에 여백 */
+input[type=text]{
+    position: absolute;
+    left: 13vw;
+    height: 100%;
+    width: 59%;
+    padding-left: 10px;
+    padding-right: 80px;
+    font-size: 1rem;
+    border: 3px solid black;
+    z-index: -1;
+}
+/* input 요소와 똑같이 .search_box에 position 설정
+label 안쪽에 span만큼만 범위 설정 
+border때문에 input border가 묻혀서 삭제*/
+input[type=text] ~ label{
+    position: absolute;
+    left: 13vw;
+    width: 59%;
+    display: flex;
+    justify-content: end;
+    border: none;
+    z-index: -1;
+}
+/* 돋보기 두껍게 */
+input[type=text] ~ label span{
+    font-size: 2rem;
+    padding: 0.5vh 1vw;
+    font-weight: 900;
+    transition: all 0.5s;
+}
+/* input */
+input[type=text]:focus ~ label span{
+    color: var(--point);
+}
+
+/* 메인 아이템 나열 */
+.container section:nth-child(3){
+    width: 100%;
+    height: 2800px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid gray;
+}
+.container section:nth-child(3) > div{
+    width: 482.5px;
+    height: 650px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid gray;
+}
+
+/* 아이템 내부 */
+.container section:nth-child(3) .item .item_img_1{
+    width: 95%;
+    height: 66%;
+    position: relative;
+    margin-top: 11px;
+    border: 2px solid var(--point);
+}
+/* 아이템 이미지 안쪽 아이콘 */
+.material-symbols-outlined:nth-child(1){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 2.5rem;
+    padding: 4px;
+    border: 1px solid gray;
+    border-left: none;
+    transition: all 0.3s;
+}
+.material-symbols-outlined:nth-child(2){
+    position: absolute;
+    right: 48px;
+    bottom: 0;
+    font-size: 2.5rem;
+    padding: 4px;
+    border: 1px solid gray;
+    transition: all 0.3s;
+}
+.material-symbols-outlined:hover{
+    color: var(--point);
+    cursor: pointer;
+}
+/* 아이템 타이틀 */
+.title{
+    width: 95%;
+    margin-top: 15px;
+}
+.title h1{
+    font-size: 2rem;
+}
+/* 아이템 설명 */
+.title h3{
+    margin-top: 5px;
+    font-size: 1.3rem;
+    font-family: 'SEBANG_Gothic_Regular' Arial, Helvetica, sans-serif;
+}
+/* 아이템 가격 */
+.item div.price{
+    margin-top: 40px;
+    width: 95%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'BBTreeGR' Arial, Helvetica, sans-serif;
+    justify-content: end;
+    align-items: flex-end;
+}
+/* 아이템 원래 가격 */
+.price i{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+/* 아이템 할인율 */
+.price span{
+    color: red;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+/* 아이템 할인 가격 */
+.price h4{
+    font-size: 2rem;
+    color: black;
+}
