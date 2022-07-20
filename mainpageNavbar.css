@@ -12,6 +12,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* 세방고딕 BOLD */
 @font-face {
     font-family: 'SEBANG_Gothic_Bold';
@@ -19,6 +20,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* 세방고딕 Regular  */
 @font-face {
     font-family: 'SEBANG_Gothic_Regular';
@@ -38,15 +40,14 @@
     text-decoration: none;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
+    /* 22/07/20 김정치
+x축 스크롤바 제거 */
+    overflow-x: hidden;
 }
-/* 22/07/19 노현
-네비바 밑에 세션부분 옆에 공백주려고 padding값 넣음 */
-.container{
-    padding: 0 10vw;
-}
+
 
 /* 22/07/19 노현
 로고 가운데 맞추려고 text-align: center 씀 */
@@ -55,6 +56,7 @@ body{
 .header {
     text-align: center;
 }
+
 /* 22/07/19 노현
 네비바 로고 사이즈 */
 .logo>img {
@@ -82,8 +84,9 @@ justify-content: space-between; 로 바꿈.
     /* justify-content: center; */
     justify-content: space-between;
     list-style: none;
-    
+
 }
+
 /* 22/07/19 노현
 네비바 간격 벌리려고 마진씀
 추후 더 넣을거면 조정
@@ -115,6 +118,7 @@ justify-content: space-between; 로 바꿈.
     top: 10px;
     right: 10px;
 }
+
 /* 22/07/19 노현
 우측 상단 로그인 회원가입
 a태그 글씨색깔 검정 */
@@ -123,43 +127,15 @@ a태그 글씨색깔 검정 */
     margin: 0 15px;
     color: black;
 }
+
 /* 22/07/19 노현
 네비바 첫번째 왼쪽마진 */
-.navbar>a:first-child{
+.navbar>a:first-child {
     margin-left: 10vw;
 }
+
 /* 22/07/19 노현
 네비바 첫번째 오른쪽마진 */
-.navbar>a:last-child{
+.navbar>a:last-child {
     margin-right: 10vw;
 }
-/* 메인 이미지 */
-.mainImg{
-    width: 100%;
-    height: 600px;
-    background: url(mainimage.jpg) 80% 80%/100% no-repeat;
-}
-
-/* 메인부분 */
-.section{
-    width: 100%;
-    /* height: 300px; */
-}
-/* 메인세션 신상품 부분 */
-.Newproduct{
-
-}
-/* 메인세션 추천상품 부분 */
-.Recommend{
-
-}
-/* 메인세션 리뷰 부분 */
-.Review{
-    
-}
-
-/* 메인세션 블로그 부분 */
-.Blogs{
-
-}
-
