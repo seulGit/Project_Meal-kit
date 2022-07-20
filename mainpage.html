@@ -8,93 +8,122 @@
     <title>Document</title>
     <link rel="stylesheet" href="mainpage.css">
     <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> <!-- 22/07/20 Link Swiper's CSS -->
 </head>
 
 <body>
-    
-        <!-- 헤더부분 -->
-        <div class="header">
-            <!-- 로고 -->
-            <a href="" class="logo">
-                <img src="logo.png" alt="로고">
-            </a>
-            <!-- 네비바 메뉴 -->
-            <div class="navbar">
-                <a href="">전체메뉴</a>
-                <a href="">신상품</a>
-                <a href="">한 식</a>
-                <a href="">양 식</a>
-                <a href="">일 식</a>
-                <a href="">중 식</a>
-            </div>
-            <!-- 우측 상단 로그인 회원가입 -->
-            <div class="login">
-                <a href="">로그인</a>
-                <a href="">회원가입</a>
-            </div>
-        </div>
-        <div class="mainImg"></div>
 
-<!--
+    <!-- 헤더부분 -->
+    <div class="header">
+        <!-- 로고 -->
+        <a href="" class="logo">
+            <img src="logo.png" alt="로고">
+        </a>
+        <!-- 네비바 메뉴 -->
+        <div class="navbar">
+            <a href="">전체메뉴</a>
+            <a href="">신상품</a>
+            <a href="">한 식</a>
+            <a href="">양 식</a>
+            <a href="">일 식</a>
+            <a href="">중 식</a>
+        </div>
+        <!-- 우측 상단 로그인 회원가입 -->
+        <div class="login">
+            <a href="">로그인</a>
+            <a href="">회원가입</a>
+        </div>
+    </div>
+    <div class="mainImg"></div>
+
+    <!--
 22/07/19 김정치 메인페이지의 신상품 자동캐로셀 영역 생성
 -->
     <div class="container">
         <h1 class="carouselTitle">신상품</h1>
-        <div class="section Newproduct">
-            <div class="autoCarousel">
-                <!-- 자동 캐로셀1 시작 -->
-                <div class="itemBox">
+        <!-- <div class="autoCarousel"> -->
+        <!-- 자동 캐로셀1 시작 Swiper 라이브러리 -->
+        <div class="section Newproduct swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
                     <!-- 상품 박스 -->
                     <div class="slide">
-                    <div class="imgBox"><img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" alt=""></div><!-- 상품 이미지 -->
-                    <div class="itemText">
-                        <!-- 상품 이름 및 가격 정보 -->
-                        <h3 class="itemTitle">아찔떡볶잉</h3>
-                        <p class="itemInfor">가격 : 13,000원</p>
-                    </div>
+                        <div class="imgBox">
+                            <img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        </div>
+                        <div class="itemText">
+                            <!-- 상품 이름 및 가격 정보 -->
+                            <h3 class="itemTitle">해물 누룽지탕(2인)</h3>
+                            <p class="itemInfor">가격 : 16,000원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="itemBox">
+                <div class="swiper-slide">
                     <!-- 상품 박스 -->
                     <div class="slide">
-                    <div class="imgBox"><img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" alt=""></div> <!-- 상품 이미지 -->
-                    <div class="itemText">
-                        <!-- 상품 이름 및 가격 정보 -->
-                        <h3 class="itemTitle">아찔떡볶잉</h3>
-                        <p class="itemInfor">가격 : 13,000원</p>
-                    </div>
+                        <div class="imgBox">
+                            <img src="images/[마이셰프] 알찬 소고기 스키야키(2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        </div>
+                        <div class="itemText">
+                            <!-- 상품 이름 및 가격 정보 -->
+                            <h3 class="itemTitle">알찬 소고기 스키야키(2인)</h3>
+                            <p class="itemInfor">가격 : 18,000원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="itemBox">
+                <div class="swiper-slide">
                     <!-- 상품 박스 -->
                     <div class="slide">
-                    <div class="imgBox"><img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt=""></div> <!-- 상품 이미지 -->
-                    <div class="itemText">
-                        <!-- 상품 이름 및 가격 정보 -->
-                        <h3 class="itemTitle">아찔떡볶잉</h3>
-                        <p class="itemInfor">가격 : 13,000원</p>
-                    </div>
+                        <div class="imgBox">
+                            <img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" alt=""> <!-- 상품 이미지 -->
+                        </div>
+                        <div class="itemText">
+                            <!-- 상품 이름 및 가격 정보 -->
+                            <h3 class="itemTitle">포크 찹스테이크(2-3인)</h3>
+                            <p class="itemInfor">가격 : 21,000원</p>
+                        </div>
                     </div>
                 </div>
-                <div class="itemBox">
+                <div class="swiper-slide">
                     <!-- 상품 박스 -->
                     <div class="slide">
-                    <div class="imgBox"><img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt=""></div> <!-- 상품 이미지 -->
-                    <div class="itemText">
-                        <!-- 상품 이름 및 가격 정보 -->
-                        <h3 class="itemTitle">아찔떡볶잉</h3>
-                        <p class="itemInfor">가격 : 13,000원</p>
+                        <div class="imgBox">
+                            <img src="images/[마이셰프] 불고기 퀘사디아(1-2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        </div>
+                        <div class="itemText">
+                            <!-- 상품 이름 및 가격 정보 -->
+                            <h3 class="itemTitle">불고기 퀘사디아(1~2인)</h3>
+                            <p class="itemInfor">가격 : 14,000원</p>
+                        </div>
                     </div>
+                </div>
+                <div class="swiper-slide">
+                    <!-- 상품 박스 -->
+                    <div class="slide">
+                        <div class="imgBox">
+                            <img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        </div>
+                        <div class="itemText">
+                            <!-- 상품 이름 및 가격 정보 -->
+                            <h3 class="itemTitle">바질페스토 파스타(2인)</h3>
+                            <p class="itemInfor">가격 : 15,000원</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section Recommend"></div>
-        <div class="section Review"></div>
-        <div class="section Blogs"></div>
-        <div class="footer"></div>
+    </div>
+    <div class="section Recommend"></div>
+    <div class="section Review"></div>
+    <div class="section Blogs"></div>
+    <div class="footer"></div>
     </div>
     <script src="mainpage.js"></script>
+    
+    <!-- 22/07/20 Swiper 및 캐러셀 js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="carousel.js"></script>
+
 </body>
 
 </html>

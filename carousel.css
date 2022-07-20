@@ -6,52 +6,57 @@
 
 /* 22/07/19 캐로셀 전체 영역 설정 */
 .container {
-    margin: 10px 0;
     display: flex;
     flex-direction: column;
     min-width: 800px;
 }
 .container .carouselTitle {
     text-align: center;
+    margin: 10px 0;
 }
 
-/* 22/07/19 캐로셀 세부 영역 설정 */
-.autoCarousel {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    min-width: 800px;
+/* 22/07/20 캐로셀 타이틀 설정 */
+.swiper-wrapper .swiper-slide .slide .imgBox {
+    height: 70%;
 }
-.autoCarousel .itemBox {
-    width: 250px;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-}
-/* 22/07/19 캐로셀 세부 영역 설정 */
-.autoCarousel .itemBox .slide {
-    /* width: 250px;
-    height: 200px; */
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.autoCarousel .itemBox .imgBox {
-    /* height: 100%; */
-    width: auto;
-}
-.autoCarousel .itemBox .imgBox img {
-    height: auto;
-    width: 100%;
-}
-
-/* 22/07/19 캐로셀 타이틀 설정 */
-.autoCarousel .itemBox .itemText .itemTitle {
+.swiper-wrapper .swiper-slide .slide .itemText .itemTitle {
     font-family: 'SEBANG_Gothic_Regular', sans-serif;
+    font-size: 1.2rem;
+    margin: 10px 0 7px;
 }
-.autoCarousel .itemBox .itemText .itemInfor {
+.swiper-wrapper .swiper-slide .slide .itemText .itemInfor {
     font-family: 'BBTreeGR', sans-serif;
+    font-size: 1.2rem;
+}
+
+/* 22/07/20 스위프 캐로셀 설정 */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
