@@ -75,11 +75,11 @@
                                 유투브 크리에이터 우정잉씨가 판매하는 밀키트 사이트를 발견했어요!
                             </p>
                         </div>
-                        <div class="imgBox"><img src="logo.png" class="sec1Img" alt=""></div>
+                        <div class="imgBox"><img src="blogImg/logo.png" class="sec1Img" alt=""></div>
                         <div>
                             <p>로고도 너무 귀엽지 않나요?!</p>
                         </div>
-                        <div class="imgBox"><img src="음식소개사진.png" class="secImg2" alt=""></div>
+                        <div class="imgBox"><img src="blogImg/음식소개사진.png" class="secImg2" alt=""></div>
                         <div>
                             <p>
                                 어떤 밀키드들이 있나 찾아보고 있었는데 떡볶이 발견!! @_@
@@ -114,7 +114,7 @@
         let share = document.querySelector('#share');
         let logout = document.querySelector('#logout');
         let profile = document.querySelector('#profile');
-
+        let topNav = document.querySelector('.topNav');
 
         // 상단메뉴의 설정 이모티콘 rotate 효과 설정
         // 상단메뉴 이모티콘 display='none' 효과 
@@ -134,6 +134,10 @@
                 flag = !flag;
             }
 
+        });
+
+        window.addEventListener("scroll",function(){
+          topNav.style.backgroundColor='white';
         });
     </script>
 </body>
