@@ -26,38 +26,21 @@
 }
 
 /* 임시 공간을 위한 공간 확보 */
-nav{
-    width: 100%;
-    height: 300px;
-}
 /* css 적용을 위한 라인 확인용 
     - 작업 완료 후 주석 처리 예정
 */
 *{
-
-    border: 1px solid red;
-    transition: all 0.3s;
-=======
     /* border: 1px solid red; */
-    font-family: 'Jua', Arial, Helvetica, sans-serif;
-    transition: all .5s; /* 220720 오슬기 수정: 시간 줄였음*/
-
+    /* transition: all .5s; 220720 오슬기 수정: 시간 줄였음 
+                            220720 성선규 수정 : 전체 딜레이가 너무 심해서 삭제 후 해당 요소에 직접 추가*/
 }
 /* 페이지 기존 margin 제거 */
 body{
     margin: 0;
 }
-/* 사용자 전체화면 */
-.container{
-    width: 100vw;
-    height: 100vh;
-}
+
 /* aside container (장바구니) 
 margin 조정 가능*/
-.basket_container{
-    width: 120px;
-    margin: 3% 0 0 -10%;
-}
 /* 테두리 색상은 폰트 색상으로 변경
 사용자의 화면에 고정하기 위해 fixed 설정 */
 .basket_box{
@@ -67,15 +50,11 @@ margin 조정 가능*/
     flex-direction: column;
     align-items: center;
     position: fixed;
-
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 1px rgba(128, 128, 128, 0.416);
     z-index: 999;
-=======
     border-radius: 2px; /*220720 오슬기 수정: 줄였음*/
     border: 1px solid rgba(128, 128, 128, 0.416); /* 220720 오슬기 수정: 사이드바 전체div 보더 수정*/
-    left: 0; /* 220720 오슬기 추가: 사이드바 전체 왼쪽으로 붙임*/
-
+    left: 1%; /* 220720 오슬기 추가: 사이드바 전체 왼쪽으로 붙임*/
+    top: 40%;
 }
 /* 텍스트 가운데 설정 */
 .basket_box > div{
@@ -92,33 +71,19 @@ margin 조정 가능*/
 input[type=radio]{
     display: none; 
 }
-/* label 텍스트에 색상 및 폰트 두께 설정 */
-input[type=radio] ~ label{
-
-    width: 120px;
-    height: 30px;
-    line-height: 30px; /* 텍스트 가운데 정렬 */
-    background-color: rgb(255, 218, 71);
-    font-weight: 300;
-    border-top: 1px solid rgb(255, 255, 255); /* 버튼 상단 테두리 */
-    border-bottom: 1px solid rgb(255, 255, 255); /* 버튼 하단 테두리 */
-    border-collapse: collapse; /* 상하단 테두리 중복되는 부분 삭제 */
-}
 /* label에 커서가 올라갔을 때 pointer로 변경
 상하단 white 에서 black으로 변경 */
 input[type=radio] ~ label:hover{
     cursor: pointer;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    transition: all .5s;
 }
 /* 폰트 세방 고딕체 설정
 폰트 사이즈 조정
 꼭지점 설정 */
 label{
-    border-radius: 5px;
-    font-size: 14px;
     font-family: 'SEBANG_Gothic_Regular';
-=======
     width: 115px;    /*220720 오슬기 수정: 늘렸음*/
     height: 50px;   /*220720 오슬기 수정: 늘렸음*/
     line-height: 50px;   /*220720 오슬기 수정: 늘렸음*/
@@ -164,18 +129,21 @@ label{
     width: 120px;
     color: black;
     background-color: rgb(255, 218, 71);
+    transition: all .5s;
 }
 #like:checked ~ label{
     display: block;
     width: 120px;
     color: black;
     background-color: rgb(255, 218, 71);
+    transition: all .5s;
 }
 #select:checked ~ label{
     display: block;
     width: 120px;
     color: black;
     background-color: rgb(255, 218, 71);
+    transition: all .5s;
 }
 /* 220720 오슬기 추가 영역 끝*/
 
