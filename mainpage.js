@@ -18,9 +18,20 @@ window.addEventListener('scroll', function () {
         nav.style.position = '' // 
         // document.body.classList.remove("fixed-nav"); 오류나서 안됨 이유는 모르겠음.
     }
-
-    // 
-    if (window.pageYOffset >= 800){
+/*
+22/07/20 노현
+네비바 스크롤했을때 백그라운드 속성값 주는거 수정.
+*/
+    // if문 조건값이 적용되버려서
+    // 아래 else if문이 적용되지않기때문에 위 아래 바꿈.
+    // if (window.pageYOffset >= 200){
+    //     nav.style.backgroundColor='white';
+    //     nav.style.opacity=0.8;
+    // }else if (window.pageYOffset >= 800){
+    //     nav.style.backgroundColor='';
+    //     nav.style.opacity=1;
+    // }
+    if (window.pageYOffset >= 800){//네비바 밑 메인이미지 Y축길이가 200~800 정도라서 수치를 저렇게 잡음.
         nav.style.backgroundColor='';
         nav.style.opacity=1;
     }else if (window.pageYOffset >= 200 ){
@@ -28,6 +39,6 @@ window.addEventListener('scroll', function () {
         nav.style.opacity=0.8;
     }
 });
-window.addEventListener('scroll', function () {
-    console.log(window.pageYOffset)
-});
+// window.addEventListener('scroll', function () {
+//     console.log(window.pageYOffset)
+// });
