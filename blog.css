@@ -1,7 +1,7 @@
 /*  
 ==================================================
 220718 이은지 블로그 틀 나누고 메인 배경 초안 구성
-220719 상단 메뉴 설정 이모티콘 클릭 이벤트 js 추가
+220719 상단 메뉴 설정 이모티콘 클릭이벤트 js 추가
 220720 상단 메뉴 fixed 고정, 블로그 내용 추가
        선규->블로그 본문과 상단 메뉴 위치 수정 요청
 
@@ -48,6 +48,20 @@ body{
     width: 100vw;
 }
 
+/* 220720 다크모드 효과 */
+.container.dark{
+    color: white;
+}
+.container.dark .main{
+    filter : opacity(1);
+}
+.container.dark .con2{
+    background-color: rgb(189, 185, 185);
+}
+.container.dark .topNav{
+    background-color: black;
+}
+
 /* 상단 이미지 */
 .main{
     width: 100%;
@@ -77,7 +91,7 @@ body{
     align-items: center;
     flex-direction: column;
     width: 100%;
-    min-width: 650px; /* 201719 사이트 크기 조정 */
+    min-width: 650px; /* 220719 사이트 최소 크기 조정 */
 }
 
 /* 상단 메뉴 */
@@ -89,11 +103,13 @@ body{
    justify-content: space-around;
    align-items: center; 
    position: fixed;
+   top:0;
    /* 220720
-   fixed 시 아이콘이 header 뒤로 가 클릭 이벤트가 실행안됨
+   fixed 시 아이콘들이 header 뒤로 가 클릭 이벤트가 실행안됨
    z-index를 줌으로써 아이콘을 맨 앞으로 오게 해 
    클릭이벤트를 할 수 있도록 함*/
-   z-index: 100;  
+   z-index: 100;
+   transition: all 0.5s;  
 }
 .topNav>div{
     width: 30%;
@@ -120,16 +136,23 @@ body{
     cursor: pointer;
     margin-left: 8px;
 }
-
+/* 220720
+이벤트리스너 했는데 아이콘 효과가 인식되지 않아서  
+전구 아이콘에 마진과 커서 효과주었음 */
+.xi-lightbulb-o, .xi-lightbulb{
+    cursor: pointer;
+    margin-left: 8px;
+}
 
 /* 왼쪽 메뉴 */
 .leftNav{
     background-color: white;
     border: 3px solid orange;
     width: 15%;
-    /* position: absolute; 
+    position: absolute; 
     transition: all 0.5s;
-    left: -100%; */
+    left: -100%;
+    z-index: 100;
 }
 .leftTop{
     width: 100%;
@@ -182,42 +205,35 @@ header>div{
 
 /* section 영역 */
 section{
-    border: 3px solid red;
     width: 100%;
-    background-color: white;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     font-family: 'BBTreeGR';
     text-align : center;
     font-size: 1.3rem;
     line-height: 30px;
 }
-.imgBox{
-    height:350px;
-    width: 100%;
-}
 .sec1Img{
-    height:350px;
+    height:200px;
 }
 .secImg2{
     height:350px;
 }
+/* 220720 section, footer side여백 추가 */
+.side{
+
+    width:15%;
+}
 /* 220719 section 내부 sec1 영역 */
 .sec1{
-    width: 100%;
+    width: 70%;
     padding-top: 30px; 
     flex-wrap: wrap;
     display: flex;
+    border: 3px solid black;
 }
 .sec1>div{
     width: 100%;
-}
-.sec2{
-    width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-
 }
 .sec2>div{
     width: 100%;
@@ -225,7 +241,36 @@ section{
 
 /* footer 영역 */
 footer{
-    background-color: white;
-    border: 3px solid blue;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+footer>div:nth-child(2){
+    width: 70%;
+    border: 3px solid orange;
+}
+
+/* 하단 고정 메뉴 영역 */
+.footerNav{
+    width: 100%;
+    border: 3px solid yellow;
+    /* position: fixed;
+    bottom: 0; */
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: row;
+}
+.footerNav>div:nth-child(2){
+    width: 70%;
+    text-align: left;
+    padding: 10px 0 10px;
+}
+#heart, #talk{
+    font-family: 'BBTreeGR';
+    font-size: 1rem;
+    font-weight: bold;
+}
+#heart:hover, #talk:hover{
+    cursor: pointer;
+    color: blue;
 }
