@@ -1,0 +1,148 @@
+/* ========================
+220719 오슬기 기본 레이아웃 작성  
+220720 오슬기 공통영역 속성 적용 및 세부 조정(중복or불필요 속성 삭제, 중복 클래스명 변경
+===========================*/
+
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+.main_container { /*220720 오슬기 수정: 메인페이지에 중복되는 클래스명이 있어서 수정*/
+    height: 250vh;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    padding: 0 10vw;
+}
+
+/* 오슬기 파트 시작 */
+
+/* 전체 컨테이너 */
+.mainbody {
+    width: 100%;
+    border: 1px solid blue;
+}
+
+/* 상품사진,정보 및 가격 부분 div */
+.top {
+    width: 100%;
+    height: 500px;
+    border: 1px solid red;
+}
+
+/* 상품사진(메인사진+추가사진) div */
+.topleft {
+    width: 50%;
+    height: 500px;
+    border: 1px solid blue;
+    display: flex;
+    float: left;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 상품사진(메인사진)  */
+.main_details_img { /*220720 오슬기 수정: 메인페이지에 중복되는 클래스명이 있어서 수정*/
+    width: 60%;
+    height: 70%;
+    background-color: green;
+}
+
+/* 상품사진(추가사진) div */
+.subimgbox {
+    width: 60%;
+    height: 20%;
+    background-color: green;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 상품사진(추가사진) */
+.subimg {
+    width: 24%;
+    height: 100%;
+    background-color: yellow;
+}
+
+/* 상품 정보 및 가격 전체div */
+.topright {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+/* 상품 정보 및 가격 각 div */
+.topright>div{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid blue;
+}
+
+/* 장바구니,찜,구매하기 버튼 div */
+.topright>div>div{
+    width: 150px;
+    height: 50px;
+    border: 1px solid pink;
+}
+
+/* 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) 전체 div */
+.bodymenubox {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: lightblue;
+}
+
+/* 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div */
+.bodymenu {
+    width: 200px;
+    height: 70px;
+    background-color: linen;
+}
+
+/* 본문 내용(공통) 각 div 설정 */
+.middlebox {
+    width: 100%;
+    height: 410px;
+    border: 1px solid brown;
+}
+
+/* 본문 내용(이미지 또는 목록) div */
+.middle {
+    width: 100%;
+    height: 370px;
+    background-color: pink;
+}
+
+/* 본문 내용(리뷰) div */
+.reviewlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 리뷰 목록 디자인 */
+.reviewlist>table{
+    width: 100%;
+    border: 1px solid red;
+}
+
+/* 리뷰 별점 스타일 */
+.xi-star {
+    color: yellow;
+    font-size: 20px;
+}
+/* 오슬기 파트 끝 */
+
+
+
