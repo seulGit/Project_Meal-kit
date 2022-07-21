@@ -1,0 +1,23 @@
+{
+    "item": [{
+        "product_Id": "한식",
+        "item_Id": "0001",
+        "img": "item_img/item_list_page_main/tteogbokki/1000002282_magnify_013.jpg",
+        "item_Name": "[마이셰프x트레져헌터] 우정분식 아찔 떡볶잉(2인)",
+        "item_info": "MYCHEF X TREASURE HUNTER 우정분식 아찔 떡볶잉 3단계로 도전하는 매운맛 떡볶이",
+        "price": "15,900원",
+        "discount_rate": "50%",
+        "discount_price": "7,950원",
+        "sub_main_img": "item_img/item_list_page_main/tteogbokki/1000002282_detail_276.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0002",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "[마이셰프] 해물 누룽지탕(2인)",
+        "item_info": "셰프의 손길이 닿은 전통 중화 요리",
+        "price": "16,900원",
+        "discount_rate": "50%",
+        "discount_price": "8,450원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }]
+}
