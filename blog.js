@@ -8,6 +8,8 @@ let topNav = document.querySelector('.topNav');
 let footerNav = document.querySelector('.footerNav');
 let light = document.querySelector('.xi-lightbulb-o');
 let container = document.querySelector('.container'); 
+let hide = document.querySelector('#hide');
+let leftTop = document.querySelector('.leftTop');
 
 // 상단메뉴의 설정 이모티콘 rotate 효과 설정
 // 상단메뉴 이모티콘 display='none' 효과 
@@ -64,3 +66,13 @@ light.addEventListener("click",function(){
    container.classList.toggle('dark');
 });
 
+
+// 아이콘 누르면 왼쪽 네비바 들어갔다 나옴
+   let navbar = true;
+hide.addEventListener("click", function(){
+    if(navbar == true){
+        leftTop.style.display='block';
+    }else if(navbar == false){
+        leftTop.style.display='none';
+    }
+});
