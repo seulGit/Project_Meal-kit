@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="item_Details.css">
+    <link rel="stylesheet" href="item_List.css">
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+<!-- 220720 오슬기 공통영역 추가 -->
+<!-- 헤더부분 -->
+<div class="header">
+    <!-- 로고 -->
+    <a href="" class="logo">
+        <img src="logo.png" alt="로고">
+    </a>
+    <!-- 네비바 메뉴 -->
+    <div class="navbar">
+        <a href="">전체메뉴</a>
+        <a href="">신상품</a>
+        <a href="">한 식</a>
+        <a href="">양 식</a>
+        <a href="">일 식</a>
+        <a href="">중 식</a>
+    </div>
+    <!-- 우측 상단 로그인 회원가입 -->
+    <div class="login">
+        <a href="">로그인</a>
+        <a href="">회원가입</a>
+    </div>
+</div>
+<div class="mainImg"></div>
+
+
+
+
+    <!-- 220719 오슬기 사이드바(성선규) 붙여넣기 -->
+    <!-- 사이드 바 이동루트-->
+    <aside class="basket_container">
+        <!-- 사이드 바 컨테이너 -->
+        <div class="basket_box">
+            <!-- 최근 본 상품 -->
+            <div>
+                <input type="radio" id="recent" name="basket">
+                <label for="recent">최근 본 상품</label>
+                <div class="recent_box">sdfasdfasdfasdf</div>
+            </div>
+            <!-- 찜한 상품 -->
+            <div>
+                <input type="radio" id="like" name="basket">
+                <label for="like">찜한 상품</label>
+                <div class="like_box">asdfasdfasdfasdfasdf</div>
+            </div>
+            <!-- 장바구니 -->
+            <div>
+                <input type="radio" id="select" name="basket">
+                <label for="select">장바구니</label>
+                <div class="select_box">asdfasdfasdfasdfas</div>
+            </div>
+        </div>
+    </aside>
+
+
+    <div class="main_container">
+        <div class="header"></div>
+        <!-- 슬기 파트 시작-->
+        <div class="mainbody">
+            <!-- 상품사진,정보 및 가격 부분 div -->
+            <div class="top"> 
+                <!-- 상품사진(메인사진+추가사진) div) -->
+                <div class="topleft">
+                    <!-- 상품사진(메인사진) -->
+                    <div class="main_details_img"></div>
+                    <!-- 상품사진(추가사진) div -->
+                    <div class="subimgbox">
+                        <!-- 상품사진(추가사진 -->
+                        <div class="subimg"></div>
+                        <div class="subimg"></div>
+                        <div class="subimg"></div>
+                        <div class="subimg"></div>
+                    </div>
+                </div>
+                <!-- 상품정보 및 가격 전체div -->
+                <div class="topright">
+                    <!-- 상품 정보 및 가격 각 div -->
+                    <div>
+                        <span>우정분식 아찔 떡볶잉(2인)</span>
+                    </div>
+                    <div>
+                        <div><span>판매가</span></div>
+                        <div>15,900원</div>
+                    </div>
+                    <div>
+                        <div><span>수량</span></div>
+                        <div><span>1개</span></div>
+                    </div>
+                    <div>
+                        <div><span>총 합계금액</span></div>
+                        <div><span>15,900원</span></div>
+                    </div>
+                    <!-- 장바구니,찜,구매하기 버튼 div -->
+                    <div>
+                        <!-- 장바구니,찜,구매하기 버튼 -->
+                        <div>
+                            <button>장바구니</button>
+                        </div>
+                        <div>
+                            <button>찜하기</button>
+                        </div>
+                        <div>
+                            <button>바로 구매</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) 전체 div-->
+            <div class="bodymenubox">
+                <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div -->
+                <div class="bodymenu detail"><span>상품상세정보</span></div>
+                <div class="bodymenu info"><span>배송안내</span></div>
+                <div class="bodymenu review"><span>리뷰</span></div>
+                <div class="bodymenu blog"><span>블로그후기</span></div>
+            </div>
+            <!-- 본문 내용1(상품디테일) div -->
+            <div class="middlebox">
+                <h1>Details</h1>
+                <!-- 본문 내용1(상품디테일) 이미지  -->
+                <div class="middle detailimg"></div>
+            </div>
+            <!-- 본문 내용2(상품정보) div -->
+            <div class="middlebox">
+                <h1>Info</h1>
+                <!-- 본문 내용2(상품정보) 이미지  -->
+                <div class="middle infoimg"></div>
+            </div>
+            <!-- 본문 내용3(리뷰) div -->
+            <div class="middlebox">
+                <h1>Review</h1>
+                <!-- 본문 내용3(리뷰) 목록 div-->
+                <div class="middle reviewlist">
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>떡볶이 겁나 맛있어용</td>
+                            <td>이은지</td>
+                            <td>2022.07.20</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>퉤퉤퉤 별 한개도 아깝네요 ㅡㅡ</td>
+                            <td>오슬기</td>
+                            <td>2022.07.22</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- 본문 내용4(블로그) div -->
+            <div class="middlebox">
+                <h1>Blog</h1>
+                <!-- 본문 내용4(블로그) 목록 -->
+                <div class="middle bloglist"></div>
+            </div>
+        </div>
+        <!-- 슬기 파트 끝 -->
+        <div class="footer"></div>
+    </div>
+</body>
+</html>
