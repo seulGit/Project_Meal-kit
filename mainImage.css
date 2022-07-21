@@ -11,9 +11,12 @@ mainImage.css , mainpageNavbar.css
 
 /* 22/07/19 노현
 네비바 밑에 세션부분 옆에 공백주려고 padding값 넣음 */
-
 /* 22/07/20 노현
 css나누면서 이쪽으로 옴. */
-.container{
-    padding: 0 10vw;
-}
+/* 22/07/21 노현
+수정.
+container클래스명을 김정치님쪽에서 변경.
+필요없어져서 주석처리. */
+/* .container{
+    padding: 0 10vw; 
+}*/
