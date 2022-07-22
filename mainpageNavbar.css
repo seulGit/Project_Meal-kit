@@ -36,7 +36,7 @@
     margin: 0;
     box-sizing: border-box;
     /* 라인 보려고 적용해둔 보더라인. */
-    border: 1px solid royalblue;
+    /* border: 1px solid royalblue; */
     text-decoration: none;
 }
 
@@ -77,14 +77,25 @@ margin: 0 5.8vw;
 마진값 때문에 글씨가 세로로 서지고
 엉켜서 주석처리하고
 justify-content: space-between; 로 바꿈.
-=================================================   
+=================================================
+22/07/21 성선규
+수정
+네비게이션바의 z-index가 설정되어 있지 않아 
+다른 컨텐츠에 묻힘
+해서 z-index 100으로 설정
+해당 내용 수정
+=================================================
 */
 .header>.navbar {
     display: flex;
     /* justify-content: center; */
     justify-content: space-between;
     list-style: none;
-
+    
+/* 22/07/21 노현
+    네비바 아래 밑줄 추가. */
+    border-bottom: 3px solid rgb(255, 69, 0);
+    /* box-shadow: 0 3px 2px 0 rgba(192, 192, 192, 0.6); */
 }
 
 /* 22/07/19 노현
@@ -94,7 +105,7 @@ justify-content: space-between; 로 바꿈.
 /* 22/07/20 노현
 수정
 밑에 간격 벌리려고 쓴 마진은 주석처리
-사유는 읽는 위치 기준 위로 20번째줄에 주석 달아둠. */
+사유는 읽는 위치 기준 위로 25번째줄에 주석 달아둠. */
 .header>.navbar>a {
     /* margin: 0 5.8vw;  */
     font-size: 23px;
@@ -127,6 +138,28 @@ a태그 글씨색깔 검정 */
     margin: 0 15px;
     color: black;
 }
+/* 22/07/19 노현
+네비바 첫번째 왼쪽마진 */
+.navbar>a:first-child{
+    margin-left: 10vw;
+}
+/* 22/07/19 노현
+네비바 첫번째 오른쪽마진 */
+.navbar>a:last-child{
+    margin-right: 10vw;
+}
+/* 메인 이미지 */
+.mainImg{
+    width: 100%;
+    height: 600px;
+    background: url(mainimage.jpg) 80% 80%/100% no-repeat;
+}
+
+/* 메인부분 */
+.section{
+    width: 100%;
+    /* height: 300px; */
+}
 
 /* 22/07/19 노현
 네비바 첫번째 왼쪽마진 */
@@ -139,3 +172,11 @@ a태그 글씨색깔 검정 */
 .navbar>a:last-child {
     margin-right: 10vw;
 }
+
+/* 22/07/21 노현
+    보류 .. */
+/* .navbar>a:hover{
+    transition: all 0.3s;
+    border-bottom: 5px solid rgb(255, 69, 0);
+     color: rgb(255, 69, 0); 
+} */

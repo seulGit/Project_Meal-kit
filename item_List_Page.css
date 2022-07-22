@@ -3,10 +3,41 @@
 22/07/20 성선규
 메인 섹션 작성
 ==============================
+22/07/21 성선규
+폰트 추가
+이미지 안쪽 아이콘 수정
+아이템 타이틀 폰트 및 높이 수정
+아이템 부가설명 폰트 및 높이 수정
+아이템 박스 높이 수정
+메인 아이템 컨테이너 높이 삭제
+인풋 박스 border or outline 수정
+==============================
 */
 :root {
     --point : orangered;
     --color : rgb(255, 218, 71);
+}
+/* 폰트 */
+/* 유토이미지고딕R */
+@font-face {
+    font-family: 'BBTreeGR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 세방고딕 BOLD */
+@font-face {
+    font-family: 'SEBANG_Gothic_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 세방고딕 Regular  */
+@font-face {
+    font-family: 'SEBANG_Gothic_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 *{
     /* border: 1px solid red; */
@@ -89,6 +120,7 @@ input[type=range]{
 input 요소를 잡아주기 위한 포지션*/
 .search_box{
     position: relative;
+    z-index: 2;
 }
 /* input 컨테이너에 position 설정 
 안쪽 텍스트에 여백 */
@@ -100,8 +132,9 @@ input[type=text]{
     padding-left: 10px;
     padding-right: 80px;
     font-size: 1rem;
-    border: 3px solid black;
-    z-index: -1;
+    border: none; /* 22/07/21 성선규 수정 : border 전체 삭제 */
+    border-bottom: 1px solid black; /* 22/07/21 성선규 추가 : 기본값을 밑에만 있도록 */
+    z-index: 3; /* 22/07/21 성선규 수정 : 검색 컨테이너보다 높이기 */
 }
 /* input 요소와 똑같이 .search_box에 position 설정
 label 안쪽에 span만큼만 범위 설정 
@@ -113,7 +146,7 @@ input[type=text] ~ label{
     display: flex;
     justify-content: end;
     border: none;
-    z-index: -1;
+    z-index: 4; /* 22/07/21 성선규 수정 : input 보다 높이기 */
 }
 /* 돋보기 두껍게 */
 input[type=text] ~ label span{
@@ -126,18 +159,24 @@ input[type=text] ~ label span{
 input[type=text]:focus ~ label span{
     color: var(--point);
 }
-
+/* input focus시 아웃라인 제거
+밑에 border만 올라오게 */
+input[type=text]:focus{
+    border-bottom: 3px solid var(--point);
+    outline: none;
+    transition: all 0.3s;
+}
 /* 메인 아이템 나열 */
 .container section:nth-child(3){
     width: 100%;
-    height: 2800px;
+    /* height: 2900px; 22/07/21 성선규 수정 : 동적으로 움직이기 위한 삭제 */
     display: flex;
     flex-wrap: wrap;
     border: 1px solid gray;
 }
 .container section:nth-child(3) > div{
     width: 482.5px;
-    height: 650px;
+    height: 690px;
     margin: 10px;
     display: flex;
     align-items: center;
@@ -145,35 +184,34 @@ input[type=text]:focus ~ label span{
     border: 1px solid gray;
 }
 
-/* 아이템 내부 */
+/* 아이템 내부 이미지*/
 .container section:nth-child(3) .item .item_img_1{
     width: 95%;
     height: 66%;
     position: relative;
     margin-top: 11px;
-    border: 2px solid var(--point);
+    border: 2px solid black;
+    overflow: hidden;
 }
 /* 아이템 이미지 안쪽 아이콘 */
-.material-symbols-outlined:nth-child(1){
+.item_img_1 .material-symbols-outlined{ /* 22/07/21 성선규 수정 : 검색창 돋보기와 중복되어 수정 */
     position: absolute;
+    bottom: 0;
+    transition: all 0.3s;
+    user-select: none; /* 22/07/21 성선규 추가 : 사용자 드래그 불가 처리 */
+    transform: translateY(50px); /* 22/07/21 성선규 추가 : 하단으로 내려서 안보이게 처리 */
+}
+.item_img_1 .material-symbols-outlined:nth-child(1){
     right: 0;
-    bottom: 0;
-    font-size: 2.5rem;
     padding: 4px;
-    border: 1px solid gray;
-    border-left: none;
-    transition: all 0.3s;
+    font-size: 2.5rem;
 }
-.material-symbols-outlined:nth-child(2){
-    position: absolute;
+.item_img_1 .material-symbols-outlined:nth-child(2){
     right: 48px;
-    bottom: 0;
-    font-size: 2.5rem;
     padding: 4px;
-    border: 1px solid gray;
-    transition: all 0.3s;
+    font-size: 2.5rem;
 }
-.material-symbols-outlined:hover{
+.item_img_1 .material-symbols-outlined:hover{
     color: var(--point);
     cursor: pointer;
 }
@@ -181,19 +219,30 @@ input[type=text]:focus ~ label span{
 .title{
     width: 95%;
     margin-top: 15px;
+    margin-bottom: 10px;
 }
 .title h1{
-    font-size: 2rem;
+    font-size: 1.7rem;
+    height: 70px; /* 22/07/21 성선규 추가 : 높이가 설정되어 있지 않아 이미지 크기가 찌그러짐 */
+}
+/* 22/07/21 성선규 추가
+마우스 hover시 색상 변경 및 커서 변경 */
+.title h1:hover{
+    color: var(--point);
+    cursor: pointer;
+    transition: all 0.2s;
 }
 /* 아이템 설명 */
 .title h3{
     margin-top: 5px;
-    font-size: 1.3rem;
-    font-family: 'SEBANG_Gothic_Regular' Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-family: 'BBTreeGR'; /* 22/07/21 성선규 수정 : 폰트가 너무 두꺼워서 변경 */
+    color: rgb(84, 84, 84);
+    height: 75px;
 }
 /* 아이템 가격 */
 .item div.price{
-    margin-top: 40px;
+    margin-bottom: 12px;
     width: 95%;
     height: 10%;
     display: flex;
@@ -204,9 +253,9 @@ input[type=text]:focus ~ label span{
 }
 /* 아이템 원래 가격 */
 .price i{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-decoration: line-through;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     opacity: 0.5;
 }
 /* 아이템 할인율 */

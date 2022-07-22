@@ -3,6 +3,9 @@
 22/07/19 노현
 네비바 스크롤 고정 생성
 ============================
+22/07/21 성선규
+네비바 z-index 추가
+============================
 */
 const nav = document.querySelector('.navbar'); // 네비바 부분
 const topOfNav = nav.offsetTop;
@@ -13,9 +16,17 @@ window.addEventListener('scroll', function () {
         nav.style.position = 'fixed' // 위에꺼 오류나서 직접 fixed값 줬음
         nav.style.top = '0' // 탑에 붙이려고
         nav.style.width = '100%' // 스크롤 내릴때 사이즈 그대로 가져가려고 넣음.
+        nav.style.zIndex = '100'; // 22/07/21 성선규 추가 : 다른 요소에 네비게이션바가 묻혀서 해당 내용 추가
     }
     else {
         nav.style.position = '' // 
+         // ==================================
+        // 22/07/21 노현 수정
+        // 네비바 움직일때 & 서있을때 밑줄 추가
+        // ==================================
+        nav.style.borderBottom='3px solid rgb(255, 69, 0)' // 스크롤 내렸다가 다시 돌아왔을때 네비바 포인트색상 사라져서 추가. 
+        nav.style.boxShadow='none' // 가만히 있을때 포인트색상(boderbottom)이랑 겹쳐있어서 none 넣었음.
+       
         // document.body.classList.remove("fixed-nav"); 오류나서 안됨 이유는 모르겠음.
     }
 /*
@@ -33,12 +44,22 @@ window.addEventListener('scroll', function () {
     // }
     if (window.pageYOffset >= 800){//네비바 밑 메인이미지 Y축길이가 200~800 정도라서 수치를 저렇게 잡음.
         nav.style.backgroundColor='';
-        nav.style.opacity=1;
-    }else if (window.pageYOffset >= 200 ){
+        // nav.style.opacity=1; // 22/07/21 노현 수정 - 투명도 빼버림
+    }else if (window.pageYOffset >= 155 ){
         nav.style.backgroundColor='white';
-        nav.style.opacity=0.8;
+        // ==================================
+        // 22/07/21 노현 수정
+        // 네비바 움직일때 & 서있을때 밑줄 추가
+        // ==================================
+        nav.style.borderStyle='none'; // 스크롤 내릴때 포인트색상 빠지고 회색섀도우 색나오게끔
+        nav.style.boxShadow='0 3px 2px 0 rgba(192, 192, 192, 0.6)'; // 스크롤 내릴때 포인트색상 빠지고 회색섀도우 색나오게끔
+        
+        // nav.style.opacity=0.8; // 22/07/21 노현 수정 - 투명도 빼버림
     }
 });
+// y축 좌표 확인할때 씀
 // window.addEventListener('scroll', function () {
 //     console.log(window.pageYOffset)
 // });
+
+
