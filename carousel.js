@@ -5,10 +5,13 @@
 */
 
 let newProduct = document.querySelector('.Newproduct');
+let con = document.querySelector('#container');
+let prev = document.querySelectorAll('.prev');
+let next = document.querySelectorAll('.next')
 
 let swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,           // 아이템 갯수
-    spaceBetween: 30,           // 아이템 사이 간격 유지
+    slidesPerView: 4,           // 아이템 갯수
+    spaceBetween: 40,           // 아이템 사이 간격 유지
     loop: true,                 // 무한 루프
     autoplay: {                 // 자동 캐러셀 시작
         delay: 2000,            // 캐로셀 이동시간
@@ -20,3 +23,12 @@ let swiper = new Swiper(".mySwiper", {
         prevEl: ".prev",
     },
 });
+
+// console.log(con);
+if(con.width < 900){
+    for(let i=0; i<next.length;i++)
+    next[i].width = 30;
+    next[i].height = 30;
+    prev[i].width = 30;
+    prev[i].height = 30;
+}
