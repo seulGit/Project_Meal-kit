@@ -29,11 +29,13 @@
 /* css 적용을 위한 라인 확인용 
     - 작업 완료 후 주석 처리 예정
 */
-*{
+/* *{ */
     /* border: 1px solid red; */
+
     /* transition: all .5s; 220720 오슬기 수정: 시간 줄였음 
                             220720 성선규 수정 : 전체 딜레이가 너무 심해서 삭제 후 해당 요소에 직접 추가*/
-}
+
+/* } */
 /* 페이지 기존 margin 제거 */
 body{
     margin: 0;
@@ -53,6 +55,7 @@ margin 조정 가능*/
     z-index: 999;
     border-radius: 2px; /*220720 오슬기 수정: 줄였음*/
     border: 1px solid rgba(128, 128, 128, 0.416); /* 220720 오슬기 수정: 사이드바 전체div 보더 수정*/
+
     left: 1%; /* 220720 오슬기 추가: 사이드바 전체 왼쪽으로 붙임*/
     top: 40%;
 }
@@ -87,9 +90,10 @@ input[type=radio] ~ label{
 상하단 white 에서 black으로 변경 */
 input[type=radio] ~ label:hover{
     cursor: pointer;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    transition: all .5s;
+
+    /* border-top: 1px solid black;
+    border-bottom: 1px solid black;  0720 오슬기 수정: 라디오박스 보더 삭제 */
+
 }
 /* 폰트 세방 고딕체 설정
 폰트 사이즈 조정
