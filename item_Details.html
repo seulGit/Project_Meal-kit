@@ -12,7 +12,9 @@
 <body>
 <!-- 220719 오슬기 기본 레이아웃 작업
      220720 오슬기 공통영역 추가(병합)
-     220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업-->
+     220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업
+     220722 오슬기 세부 디자인(상단:가격,버튼/하단:리뷰,블로그) 조정 
+-->
 <!-- 헤더부분 -->
 <div class="header">
     <!-- 로고 -->
@@ -109,7 +111,7 @@
                     <!-- 구매/찜/장바구니 버튼 div -->
                     <div class="item_details_box">
                         <!-- 구매/찜/장바구니 버튼 -->
-                        <div class="item_details_btn">
+                        <div class="item_details_btn buyNow">
                             <button>바로 구매</button>
                         </div>
                         <div class="item_details_btn">
@@ -131,19 +133,19 @@
             </div>
             <!-- 본문 내용1(상품디테일) div -->
             <div class="middlebox">
-                <h1>Details</h1>
+                <h3>상품상세정보</h3>
                 <!-- 본문 내용1(상품디테일) 이미지  -->
                 <div class="middle detailimg"></div>
             </div>
             <!-- 본문 내용2(상품정보) div -->
             <div class="middlebox">
-                <h1>Info</h1>
+                <h3>배송안내</h3>
                 <!-- 본문 내용2(상품정보) 이미지  -->
                 <div class="middle infoimg"></div>
             </div>
             <!-- 본문 내용3(리뷰) div -->
             <div class="middlebox">
-                <h1>Review</h1>
+                <h3>리뷰</h3>
                 <!-- 본문 내용3(리뷰) 목록 div-->
                 <div class="middle reviewlist">
                     <!-- 리뷰 목록 -->
@@ -171,53 +173,89 @@
                     </table>
                     <!-- 리뷰 캐러셀 -->
                     <div class="review_container">
-                        <div class="anglebox">
-                            <i class="angleicon xi-angle-left"></i>
-                        </div>
                         <div class="review_box">
-                            <div class="review_img"></div>
-                            <div class="review_details"></div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"></div>
-                            <div class="review_details"></div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"></div>
-                            <div class="review_details"></div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"></div>
+                            <div class="review_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
                             <div class="review_details">
-                                <div class="review_details_title">별점부분</div>
+                                <div class="review_details_title">
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                </div>
                                 <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
                             </div>
                         </div>
-                        <div class="anglebox">
-                            <i class="angleicon xi-angle-right"></i>
+                        <div class="review_box">
+                            <div class="review_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                            <div class="review_details">
+                                <div class="review_details_title">
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                </div>
+                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                            </div>
+                        </div>
+                        <div class="review_box">
+                            <div class="review_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                            <div class="review_details">
+                                <div class="review_details_title">
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                </div>
+                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                            </div>
+                        </div>
+                        <div class="review_box">
+                            <div class="review_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                            <div class="review_details">
+                                <div class="review_details_title">
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                    <i class="xi-star"></i>
+                                </div>
+                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- 본문 내용4(블로그) div -->
             <div class="middlebox">
-                <h1>Blog</h1>
+                <h3>블로그</h3>
                 <!-- 본문 내용4(블로그) 목록 -->
                 <div class="middle bloglist">
                     <div class="bloglist_box">
-                        <div class="bloglist_img"></div>
-                        <div class="bloglist_details"></div>
+                        <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                        <div class="bloglist_details">
+                            <div class="bloglist_details_title">블로그후기제목</div>
+                            <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                        </div>
                     </div>
                     <div class="bloglist_box">
-                        <div class="bloglist_img"></div>
-                        <div class="bloglist_details"></div>
+                        <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                        <div class="bloglist_details">
+                            <div class="bloglist_details_title">블로그후기제목</div>
+                            <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                        </div>
                     </div>
                     <div class="bloglist_box">
-                        <div class="bloglist_img"></div>
-                        <div class="bloglist_details"></div>
+                        <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                        <div class="bloglist_details">
+                            <div class="bloglist_details_title">블로그후기제목</div>
+                            <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                        </div>
                     </div>
                     <div class="bloglist_box">
-                        <div class="bloglist_img"></div>
+                        <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
                         <div class="bloglist_details">
                             <div class="bloglist_details_title">블로그후기제목</div>
                             <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
@@ -231,3 +269,4 @@
     </div>
 </body>
 </html>
+
