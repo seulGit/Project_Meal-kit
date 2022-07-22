@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="mainpage.css">
 </head>
 <body>
-<!-- 220720 오슬기 공통영역 추가 -->
+<!-- 220719 오슬기 기본 레이아웃 작업
+     220720 오슬기 공통영역 추가(병합)
+     220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업-->
 <!-- 헤더부분 -->
 <div class="header">
     <!-- 로고 -->
@@ -86,32 +88,36 @@
                 <!-- 상품정보 및 가격 전체div -->
                 <div class="topright">
                     <!-- 상품 정보 및 가격 각 div -->
-                    <div>
+                    <div class="item_details_box item_name">
                         <span>우정분식 아찔 떡볶잉(2인)</span>
                     </div>
-                    <div>
-                        <div><span>판매가</span></div>
-                        <div>15,900원</div>
+                    <div class="item_details_box item_price_original">
+                        <span>판매가</span>
+                        <span>15,900원</span>
                     </div>
-                    <div>
-                        <div><span>수량</span></div>
-                        <div><span>1개</span></div>
+                    <div class="item_details_box item_price_dcRate">
+                        <span>할인율</span>
+                        <span>50%</span>
                     </div>
-                    <div>
-                        <div><span>총 합계금액</span></div>
-                        <div><span>15,900원</span></div>
+                    <div class="item_details_box item_quantity">
+                        <span>수량</span>
+                        <span><input type="number" name="item_quantity" value="1" min="1" max="99">개</span>
                     </div>
-                    <!-- 장바구니,찜,구매하기 버튼 div -->
-                    <div>
-                        <!-- 장바구니,찜,구매하기 버튼 -->
-                        <div>
+                    <div class="item_details_box item_price_total">
+                        <span>총 합계금액</span>
+                        <span>15,900원</span>
+                    </div>
+                    <!-- 구매/찜/장바구니 버튼 div -->
+                    <div class="item_details_box">
+                        <!-- 구매/찜/장바구니 버튼 -->
+                        <div class="item_details_btn">
+                            <button>바로 구매</button>
+                        </div>
+                        <div class="item_details_btn">
                             <button>장바구니</button>
                         </div>
-                        <div>
+                        <div class="item_details_btn">
                             <button>찜하기</button>
-                        </div>
-                        <div>
-                            <button>바로 구매</button>
                         </div>
                     </div>
                 </div>
@@ -141,9 +147,10 @@
                 <h1>Review</h1>
                 <!-- 본문 내용3(리뷰) 목록 div-->
                 <div class="middle reviewlist">
+                    <!-- 리뷰 목록 -->
                     <table>
                         <tr>
-                            <td>
+                            <td class="stars">
                                 <i class="xi-star"></i>
                                 <i class="xi-star"></i>
                                 <i class="xi-star"></i>
@@ -163,13 +170,61 @@
                             <td>2022.07.22</td>
                         </tr>
                     </table>
+                    <!-- 리뷰 캐러셀 -->
+                    <div class="review_container">
+                        <div class="anglebox">
+                            <i class="angleicon xi-angle-left"></i>
+                        </div>
+                        <div class="review_box">
+                            <div class="review_img"></div>
+                            <div class="review_details"></div>
+                        </div>
+                        <div class="review_box">
+                            <div class="review_img"></div>
+                            <div class="review_details"></div>
+                        </div>
+                        <div class="review_box">
+                            <div class="review_img"></div>
+                            <div class="review_details"></div>
+                        </div>
+                        <div class="review_box">
+                            <div class="review_img"></div>
+                            <div class="review_details">
+                                <div class="review_details_title">별점부분</div>
+                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                            </div>
+                        </div>
+                        <div class="anglebox">
+                            <i class="angleicon xi-angle-right"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- 본문 내용4(블로그) div -->
             <div class="middlebox">
                 <h1>Blog</h1>
                 <!-- 본문 내용4(블로그) 목록 -->
-                <div class="middle bloglist"></div>
+                <div class="middle bloglist">
+                    <div class="bloglist_box">
+                        <div class="bloglist_img"></div>
+                        <div class="bloglist_details"></div>
+                    </div>
+                    <div class="bloglist_box">
+                        <div class="bloglist_img"></div>
+                        <div class="bloglist_details"></div>
+                    </div>
+                    <div class="bloglist_box">
+                        <div class="bloglist_img"></div>
+                        <div class="bloglist_details"></div>
+                    </div>
+                    <div class="bloglist_box">
+                        <div class="bloglist_img"></div>
+                        <div class="bloglist_details">
+                            <div class="bloglist_details_title">블로그후기제목</div>
+                            <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- 슬기 파트 끝 -->

@@ -12,6 +12,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* 세방고딕 BOLD */
 @font-face {
     font-family: 'SEBANG_Gothic_Bold';
@@ -19,6 +20,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* 세방고딕 Regular  */
 @font-face {
     font-family: 'SEBANG_Gothic_Regular';
@@ -34,19 +36,18 @@
     margin: 0;
     box-sizing: border-box;
     /* 라인 보려고 적용해둔 보더라인. */
-    border: 1px solid royalblue;
+    /* border: 1px solid royalblue; */
     text-decoration: none;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
+    /* 22/07/20 김정치
+x축 스크롤바 제거 */
+    overflow-x: hidden;
 }
-/* 22/07/19 노현
-네비바 밑에 세션부분 옆에 공백주려고 padding값 넣음 */
-.container{
-    padding: 0 10vw;
-}
+
 
 /* 22/07/19 노현
 로고 가운데 맞추려고 text-align: center 씀 */
@@ -55,6 +56,7 @@ body{
 .header {
     text-align: center;
 }
+
 /* 22/07/19 노현
 네비바 로고 사이즈 */
 .logo>img {
@@ -89,7 +91,13 @@ justify-content: space-between; 로 바꿈.
     /* justify-content: center; */
     justify-content: space-between;
     list-style: none;
+    
+/* 22/07/21 노현
+    네비바 아래 밑줄 추가. */
+    border-bottom: 3px solid rgb(255, 69, 0);
+    /* box-shadow: 0 3px 2px 0 rgba(192, 192, 192, 0.6); */
 }
+
 /* 22/07/19 노현
 네비바 간격 벌리려고 마진씀
 추후 더 넣을거면 조정
@@ -97,7 +105,7 @@ justify-content: space-between; 로 바꿈.
 /* 22/07/20 노현
 수정
 밑에 간격 벌리려고 쓴 마진은 주석처리
-사유는 읽는 위치 기준 위로 20번째줄에 주석 달아둠. */
+사유는 읽는 위치 기준 위로 25번째줄에 주석 달아둠. */
 .header>.navbar>a {
     /* margin: 0 5.8vw;  */
     font-size: 23px;
@@ -121,6 +129,7 @@ justify-content: space-between; 로 바꿈.
     top: 10px;
     right: 10px;
 }
+
 /* 22/07/19 노현
 우측 상단 로그인 회원가입
 a태그 글씨색깔 검정 */
@@ -151,3 +160,23 @@ a태그 글씨색깔 검정 */
     width: 100%;
     /* height: 300px; */
 }
+
+/* 22/07/19 노현
+네비바 첫번째 왼쪽마진 */
+.navbar>a:first-child {
+    margin-left: 10vw;
+}
+
+/* 22/07/19 노현
+네비바 첫번째 오른쪽마진 */
+.navbar>a:last-child {
+    margin-right: 10vw;
+}
+
+/* 22/07/21 노현
+    보류 .. */
+/* .navbar>a:hover{
+    transition: all 0.3s;
+    border-bottom: 5px solid rgb(255, 69, 0);
+     color: rgb(255, 69, 0); 
+} */
