@@ -3,7 +3,7 @@
         "product_Id": "한식",
         "item_Id": "0001",
         "img": "item_img/item_list_page_main/tteogbokki/1000002282_magnify_013.jpg",
-        "item_Name": "[마이셰프x트레져헌터] 우정분식 아찔 떡볶잉(2인)",
+        "item_Name": "우정분식 아찔 떡볶잉(2인)",
         "item_info": "MYCHEF X TREASURE HUNTER 우정분식 아찔 떡볶잉 3단계로 도전하는 매운맛 떡볶이",
         "price": "15,900원",
         "discount_rate": "50%",
@@ -13,11 +13,181 @@
         "product_Id": "한식",
         "item_Id": "0002",
         "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
-        "item_Name": "[마이셰프] 해물 누룽지탕(2인)",
+        "item_Name": "해물 누룽지탕(2인)",
         "item_info": "셰프의 손길이 닿은 전통 중화 요리",
         "price": "16,900원",
         "discount_rate": "50%",
         "discount_price": "8,450원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0003",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "장어 솥밥 + 불고기 세트",
+        "item_info": "장어 한마리 솥밥 키트 + 능이 페스토 한입 소불고기 + 쌀 1KG + 에코백",
+        "price": "34,800원",
+        "discount_rate": "50%",
+        "discount_price": "17,400원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0004",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "향미 솥밥 세트",
+        "item_info": "장어 한마리 솥밥 키드 + 트러플 불고기 솥밥 키트 + 쌀 1KG + 에코백",
+        "price": "35,800원",
+        "discount_rate": "50%",
+        "discount_price": "17,900원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0005",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "안동식 순살 찜닭(2인)",
+        "item_info": "자극적이지 않아 남녀노소 모두가 좋아하는 단짠의 맛!",
+        "price": "16,900원",
+        "discount_rate": "50%",
+        "discount_price": "8,450원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0006",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "마그마 순살 닭볶음탕(2인)",
+        "item_info": "매콤 칼칼한 국물과 함께 즐기는 닭볶음탕!",
+        "price": "16,900원",
+        "discount_rate": "50%",
+        "discount_price": "8,450원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0007",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "궁중 소고기 버섯잡채(2인)",
+        "item_info": "특별한 날 함께 하면 좋은 대표 한식메뉴",
+        "price": "11,900원",
+        "discount_rate": "50%",
+        "discount_price": "5,950원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0008",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "일품 소고기육전(2인)",
+        "item_info": "부드러운 소고기 육전에 새콤달콤한 파채를 곁들인 고급스러운 전 요리",
+        "price": "16,900원",
+        "discount_rate": "50%",
+        "discount_price": "8,450원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0009",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "소고기 숙주볶음(2인)",
+        "item_info": "부드러운 소고기와 숙주나물의 환상적인 조합",
+        "price": "12,900원",
+        "discount_rate": "50%",
+        "discount_price": "6,450원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0010",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "소고기 가득 된장찌개(2인)",
+        "item_info": "식탁에서 빠지면 서운한 한국인의 소울푸드",
+        "price": "9,900원",
+        "discount_rate": "50%",
+        "discount_price": "4,950원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0011",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "버섯가득 소불고기 전골(2인)",
+        "item_info": "국물까지 시원하고 담백한 소고기 버섯 전골입니다",
+        "price": "16,900원",
+        "discount_rate": "50%",
+        "discount_price": "16,900원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0012",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "궁중 소고기 갈비찜(2인)",
+        "item_info": "정성스레 푹 익힌 부드러운 소갈비와 각종 채소가 듬뿍!",
+        "price": "16,900원",
+        "discount_rate": "50%",
+        "discount_price": "16,900원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0013",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "매콤 크림 닭 떡볶이(2인)",
+        "item_info": "쫄깃한 밀떡에 매콤한 닭! 고소한 크리미 소스를 더한 이색 떡볶이",
+        "price": "12,900원",
+        "discount_rate": "50%",
+        "discount_price": "12,900원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0014",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "실속 부대찌개(2인)",
+        "item_info": "엄선된 햄을 듬뿍 담은 실속 부대찌개",
+        "price": "10,900원",
+        "discount_rate": "50%",
+        "discount_price": "5,450원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0015",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "헬케이노 국물닭발(2인)",
+        "item_info": "입안 가득 퍼지는 기분 좋은 매운맛",
+        "price": "15,900원",
+        "discount_rate": "50%",
+        "discount_price": "7,950원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0016",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "소고기 미나리구이(2인)",
+        "item_info": "향이 진한 미나리와 쫄깃하고 담백한 우삼겹구이의 만남",
+        "price": "14,900원",
+        "discount_rate": "50%",
+        "discount_price": "7,450원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0017",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "인생 닭갈비(2인)",
+        "item_info": "아삭한 양상추에 쫀득쫀득한 떡을 넣어 감칠맛을 한층 더해주는 닭갈비",
+        "price": "19,000원",
+        "discount_rate": "50%",
+        "discount_price": "9,500원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0018",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "인생 닭갈비(2인)",
+        "item_info": "아삭한 양상추에 쫀득쫀득한 떡을 넣어 감칠맛을 한층 더해주는 닭갈비",
+        "price": "19,000원",
+        "discount_rate": "50%",
+        "discount_price": "9,500원",
+        "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
+    }, {
+        "product_Id": "한식",
+        "item_Id": "0019",
+        "img": "item_img/item_list_page_main/nulungjitang/[마이셰프]\\ 해물\\ 누룽지탕\\(2인\\).jpg",
+        "item_Name": "UFO 부대찌개(2인)",
+        "item_info": "훈제 햄, 순살 햄, 치즈, 라면사리, 신선한 채소와 깊은 맛을 내는 육수까지 푸짐한 비주얼!",
+        "price": "19,000원",
+        "discount_rate": "50%",
+        "discount_price": "9,500원",
         "sub_main_img": "item_img/item_list_page_main/nulungjitang/1000002296_detail_290.jpg"
     }]
 }
