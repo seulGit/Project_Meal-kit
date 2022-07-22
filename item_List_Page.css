@@ -172,7 +172,8 @@ input[type=text]:focus{
     /* height: 2900px; 22/07/21 성선규 수정 : 동적으로 움직이기 위한 삭제 */
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid gray;
+    border-top: 1px solid gray; /* 22/07/22 성선규 수정 : 양쪽 border 삭제 */
+    border-bottom: 1px solid gray;
 }
 .container section:nth-child(3) > div{
     width: 482.5px;
@@ -182,6 +183,7 @@ input[type=text]:focus{
     align-items: center;
     flex-direction: column;
     border: 1px solid gray;
+    background-image: url("item_img/우정분식-아찔-떡볶잉\(2인\)/main/1000002282_detail_033.jpg");
 }
 
 /* 아이템 내부 이미지*/
