@@ -85,6 +85,7 @@ input[type=radio] ~ label{
     border-bottom: 1px solid rgb(255, 255, 255); /* 버튼 하단 테두리 */
     border-collapse: collapse; /* 상하단 테두리 중복되는 부분 삭제 */
 }   
+
 /* label에 커서가 올라갔을 때 pointer로 변경
 상하단 white 에서 black으로 변경 */
 input[type=radio] ~ label:hover{
