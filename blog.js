@@ -71,8 +71,8 @@ light.addEventListener("click",function(){
    let navbar = true;
 hide.addEventListener("click", function(){
     if(navbar == true){
-        leftTop.style.display='block';
+        leftTop.style.display='';
     }else if(navbar == false){
-        leftTop.style.display='none';
+        leftTop.style.display='';
     }
 });
