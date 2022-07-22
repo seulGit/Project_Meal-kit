@@ -16,6 +16,13 @@ window.addEventListener('scroll', function () {
     }
     else {
         nav.style.position = '' // 
+         // ==================================
+        // 22/07/21 노현 수정
+        // 네비바 움직일때 & 서있을때 밑줄 추가
+        // ==================================
+        nav.style.borderBottom='3px solid rgb(255, 69, 0)' // 스크롤 내렸다가 다시 돌아왔을때 네비바 포인트색상 사라져서 추가. 
+        nav.style.boxShadow='none' // 가만히 있을때 포인트색상(boderbottom)이랑 겹쳐있어서 none 넣었음.
+       
         // document.body.classList.remove("fixed-nav"); 오류나서 안됨 이유는 모르겠음.
     }
 /*
@@ -33,12 +40,22 @@ window.addEventListener('scroll', function () {
     // }
     if (window.pageYOffset >= 800){//네비바 밑 메인이미지 Y축길이가 200~800 정도라서 수치를 저렇게 잡음.
         nav.style.backgroundColor='';
-        nav.style.opacity=1;
-    }else if (window.pageYOffset >= 200 ){
+        // nav.style.opacity=1; // 22/07/21 노현 수정 - 투명도 빼버림
+    }else if (window.pageYOffset >= 155 ){
         nav.style.backgroundColor='white';
-        nav.style.opacity=0.8;
+        // ==================================
+        // 22/07/21 노현 수정
+        // 네비바 움직일때 & 서있을때 밑줄 추가
+        // ==================================
+        nav.style.borderStyle='none'; // 스크롤 내릴때 포인트색상 빠지고 회색섀도우 색나오게끔
+        nav.style.boxShadow='0 3px 2px 0 rgba(192, 192, 192, 0.6)'; // 스크롤 내릴때 포인트색상 빠지고 회색섀도우 색나오게끔
+        
+        // nav.style.opacity=0.8; // 22/07/21 노현 수정 - 투명도 빼버림
     }
 });
+// y축 좌표 확인할때 씀
 // window.addEventListener('scroll', function () {
 //     console.log(window.pageYOffset)
 // });
+
+
