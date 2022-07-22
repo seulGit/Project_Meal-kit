@@ -8,25 +8,70 @@
 .container {
     display: flex;
     flex-direction: column;
-    min-width: 800px;
+    position: relative;
+    z-index: -100;
+    min-width: 820px;
 }
 .container .carouselTitle {
     text-align: center;
-    margin: 10px 0;
+    margin: 40px 0 10px;
+}
+.container .carouselTitle i{
+    color: orangered;
+    font-size: 27px;
+}
+
+
+/* 22/07/21 섹션별 구분 라인 설정 */
+.sectionLine {
+    margin-top: 35px;
+    border-color: orangered;
+}
+
+/* 22/07/21 캐로셀 네비게이션 설정 */
+.swiper .caroselNavigation{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 35%;
+    z-index: 10;
+}
+.swiper .caroselNavigation .prev,
+.swiper .caroselNavigation .next
+{
+    font-size: 3rem;
+    color: orangered;
+    margin: 0 5px;
+}
+.swiper .caroselNavigation .prev{
+    transform: rotate(-90deg);
+}
+.swiper .caroselNavigation .next{
+    transform: rotate(90deg);
 }
 
 /* 22/07/20 캐로셀 타이틀 설정 */
 .swiper-wrapper .swiper-slide .slide .imgBox {
-    height: 70%;
+    height: 100%;
 }
 .swiper-wrapper .swiper-slide .slide .itemText .itemTitle {
     font-family: 'SEBANG_Gothic_Regular', sans-serif;
     font-size: 1.2rem;
     margin: 10px 0 7px;
 }
+.swiper-wrapper .swiper-slide .slide .itemText .salesPrice {
+    font-family: 'BBTreeGR', sans-serif;
+    font-size: 0.9rem;
+    text-decoration: line-through;
+    vertical-align: text-top;   /* 22/07/21 할인 상품 원래 가격 세로위치 글줄 맨위로 조정 */
+    line-height: 19px;          /* 22/07/21 할인 상품 원래 가격 세로위치 조정 */
+    color: red;
+}
 .swiper-wrapper .swiper-slide .slide .itemText .itemInfor {
     font-family: 'BBTreeGR', sans-serif;
     font-size: 1.2rem;
+    line-height: 1.2;           /* 22/07/21 할인 상품 원래 가격 세로위치 조정을 위한 세팅 */
 }
 
 /* 22/07/20 스위프 캐로셀 설정 */
@@ -59,4 +104,26 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* 22/07/21 김정치 footer 설정 */
+.footer{
+    height: 250px;
+    padding: 25px 0 0 20px;
+    border-top: 2px solid rgb(155, 154, 154);
+    background-color: rgba(214, 214, 214, 0.747);
+    display: flex;
+}
+.footer .footerImg .footerLogo{
+    position: relative;
+    top: -21px;
+    width: 160px;
+}
+.footerText{
+    line-height: 25px;
+    font-size: 1.2rem;
+}
+.footContent{
+    font-family: 'BBTreeGR', sans-serif;
+    font-size: 0.9rem;
 }
