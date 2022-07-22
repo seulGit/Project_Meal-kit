@@ -1,6 +1,8 @@
 /* ========================
 220719 오슬기 기본 레이아웃 작성  
 220720 오슬기 공통영역 속성 적용 및 세부 조정(중복or불필요 속성 삭제, 중복 클래스명 변경
+220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업 및 상단 제품이름,가격,버튼 부분 디자인 작업
+            구매버튼만 색상 따로 지정 
 ===========================*/
 
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
@@ -76,20 +78,86 @@
 }
 
 /* 상품 정보 및 가격 각 div */
-.topright>div{
+.item_details_box{
     width: 100%;
-    height: 100px;
+    height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border: 1px solid blue;
 }
 
-/* 장바구니,찜,구매하기 버튼 div */
-.topright>div>div{
+/* 제품이름 부분 div 높이조절 */
+.item_details_box:nth-child(1){
+    height: 130px;
+}
+
+/* 제품이름 폰트크기 별도 지정 */
+.item_name>span{
+    font-size: 40px;
+}
+
+/* 제품이름부분을 제외한 텍스트부분 중앙정렬을 위한 디자인 */
+.item_details_box>span:not(.item_name>span){
+    width: 50%;
+    text-align: center;
+}
+
+/* 판매가 가격부분 폰트디자인 */
+.item_price_original>span:nth-child(2){
+    color:gray;
+    text-decoration: line-through;
+}
+
+/* 할인율 숫자부분 폰트컬러 */
+.item_price_dcRate>span:nth-child(2){
+    color: red;
+}
+
+/* 수량 인풋 디자인 */
+.item_quantity input[type=number]{
+    width: 60px;
+    height: 30px;
+    padding-left: 18px;
+    text-align: center;
+}
+
+/* 수량 인풋 업다운버튼 크기조절 */
+.item_quantity input[type=number]::-webkit-inner-spin-button{
+    height: 30px;
+}
+
+/* 총합계금액 부분 div 높이조절 */
+.item_details_box:nth-child(5){
+    height:100px;
+}
+
+/* 총합계금액 금액부분 폰트크기조절 */
+.item_price_total>span:nth-child(2) {
+    font-size: 30px;
+}
+
+/* 구매/찜/장바구니 버튼 부분 감싸는 div 높이조절 */
+.item_details_box:nth-child(6){
+    height: 130px;
+}
+
+/* 구매/찜/장바구니 버튼 div */
+.item_details_btn{
     width: 150px;
     height: 50px;
-    border: 1px solid pink;
+}
+
+/* 구매/찜/장바구니 버튼 디자인 */
+.item_details_btn>button {
+    width: 100%;
+    height: 100%;
+    border: 1px solid orangered;
+    border-radius: 1px;
+    color: orangered;
+    background-color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 /* 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) 전체 div */
@@ -107,6 +175,10 @@
     width: 200px;
     height: 70px;
     background-color: linen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
 }
 
 /* 본문 내용(공통) 각 div 설정 */
@@ -123,11 +195,13 @@
     background-color: pink;
 }
 
+/* 리뷰 부분 시작 */
 /* 본문 내용(리뷰) div */
 .reviewlist {
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -135,6 +209,26 @@
 .reviewlist>table{
     width: 100%;
     border: 1px solid red;
+    margin: 10px 0;
+}
+
+/* 리뷰 목록 행 보더 디자인 */
+.reviewlist>table td {
+    height: 30px;
+    border-bottom: 1px solid gray;
+    border-collapse: collapse;
+}
+
+/* 별점 부분 정렬 */
+.reviewlist td:nth-child(1){
+    width: 300px;
+    text-align: left;
+    padding-left: 100px;
+}
+
+/* 내용 부분 정렬 */
+.reviewlist td:nth-child(2){
+    text-align: left;
 }
 
 /* 리뷰 별점 스타일 */
@@ -142,7 +236,109 @@
     color: yellow;
     font-size: 20px;
 }
+/* 리뷰캐러셀 전체 컨테이너 */
+.review_container {
+    width: 100%;
+    height: 70%;
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+}
+/* 리뷰캐러셀의 각 div */
+.review_box {
+    width: 20%;
+    height: 100%;
+    margin: 0 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid yellow;
+}
+/* 리뷰캐러셀 미리보기이미지 */
+.review_img {
+    width: 90%;
+    height: 70%;
+    border: 1px solid blue;
+}
+/* 리뷰캐러셀 미리보기텍스트 */
+.review_details {
+    width: 90%;
+    height: 20%;
+    border: 1px solid yellow
+}
+/* 리뷰캐러셀 미리보기텍스트 중 제목(별점부분) */
+.review_details_title {
+    text-align: left;
+    font-size: 20px;
+}
+/* 리뷰캐러셀 미리보기텍스트 중 내용 */
+.review_details_contents {
+    text-align: left;
+    font-size: 10px;
+}
+/* 옆으로 넘기는 버튼 div */
+.anglebox {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid plum;
+}
+/* 옆으로 넘기는 버튼 디자인 */
+.angleicon {
+    font-size: 50px;
+    background-color: rgba(128, 128, 128, 0.359);
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+/* 리뷰 부분 끝 */
+
+/* 블로그 부분 시작 */
+/* 블로그 목록 감싸는 컨테이너 */
+.bloglist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* 블로그 목록의 각 div */
+.bloglist_box {
+    width: 20%;
+    height: 100%;
+    border: 1px solid red;
+    margin: 0 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* 블로그 미리보기이미지 */
+.bloglist_img {
+    width: 90%;
+    height: 60%;
+    border: 1px solid blue;
+}
+/* 블로그 미리보기텍스트 */
+.bloglist_details {
+    width: 90%;
+    height: 30%;
+    border: 1px solid yellow
+}
+/* 블로그 미리보기텍스트 중 포스팅제목 */
+.bloglist_details_title {
+    text-align: left;
+    font-size: 20px;
+}
+/* 블로그 미리보기텍스트 중 포스팅내용 */
+.bloglist_details_contents {
+    text-align: left;
+    font-size: 10px;
+}
 /* 오슬기 파트 끝 */
+
 
 
 
