@@ -5,6 +5,7 @@
 220720 상단 메뉴 fixed 고정, 블로그 내용 추가
        선규->블로그 본문과 상단 메뉴 위치 수정 요청
 220721 왼쪽 네비바 js 기능 추가
+220722 
 ==================================================
  */
 
@@ -65,7 +66,7 @@ body{
 /* 상단 이미지 */
 .main{
     width: 100%;
-    height: 100%;
+    height: 250%;
     background-size: 100%; 
     background-image: url("blogImg/food2.jpg"); 
     background-repeat: no-repeat;   /* 이미지 중복 제거 */
@@ -117,7 +118,9 @@ body{
     font-size: 1.3rem;  
 }
 .topNav>div:nth-child(1){
-    margin-left: 25px;
+    margin-left: 15px;
+    position:relative;
+    top : 0;
 }
 .topNav>div:nth-child(2){
     text-align: center;
@@ -137,7 +140,25 @@ body{
     margin-left: 8px;
 }
 /* 220720
-이벤트리스너 했는데 아이콘 효과가 인식되지 않아서  
+아이콘 커서 포인터 효과 */
+.xi-bars{
+    cursor: pointer;
+}
+/* 220722 아이콘 hover 시 색 변화 */
+#home:hover, #share:hover, #profile:hover, #logout:hover{
+    color: blue;
+}
+/* 220722
+상단 메뉴 왼쪽에 네비바 아이콘 이동하고
+블로그 이름 위치 지정하였음 */
+.topNavPosition{
+  position: absolute;
+  top : 0;
+  left: 35px;
+}
+
+/* 220720
+이벤트리스너 설정 후 클릭 시 아이콘 위치가 움직여  
 전구 아이콘에 마진과 커서 효과주었음 */
 .xi-lightbulb-o, .xi-lightbulb{
     cursor: pointer;
@@ -149,9 +170,11 @@ body{
     background-color: white;
     border: 3px solid orange;
     width: 15%;
-    /* position: absolute; 
+    height: 100vh;
+    position: fixed; 
+    top :0;
     transition: all 0.5s;
-    left: -100%; */
+    /* left: -100%; */
     z-index: 1000;
 }
 .leftTop{
@@ -169,6 +192,7 @@ body{
     width: 100%;
     font-size: 25px;
     text-align : right;
+    cursor: pointer;
 }
 .leftM{
     width: 100%;
@@ -222,7 +246,6 @@ section{
 }
 /* 220720 section, footer side여백 추가 */
 .side{
-
     width:15%;
 }
 /* 220719 section 내부 sec1 영역 */
