@@ -11,7 +11,34 @@ const discount_rate = document.querySelectorAll(".price > span");
 const discount_price = document.querySelectorAll(".price > h4");
 const icon = document.querySelectorAll(".material-symbols-outlined");
 
-const item_div = document.querySelectorAll(".container section:nth-child(3) > div");
+// 22/07/22 성선규 html 아이템 박스를 동적으로 생성하기 위한 선언
+// const item_section = document.querySelector(".container section:nth-child(3)");
+// const new_div = document.createElement("div");
+// // const item_node = document.ATTRIBUTE_NODE("class", "item");
+// const new_span = document.createElement("span");
+// const new_h1 = document.createElement("h1");
+// const new_h3 = document.createElement("h3");
+// const new_h4 = document.createElement("h4");
+// const new_i = document.createElement("i");
+// const new_icon_shopping = document.createTextNode("shopping_cart");
+// const new_icon_favorite = document.createTextNode("favorite");
+
+
+// new_span.setAttribute("class", "material-symbols-outlined")
+// let new_span_icon_shop = new_span.appendChild(new_icon_shopping);
+// let new_span_icon_favo = new_span.appendChild(new_icon_favorite);
+// let new_span_in_div = new_div.appendChild(new_span_icon_favo);
+// console.dir(new_span_icon_shop);
+// console.log(new_span_icon_favo);
+// console.dir(new_span_in_div);
+
+// new_span.setAttribute("class", "material-symbols-outlined");
+// let new_item_img = item_section.append(new_div);
+
+
+
+
+
 
 // 가격 선택 value 값
 price_value.oninput = function () {
@@ -66,3 +93,6 @@ for(let i = 0; i < item_img.length; i++){
         event.target.style.transform = "translateY(0)";
     })
 }
+
+// 아이템 리스트
+
