@@ -3,10 +3,11 @@
 220720 오슬기 공통영역 속성 적용 및 세부 조정(중복or불필요 속성 삭제, 중복 클래스명 변경
 220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업 및 상단 제품이름,가격,버튼 부분 디자인 작업
 220722 오슬기 세부 디자인 조정 
+220723 오슬기 버튼 간격 및 속성 수정/페이지본문 영역구분선설정/리뷰테이블폼 정렬수정/일부div 너비,높이 px->%로 변경
 ===========================*/
- 
+
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
-  
+
 .main_container { /*220720 오슬기 수정: 메인페이지에 중복되는 클래스명이 있어서 수정*/
     height: 250vh;
     justify-content: center;
@@ -30,7 +31,7 @@
 /* 상품사진(메인사진+추가사진) div */
 .topleft {
     width: 50%;
-    height: 500px;
+    height: 100%;
     display: flex;
     float: left;
     justify-content: center;
@@ -40,14 +41,14 @@
 
 /* 상품사진(메인사진)  */
 .main_details_img { /*220720 오슬기 수정: 메인페이지에 중복되는 클래스명이 있어서 수정*/
-    width: 60%;
+    width: 70%;
     height: 70%;
     border: 1px solid orangered;
 }
 
 /* 상품사진(추가사진) div */
 .subimgbox {
-    width: 60%;
+    width: 70%;
     height: 20%;
     margin-top: 5px;
     display: flex;
@@ -152,7 +153,7 @@
 
 /* 구매/찜/장바구니 버튼 div */
 .item_details_btn{
-    width: 200px;
+    width: 25%;
     height: 60px;
 }
   
@@ -166,16 +167,25 @@
     background-color: white;
     font-size: 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 버튼 내 아이콘과 텍스트 사이 간격 */
+.item_details_btn>button>span:nth-child(2){
+    padding: 2px 0 0 5px;
 }
 
 /* 구매 버튼 강조하기위해 div 너비 별도 늘림 */
 .buyNow {
-    width: 270px;
+    width: 45%;
 }  
 
 /* 구매 버튼 강조하기위해 색상 별도 지정 */
 .buyNow>button {
-    width: 270px;
+    width: 100%;
     background-color: orangered;
     color: white;
 }
@@ -209,48 +219,56 @@
 }
 
 /* 네비메뉴바(현재적용부분:상품디테일) 클릭시 해당 div 배경색 나타나게 구현 예정*/
-.detail {
+.bodymenubox>.detail {
     background-color: rgba(0, 0, 0, 0.030);
 }
 
 /* 네비메뉴바(현재적용부분:상품디테일) 클릭시 폰트 컬러 강조기능 구현 예정 */
-.detail>span{
+.bodymenubox>.detail>span{
     color: black;
 }
 
 /* 네비메뉴바 사이마다 구분선 지정 */
-.info{
+.bodymenubox>.info{
     border-left: 1px solid gray;
     border-right: 1px solid gray;
 }
 
 /* 네비메뉴바 사이마다 구분선 지정 */
-.review {
+.bodymenubox>.review {
     border-right: 1px solid gray;
-
 }
 
 /* 본문 내용(공통) 각 div 설정 */
 .middlebox {
     width: 100%;
-    height: 410px;
+    height: 400px;
 }
 
 .middlebox>h3 {
     font-family: 'SEBANG_Gothic_Regular', sans-serif;
 }
+
+.middlebox>hr {
+    border: .3px solid rgba(3, 3, 3, 0.078);
+}
 /* 본문 내용(이미지 또는 목록) div */
 .middle {
     width: 100%;
     height: 370px;
-    border: 1px solid black;
 }
 
 /* 리뷰 부분 시작 */
+
+/* 리뷰전체div 높이 조절 */
+.middleboxReview {
+    height: 330px;
+}
+
 /* 본문 내용(리뷰) div */
 .reviewlist {
+    height: 300px;
     display: flex;
-    justify-content:center;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -259,6 +277,7 @@
 /* 리뷰 목록 디자인 */
 .reviewlist>table{
     width: 90%;
+    height: 300px;
     margin: 10px 0;
     color: rgba(0, 0, 0, 0.765)
 }
@@ -269,13 +288,14 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.186);
     border-collapse: collapse;
     font-family: 'BBTreeGR', sans-serif;
+    cursor: default;
 }
 
 /* 별점 부분 정렬 */
 .reviewlist td:nth-child(1){
-    width: 300px;
+    width: 200px;
     text-align: left;
-    padding-left: 100px;
+    padding-left: 20px;
 }
 
 /* 내용 부분 정렬 */
@@ -287,55 +307,6 @@
 .xi-star {
     color: orangered;
     font-size: 20px;
-}
-/* 리뷰캐러셀 전체 컨테이너 */
-.review_container {
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-}
-/* 리뷰캐러셀의 각 div */
-.review_box {
-    width: 20%;
-    height: 100%;
-    margin: 0 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.176);
-}
-/* 리뷰캐러셀 미리보기이미지 */
-.review_img {
-    width: 90%;
-    height: 70%;
-}
-
-/* 리뷰캐러셀 미리보기이미지 크기조정 */
-.review_img>img {
-    width: 100%;
-    height: 100%;
-}
-
-/* 리뷰캐러셀 미리보기텍스트 */
-.review_details {
-    width: 90%;
-    height: 20%;
-}
-/* 리뷰캐러셀 미리보기텍스트 중 제목(별점부분) */
-.review_details_title {
-    text-align: left;
-    font-size: 20px;
-    text-align: center;
-    margin: 5px 0;
-}
-/* 리뷰캐러셀 미리보기텍스트 중 내용 */
-.review_details_contents {
-    text-align: left;
-    font-size: 10px;
-    font-family: 'BBTreeGR', sans-serif;
 }
 /* 리뷰 부분 끝 */
 
@@ -389,6 +360,7 @@
     font-family: 'BBTreeGR', sans-serif;
 }
 /* 오슬기 파트 끝 */
+
 
 
 
