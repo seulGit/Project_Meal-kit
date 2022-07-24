@@ -1,12 +1,15 @@
 /*  
-==================================================
+===============================================================
 220718 이은지 블로그 틀 나누고 메인 배경 초안 구성
 220719 상단 메뉴 설정 이모티콘 클릭이벤트 js 추가
 220720 상단 메뉴 fixed 고정, 블로그 내용 추가
        선규->블로그 본문과 상단 메뉴 위치 수정 요청
 220721 왼쪽 네비바 js 기능 추가
-220722 
-==================================================
+220722 왼쪽 메뉴 영역 위치 변경 
+220723 왼쪽 메뉴 내부 디자인 수정, footer 내용 추가,
+       댓글눌렀을 때 토글 효과
+220724 댓글 기능 수정, 상단 메뉴 토글 기능 공부
+===============================================================
  */
 
 
@@ -45,34 +48,64 @@ body{
 
 /* 전체 감싸는 영역 */
 .container{
-    border: 3px solid black;
     width: 100vw;
 }
 
 /* 220720 다크모드 효과 */
+/* 모든 요소 감싸는 컨테이너 글자색 효과 */
 .container.dark{
     color: white;
 }
+/* 메인 이미지 색상 */
 .container.dark .main{
     filter : opacity(1);
 }
+/* con2 배경색 */
 .container.dark .con2{
     background-color: gray;
 }
+/* 상단 메뉴 배경색 */
 .container.dark .topNav{
     background-color: gray;
+}
+/* 왼쪽 메뉴 배경색 */
+.container.dark .leftNav{
+    background-color: gray;
+    border: 1px solid black;
+}
+/* 왼쪽 메뉴 글자 색깔 */
+.container.dark a{
+    color: white;
+}
+/* 왼쪽 메뉴 호버 시 글자 색깔 */
+.container.dark a:hover{
+    color: black;
+}
+/* footer span태그 색깔 */
+.container.dark span{
+    color: white;
+}
+/* footer 밑줄 색깔 */
+.container.dark .footerBorder2{
+    border-bottom: 1px solid white;
+}
+.container.dark .colorRed{
+    color: red;
 }
 
 /* 상단 이미지 */
 .main{
     width: 100%;
-    height: 250%;
+    height: 100%;
     background-size: 100%; 
     background-image: url("blogImg/food2.jpg"); 
     background-repeat: no-repeat;   /* 이미지 중복 제거 */
     filter: opacity(0.8);  /* opacity로 배경 살짝 흐리게 함 */
     position: fixed;       /* 스크롤 시 배경 고정되도록 fixed */
     z-index: -100;         /* 배경이 맨 뒤로 가도록 index 설정 */
+    /* 왼쪽 메뉴 생성 후 이미지가 위쪽, 왼쪽이 살짝 공간이 생겨 top과 left에 0을 주어 붙였음 */
+    top : 0;  
+    left:0; 
 }
 
 /* 왼쪽 메뉴부터 footer까지 감싸는 영역 */
@@ -85,14 +118,15 @@ body{
 /* header영역부터 footer까지 감싸는 영역 */
 /* 왼쪽 메뉴~footer과 header~footer 감싼 이유
    -> 왼쪽 메뉴바가 들어가고 나올 때 flex를 이용해 
-   전체 화면 100% 맞추기 위함 */
+   전체 화면 100% 맞추기 위함
+   --> 0720 왼쪽 메뉴에 z-index를 주었기 때문에 상관 없음 */
 .con2{
     background-color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    min-width: 650px; /* 220719 사이트 최소 크기 조정 */
+    min-width: 700px; /* 220719 사이트 최소 크기 조정 */
 }
 
 /* 상단 메뉴 */
@@ -111,6 +145,13 @@ body{
    클릭이벤트를 할 수 있도록 함*/
    z-index: 100;
    transition: all 0.5s;  
+   left:0; /* 220723 왼쪽 메뉴로 인해 왼쪽에 공간이 생겨 left에 0을 주었음*/
+}
+/* 220721 
+아이콘 누르면 navbar 나옴 */
+#leftNavShow{
+    width: 100%;
+    font-size: 25px;
 }
 .topNav>div{
     width: 30%;
@@ -167,49 +208,102 @@ body{
 
 /* 왼쪽 메뉴 */
 .leftNav{
-    background-color: white;
-    border: 3px solid orange;
-    width: 15%;
+    background-color: rgb(246, 245, 245);
+    border: 1px solid gray;
+    width: 15.5%;
     height: 100vh;
     position: fixed; 
     top :0;
+    left:0;
     transition: all 0.5s;
-    /* left: -100%; */
     z-index: 1000;
+    /* 220723 사이트 처음 켰을 때 왼쪽 메뉴바가 나와있어 들어가 있도록 효과주었음 */
+    left: -100%; 
 }
+/* 왼쪽 메뉴 윗 영역 */
 .leftTop{
     width: 100%;
     height: 30%;
-    background-color: aqua;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position:relative;
 }
-/* 220721 
-아이콘 누르면 navbar 나옴 */
-#hide{
+/* 왼쪽 메뉴 리스트 영역 */
+.leftList{
     width: 100%;
-    font-size: 25px;
-}
-.xi-close{
-    width: 100%;
-    font-size: 25px;
-    text-align : right;
-    cursor: pointer;
-}
-.leftM{
-    width: 100%;
-    height: 50%;
+    height: 40%;
     text-align: center;
-    background-color: blue;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
+/* 왼쪽 메뉴 바닥 영역 */
 .leftBottom{
     width: 100%;
+    height: 30%;
     text-align: center;
-    background-color: burlywood;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* 220723 왼쪽 메뉴 내부 디자인 */
+.lefrIcon{
+    width: 100%;
+    text-align : right;
+}
+.xi-close{
+    margin: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+/* 왼쪽 메뉴 위 영역 글씨체 */
+.leftTopText{
+    font-family: 'SEBANG_Gothic_Bold';
+    background-color: powderblue;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+}
+.leftTopText2{
+    font-size: 0.8rem;
+    font-family: 'BBTreeGR';
+}
+/* 왼쪽 메뉴 리스트 영역 글씨체 */
+.leftList{
+    font-family: 'BBTreeGR';
+}
+.leftList>ul>li{
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+a:hover{
+    color: blue;
+}
+/* 왼쪽 메뉴 바닥 영역 글씨체 */
+.leftBottom{
+    font-size: 0.8rem;
+}
+.leftBottom>div:nth-child(1){
+    width: 100%;
+    height: 100px;
+}
+#leftBtext:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* header 영역 */
 header{
     width: 100%;
-    height: 250px;
+    height: 350px;
     position:relative;
     display: flex;
     align-items: center;
@@ -225,6 +319,7 @@ header>div{
 #headFont{
     font-size: 1rem;
     font-weight: lighter;
+    margin-top: 20px;
 }
 
 
@@ -254,7 +349,6 @@ section{
     padding-top: 30px; 
     flex-wrap: wrap;
     display: flex;
-    border: 3px solid black;
 }
 .sec1>div{
     width: 100%;
@@ -263,23 +357,9 @@ section{
     width: 100%;
 }
 
-/* footer 영역 */
-footer{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-footer>div:nth-child(2){
-    width: 70%;
-    border: 3px solid orange;
-}
-
-/* 하단 고정 메뉴 영역 */
+/* 하단 하트, 댓글 메뉴 영역 */
 .footerNav{
     width: 100%;
-    border: 3px solid yellow;
-    /* position: fixed;
-    bottom: 0; */
     transition: all 0.5s;
     display: flex;
     flex-direction: row;
@@ -298,3 +378,182 @@ footer>div:nth-child(2){
     cursor: pointer;
     color: red;
 }
+/* 요소들이 제각각 자리를 차지하고 있어
+flex 효과를 주어 요소를 정렬하였음 */
+.footerDisplay{
+    display: flex;
+    flex-direction: column;
+}
+/* 댓글 쓴 이름 크기 */
+.footerTextFont{
+    font-weight: bold;
+    font-size: 1rem;
+}
+.xi-profile-o{
+    margin-right: 5px;
+}
+/* 댓글과 댓글 창 감싼 div */
+.footerTextToggle{
+    margin-top : 10px;
+  /* 220723 사이트 처음 열었을 때 댓글 창 안보이도록 효과 주었음 */
+    display: none;
+}
+/* 댓글 입력 칸 감싼 div */
+.footerText{
+    font-family: 'BBTreeGR';
+    color: black;
+    font-size: 0.8rem;
+    padding: 10px;
+    line-height: 20px;
+    margin: 5px 0 5px;
+    background-color: rgb(246, 245, 245);
+}
+/* footer 영역 게시판 날짜 글자 색깔 */
+.footerTextColor{
+    margin-top : 10px;
+    color: gray;
+}
+/* 답글 창 감싼 div */
+.footerAnswer{
+    display: none;
+}
+/* 답글 버큰 호버 버튼 뒷배경 효과 */
+.answerBtn:hover{
+    background-color: powderblue;
+}
+/* 답글 버튼 */
+.footerTextBtn{
+    font-family: 'SEBANG_Gothic_Bold';
+    margin-top : 5px;
+    width: 40px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.xi-angle-left-min{
+    margin-right: 10px;
+}
+/* 댓글 쓰는 창과 댓글 버튼 감싼 div */
+.footerTextAndBtn{
+    position: relative;
+    border: 1px solid black;
+    margin-bottom: 100px;
+}
+/* 댓글 버튼 */
+.footerTextBtn2{
+    margin: 15px 0;
+    border: 1px solid gray;
+    font-family: 'SEBANG_Gothic_Bold';
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    position:absolute;
+    top: 40px;
+    right: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* 댓글 버튼 호버 시 버튼 배경 효과 */
+.footerTextBtn2:hover{
+    background-color: powderblue;
+}
+/* 댓글, 게시판 이전, 다음 아이콘 */
+/* 아이콘 가운데 정렬, 색깔 */
+.footerIcon{
+    text-align:center;
+    color: gray;
+    font-family: 'BBTreeGR';
+    margin: 20px 0 20px;
+}
+/* 호버 시 이전/다음 글자 효과 */
+.footerIcon>span:hover{
+    cursor: pointer;
+    color: black;
+}
+/* 댓글 창 크기 */
+input{
+    width: 100%;
+    height: 45px;
+    padding: 5px;
+    border: none;
+}
+/* 답글 영역 */
+.footerAnswer{
+    margin: 10px;
+    background-color: rgb(233, 233, 233);
+}
+/* 답글 창 크기 */
+.answerInput{
+    margin: 10px;
+    width: 95%;
+}
+/* 답글 버튼 */
+.answerBtn{
+    margin: 0 0 10px 10px;
+    border: 1px solid gray;
+    font-family: 'SEBANG_Gothic_Bold';
+    background-color: white;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/* 220723 footer 영역 */
+footer{
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+}
+/* footer div 두번째 자식 너비 */
+footer>div:nth-child(2){
+    width: 70%;
+}
+/* footer 패딩을 div 사이의 간격을 넓혔고 
+바닥 선을 주어 구분될 수 있도록 하였음 */
+.footerBorder{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    font-family: 'SEBANG_Gothic_Bold';
+}
+/* footer 패딩을 div 사이의 간격을 넓혔고 
+바닥 선을 주어 구분될 수 있도록 하였음 */
+.footerBorder2{
+    padding: 10px;
+    margin: 5px;
+    border-bottom: 1px solid gray;
+    font-family: 'BBTreeGR';
+    display: flex;
+}
+/* 다른 게시글 호버 시 클릭 커서, 밑줄 효과 */
+.footerWidth>div>p:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* foodblog 빨간 글씨 포인트 */
+.colorRed{
+    color: red;
+}
+/* 인기글 날짜 왼쪽 정렬, 색깔 */
+.textRight{
+    color: gray;
+    width: 50%;
+    text-align: right;
+    font-size:0.8rem;
+}
+/* flex를 주어 같은 같 안에서 정렬될 수 있도록
+하였으며 너비 50씩 주었음 */
+.footerWidth{
+    width: 50%;
+    display: flex;
+}
+
+
+

@@ -17,19 +17,19 @@
            <nav class="topNav">
             <div>
                 <div>
-                    <i class="xi-bars" id="hide"></i><p class="topNavPosition">foodblog</p>
+                    <i class="xi-bars" id="leftNavShow"></i><p class="topNavPosition">foodblog</p>
                 </div>
             </div>
             <div>
                 <p>푸드 파이터 블로거</p>
             </div>
             <div>
-                <i class="xi-home topNavIcon" id="home"></i>
-                <i class="xi-share-alt topNavIcon" id="share"></i>
-                <i class="xi-profile topNavIcon" id="profile"></i>
-                <i class="xi-log-out topNavIcon" id="logout"></i>
-                <i class="xi-lightbulb-o topNavIcon" id="light"></i>
-                <i class="xi-cog topNavIcon" id="setting"></i>
+                <i class="xi-home topNavIcon" id="home" title="홈"></i>
+                <i class="xi-share-alt topNavIcon" id="share" title="공유"></i>
+                <i class="xi-profile topNavIcon" id="profile" title="프로필"></i>
+                <i class="xi-log-out topNavIcon" id="logout" title="로그아웃"></i>
+                <i class="xi-lightbulb-o topNavIcon" id="light" title="다크모드"></i>
+                <i class="xi-cog topNavIcon" id="setting" title="설정"></i>
             </div>
         </nav>
 
@@ -48,20 +48,25 @@
                 <section>
                     <!-- 220720 본문 side 여백 추가 요청으로 수정 -->
                     <div class="side">
-                          <!-- 왼쪽 메뉴 영역 -->
+                          <!-- 220722 왼쪽 메뉴 영역 위치 변경-->
                     <nav class="leftNav">
                         <div class="leftTop">
-                            <i class="xi-close"></i>
+                            <div class="lefrIcon"><i class="xi-close"></i></div>
+                            <div class="leftTopText"><p>foodblog</p></div>
+                            <div class="leftTopText2"><p>You can anything by eating!<br>
+                                The first bite is exciting and <br> the last bite is missing</p></div>
+                         
                         </div>
-                        <div class="leftM">
+                        <div class="leftList">
                             <ul>
-                                <li>매콤 음식 후기</li>
-                                <li>단짠 음식 후기</li>
-                                <li>달콤 디저트 후기</li>
+                                <li><a href="#">매콤 음식 후기</a></li>
+                                <li><a href="#">단짠 음식 후기</a></li>
+                                <li><a href="#">달콤 디저트 음식 후기</a></li>
                             </ul>
                         </div>
                         <div class="leftBottom">
-                            <div>먹는게 제일 좋아</div>
+                            <div></div>
+                            <div><p id="leftBtext">계정을 잊어버리셨나요?</p></div>
                         </div>
                     </nav>
                     </div>
@@ -159,7 +164,8 @@
                                 Sunt, incidunt reprehenderit? Sapiente dolore nihil nobis<br>
                                 provident saepe eveniet voluptatibus accusamus,<br>
                                 veniam iusto numquam nisi, qui ea? At praesentium dicta doloremque?</p>
-                        </div>
+                        <br>
+                         </div>
                         
                     </div>
                     <div class="side"></div>
@@ -169,17 +175,90 @@
                      <!-- 220720 하단 고정 메뉴 생성 -->
                 <nav class="footerNav">
                     <div class="side"></div>
+                    <div class="footerDisplay">
                     <div>
-                        <i class="xi-heart-o topNavIcon" id="heart">공감 29</i>
+                        <i class="xi-heart-o topNavIcon" id="heart">공감 <span id="num">29</span></i>
                         <i class="xi-message-o topNavIcon" id="talk">댓글 22</i>
                     </div>
+                    <div class="footerTextToggle">
+                    <div class="footerText">
+                        <div class="footerTextFont"><i class="xi-profile-o"></i>빼로</div>
+                        <div><p>떡볶이 너무 맛있을 것 같아요 저도 구매하러 가야겠어요!</p></div>
+                        <div class="footerTextColor"><p>2022.3.13 17:50</p></div>
+                        <button class="footerTextBtn">답글</button>
+                        <div class="footerAnswer">
+                            <input type="text" name="" id="" class="answerInput" placeholder="답글을 작성해주세요">
+                            <button class="answerBtn">답글 입력</button>
+                        </div>
+                    </div>
+
+                    <div class="footerText">
+                        <div class="footerTextFont"><i class="xi-profile-o"></i>헤븐</div>
+                        <div><p>한 번 사먹어볼까 했는데 후기 보고 바로 구매했습니다!</p></div>
+                        <div class="footerTextColor"><p>2022.5.20 19:10</p></div>
+                        <button class="footerTextBtn">답글</button>
+                        <div class="footerAnswer">
+                            <input type="text" name="" id="" class="answerInput" placeholder="답글을 작성해주세요">
+                            <button class="answerBtn">답글 입력</button>
+                        </div>
+                    </div>
+
+                    <div class="footerText">
+                        <div class="footerTextFont"><i class="xi-profile-o"></i>원두</div>
+                        <div><p>주변 지인들에게 추천해주어야겠어요~ 젓가락이랑 냄비 받침대 너무 귀여워요</p></div>
+                        <div class="footerTextColor"><p>2022.7.23 15:23</p></div>
+                        <button class="footerTextBtn">답글</button>
+                        <div class="footerAnswer">
+                            <input type="text" name="" id="" class="answerInput" placeholder="답글을 작성해주세요">
+                            <button class="answerBtn">답글 입력</button>
+                        </div>
+                    </div>
+                    <div class="footerIcon"><span><i class="xi-angle-left-min">이전</i></span><span>다음<i class="xi-angle-right-min"></i></span></div>
+                    <div class="footerTextAndBtn">
+                        <input type="text" name="" id="" placeholder="댓글을 입력해주세요">
+                        <button class="footerTextBtn2">댓글 입력</button>
+                    </div>
+                    </div>
                     <div class="side"></div>
+                    </div>
                 </nav>
               
                 <!-- footer 영역 -->
                 <footer>
                     <div class="side"></div>
-                    <div></div>
+                    <div class="footerBox">
+                       <div class="footerBorder"><p><span class="colorRed">foodblog</span> 인기 글</p> </div>
+                       <div class="footerBorder2">
+                          <div class="footerWidth">
+                          <div><p>거제 와플 맛집 와플하면 잼</p></div>
+                            <div><span class="colorRed">&nbsp;(9)</span></div> 
+                          </div>
+                          <div class="textRight"><span>2022.3.25</span></div>
+                        </div>
+                       <div class="footerBorder2">
+                          <div class="footerWidth">
+                          <div> <p>아웃백 스테이크하우스 메뉴 추천 런치 시간</p></div>
+                            <div><span class="colorRed">&nbsp;(4)</span></div>
+                          </div>
+                          <div class="textRight"><span>2022.4.17</span></div>
+                        </div>
+                       <div class="footerBorder2">
+                          <div class="footerWidth">
+                          <div><p>63뷔페 파빌리온 할인받고 다녀온 후기</p></div>
+                            <div><span class="colorRed">&nbsp;(7)</span></div>
+                          </div>
+                          <div class="textRight"><span>2022.5.5</span></div>
+                        </div>
+                       <div class="footerBorder2">
+                          <div class="footerWidth">
+                          <div><p>광명 마카롱, 브라우니 맛집 추천</p></div>
+                            <div><span class="colorRed">&nbsp;(18)</span></div>
+                          </div>
+                          <div class="textRight"><span>2022.8.28</span></div>
+                       </div>
+                       <div class="footerIcon"><span><i class="xi-angle-left-min">이전</i></span><span>다음<i class="xi-angle-right-min"></i></span></div>
+                       <br>
+                    </div>
                     <div class="side"></div>
                 </footer>
             </div>
@@ -187,7 +266,6 @@
     </div>
 
     <script src="blog.js"></script>
-    <script src="jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

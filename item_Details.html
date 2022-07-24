@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="item_Details.css">
     <link rel="stylesheet" href="item_List.css">
     <link rel="stylesheet" href="mainpageNavbar.css">
-</head> 
-<body> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+</head>
+<body>
 <!-- 220719 오슬기 기본 레이아웃 작업
      220720 오슬기 공통영역 추가(병합)
      220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업
      220722 오슬기 세부 디자인(상단:가격,버튼/하단:리뷰,블로그) 조정 
+     220723 오슬기 리뷰부분 이미지미리보기 div 삭제(테이블폼만 남겨두는걸로 결정)/클래스명 조정
 -->
 <!-- 헤더부분 -->
 <div class="header">
@@ -112,13 +114,28 @@
                     <div class="item_details_box">
                         <!-- 구매/찜/장바구니 버튼 -->
                         <div class="item_details_btn buyNow">
-                            <button>바로 구매</button>
+                            <button>
+                                <span class="material-symbols-outlined">
+                                    paid
+                                </span>
+                                <span>바로 구매</span>
+                            </button>
                         </div>
                         <div class="item_details_btn">
-                            <button>장바구니</button>
+                            <button>
+                                <span class="material-symbols-outlined">
+                                    shopping_cart
+                                </span>
+                                <span>장바구니</span>
+                            </button>
                         </div>
                         <div class="item_details_btn">
-                            <button>찜하기</button>
+                            <button>
+                                <span class="material-symbols-outlined">
+                                    favorite
+                                </span>
+                                <span>찜하기</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -134,18 +151,21 @@
             <!-- 본문 내용1(상품디테일) div -->
             <div class="middlebox">
                 <h3>상품상세정보</h3>
+                <hr>
                 <!-- 본문 내용1(상품디테일) 이미지  -->
                 <div class="middle detailimg"></div>
             </div>
             <!-- 본문 내용2(상품정보) div -->
             <div class="middlebox">
                 <h3>배송안내</h3>
+                <hr>
                 <!-- 본문 내용2(상품정보) 이미지  -->
                 <div class="middle infoimg"></div>
             </div>
             <!-- 본문 내용3(리뷰) div -->
-            <div class="middlebox">
+            <div class="middlebox middleboxReview">
                 <h3>리뷰</h3>
+                <hr>
                 <!-- 본문 내용3(리뷰) 목록 div-->
                 <div class="middle reviewlist">
                     <!-- 리뷰 목록 -->
@@ -158,9 +178,30 @@
                                 <i class="xi-star"></i>
                                 <i class="xi-star"></i>
                             </td>
-                            <td>떡볶이 겁나 맛있어용</td>
-                            <td>이은지</td>
+                            <td>이 집 잘하네. 꿀맛입니다.</td>
+                            <td>김정치</td>
                             <td>2022.07.20</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>대량구매했슴돠 많이파십쇼</td>
+                            <td>노현</td>
+                            <td>2022.07.22</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>혼자 4인분 먹었습니다 더 매운맛 좀 출시해주세요</td>
+                            <td>성선규</td>
+                            <td>2022.07.22</td>
                         </tr>
                         <tr>
                             <td>
@@ -170,67 +211,49 @@
                             <td>오슬기</td>
                             <td>2022.07.22</td>
                         </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>매콤달콤 졸맛탱>_&lt; 블로그에 내돈내산 후기 남겼으니 보러오세요!!</td>
+                            <td>이은지</td>
+                            <td>2022.07.22</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>딸래미 사줬는데 잘 먹네요 많이 파세요</td>
+                            <td>은지맘</td>
+                            <td>2022.07.22</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>어? 맛있다</td>
+                            <td>김형준</td>
+                            <td>2022.07.22</td>
+                        </tr>
                     </table>
-                    <!-- 리뷰 캐러셀 -->
-                    <div class="review_container">
-                        <div class="review_box">
-                            <div class="review_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
-                            <div class="review_details">
-                                <div class="review_details_title">
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                </div>
-                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
-                            </div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
-                            <div class="review_details">
-                                <div class="review_details_title">
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                </div>
-                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
-                            </div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
-                            <div class="review_details">
-                                <div class="review_details_title">
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                </div>
-                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
-                            </div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
-                            <div class="review_details">
-                                <div class="review_details_title">
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                    <i class="xi-star"></i>
-                                </div>
-                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- 본문 내용4(블로그) div -->
             <div class="middlebox">
                 <h3>블로그</h3>
+                <hr>
                 <!-- 본문 내용4(블로그) 목록 -->
                 <div class="middle bloglist">
                     <div class="bloglist_box">
