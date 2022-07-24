@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Jua:400" rel="stylesheet">
     <link rel="stylesheet" href="item_List_Page.css">
     <link rel="stylesheet" href="mainpageNavbar.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 
 <body>
@@ -59,16 +60,51 @@
             <div class="select_box"></div>
         </div>
     </div>
+
+    <!-- 아이템이 길게 나열되었을 경우 최상단으로 바로 올라갈수 있는 버튼
+    22/07/24 성선규 추가 -->
+    <div class="scroll_up_container">
+        <div>
+            <span class="material-symbols-outlined">
+                expand_less
+            </span>
+        </div>
+    </div>
+
+    <!-- 장바구니 추가 및 찜하기 클릭 시 왼쪽 하단에 알림창 띄우기 
+    22/07/24 성선규 추가-->
+    <div class="shopping_alarm alarm">
+        <div>
+            <img src="icon/close_FILL0_wght400_GRAD0_opsz48.png" alt="close_icon">
+            <span>
+                해당 상품이 장바구니에 추가되었습니다!
+            </span>
+        </div>
+    </div>
+    <div class="like_alarm alarm">
+        <div>
+            <img src="icon/close_FILL0_wght400_GRAD0_opsz48.png" alt="close_icon">
+            <span>
+                해당 상품을 찜하였습니다!
+            </span>
+        </div>
+    </div>
+
+
+
     <div class="container">
         <!-- 메인 -->
         <!-- 22/07/20 성선규
         메인 페이지 상단 검색 기능 -->
         <section class="search">
             <div class="price_box">
-                <span>8,000</span>
+                <div>
+                    <h3>가격 검색</h3>
+                </div>
+                <span>0</span>
                 <span>~</span>
                 <span id="price_value">50,000</span>
-                <input type="range" min="8000" max="50000" value="50000">
+                <input type="range" min="0" max="50000" value="50000">
             </div>
             <div class="search_box">
                 <input type="text" id="search">
@@ -91,14 +127,13 @@
         </section>
         <!-- 22/07/20 성선규 아이템 나열-->
         <section>
-            <div class="item">
-                <!-- 아이템 이미지 -->
+            <!-- <div class="item">
                 <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
+                    <span class="material-symbols-outlined favorite">
                         favorite
+                    </span>
+                    <span class="material-symbols-outlined shopping">
+                        shopping_cart
                     </span>
                 </div>
                 <div class="title">
@@ -110,233 +145,15 @@
                     <span></span>
                     <h4></h4>
                 </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1></h1>
-                    <h3></h3>
-                </div>
-                <div class="price">
-                    <i></i>
-                    <span></span>
-                    <h4></h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
-            <div class="item">
-                <!-- 아이템 이미지 -->
-                <div class="item_img_1">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    <span class="material-symbols-outlined">
-                        favorite
-                    </span>
-                </div>
-                <div class="title">
-                    <h1>아찔떡볶잉</h1>
-                    <h3>아이템아이템아이템아이템아이템 설명</h3>
-                </div>
-                <div class="price">
-                    <i>원래 가격</i>
-                    <span>할인율</span>
-                    <h4>판매가격</h4>
-                </div>
-            </div>
+        </section> -->
 
-        </section>
+
         <!-- 최하단 -->
         <footer></footer>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="item_List_Page_alarm.js"></script>
     <script src="item_List_Page.js"></script>
     <script src="mainpageNavbar.js"></script>
 </body>
