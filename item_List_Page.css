@@ -57,33 +57,64 @@
     border-top: 1px solid gray;
     margin-top: 40px;
     margin-bottom: 20px;
-    padding-top: 30px;
     padding-bottom: 80px;
 }
-/* 여백을 주기 위한 패딩 */
-.search .price_box, .search_box{
+/* 여백을 주기 위한 패딩 
+22/07/24 성선규 수정 : price_box 클래스를 제외
+상단 여백 추가*/
+.search .search_box{
     width: 50%;
     height: 50px;
     padding: 0 5%;
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
-/* 가격 검색 부분에 숫자 여백 */
+/* flex-wrap으로 개행
+22/07/24 성선규 추가 */
+.search .price_box{
+    width: 50%;
+    height: 80px;
+    padding: 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* 가격 검색 텍스트 영역 추가
+22/07/24 성선규 추가 */
+.search .price_box div{
+    width: 100%;
+    margin-top: 5px;
+}
+.search .price_box div > h3{
+    margin-left: 18%;
+    font-size: 1rem;
+}
+/* 가격 검색 부분에 숫자 여백 
+22/07/24 성선규 수정 */
 .price_box span{
-    width: 90px;
-    line-height: 50px;
+    width: 92px;
+    line-height: 30px;
     padding: 0 1vw;
-}
-/* 가격 검색 사이 물결표 */
-.price_box span:nth-child(2){
-    width: 30px;
-    padding: 0;
     text-align: center;
+}
+
+/* 가격 검색 초깃값 
+22/07/24 성선규 수정 : html 수정으로 가격 초기값으로 변경*/
+.price_box span:nth-child(2){
+    width: 70px; /* 22/07/24 성선규 수정 : 가격 사이 물결표에서 html 수정으로 가격 초기값으로 변경되어 너비 수정 */
+    padding: 0;
+}
+/* 가격 검색 사이 물결표
+22/07/24 성선규 추가 */
+.price_box span:nth-child(3){
+    width: 50px;
 }
 /* 가격 검색 bar */
 input[type=range]{
-    width: 60%;
-    height: 50px;
+    width: 50%;
+    height: 30px; /* 22/07/24 성선규 수정 : 50 -> 30으로 변경 */
 }
 
 /* 아이템 정렬 */
@@ -176,14 +207,13 @@ input[type=text]:focus{
     border-bottom: 1px solid gray;
 }
 .container section:nth-child(3) > div{
-    width: 482.5px;
+    width: 32%;
     height: 690px;
     margin: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
     border: 1px solid gray;
-    background-image: url("item_img/우정분식-아찔-떡볶잉\(2인\)/main/1000002282_detail_033.jpg");
 }
 
 /* 아이템 내부 이미지*/
@@ -194,6 +224,13 @@ input[type=text]:focus{
     margin-top: 11px;
     border: 2px solid black;
     overflow: hidden;
+}
+.item_img_1:hover{
+    cursor: pointer;
+}
+/* 아이템 이미지 hover 시 아이콘 상단으로 올라오기 */
+.item_img_1:hover span{
+    transform: translateY(0);
 }
 /* 아이템 이미지 안쪽 아이콘 */
 .item_img_1 .material-symbols-outlined{ /* 22/07/21 성선규 수정 : 검색창 돋보기와 중복되어 수정 */
@@ -270,4 +307,81 @@ input[type=text]:focus{
 .price h4{
     font-size: 2rem;
     color: black;
+}
+/* 22/02/24 성선규 추가 */
+/* 최상단 이동 버튼 */
+.scroll_up_container{
+    position: fixed;
+    right: 1%;
+    bottom: 3%;
+    user-select: none;
+}
+.scroll_up_container div{
+    border: 3px solid var(--color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.scroll_up_container div:hover{
+    background-color: var(--color);
+}
+
+/* 22/07/24 성선규 추가
+알람 추가 */
+.alarm{
+    border: 3px solid var(--point);
+    background-color: white;
+    border-radius: 10px;
+    position: fixed;
+    width: 15%;
+    height: 8%;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shopping_alarm{
+    transform: translateX(-350px);
+}
+.like_alarm{
+    transform: translateX(-350px);
+}
+.shopping_alarm div img{
+    width: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.like_alarm div img{
+    width: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.move_alarm{
+    animation-name: alarm;
+	animation-duration: 4s;
+	animation-timing-function: ease-in;
+}
+@keyframes alarm {
+    0%{
+        transform: translateX(-350px);
+    }
+    15%{
+        transform: translateX(0);
+    }
+    85%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-350px);
+    }
 }
