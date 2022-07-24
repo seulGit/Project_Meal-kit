@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: -100;
+    z-index: 1;
     min-width: 820px;
 }
 .container .carouselTitle {
@@ -22,7 +22,6 @@
     font-size: 27px;
 }
 
-
 /* 22/07/21 섹션별 구분 라인 설정 */
 .sectionLine {
     margin-top: 35px;
@@ -32,11 +31,8 @@
 /* 22/07/21 캐로셀 네비게이션 설정 */
 .swiper .caroselNavigation{
     width: 100%;
-    /* display: flex; */
-    /* justify-content: space-between; */
     position: absolute;
     top: 29%;
-    
 }
 .swiper .caroselNavigation .prev,
 .swiper .caroselNavigation .next
@@ -94,12 +90,11 @@
     line-height: 1.2;           /* 22/07/21 할인 상품 원래 가격 세로위치 조정을 위한 세팅 */
 }
 
-/* 22/07/20 스위프 캐로셀 설정 */
+/* 22/07/20 스와이프 캐로셀 설정 */
 .swiper {
     width: 100%;
     height: 100%;
 }
-
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -126,6 +121,92 @@
     object-fit: cover;
 }
 
+.swiper-wrapper .swiper-slide .slide {
+    width: 100%;
+}
+
+/* 22/07/24 김정치 고객 리뷰 이미지 및 사이즈 조정 */
+
+.Review .swiper-wrapper .swiper-slide .slide .imgBox{
+    width: 100%;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox img{
+    width: 70%;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg1{
+    background-color: rgb(148, 180, 209);
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg2{
+    background-color: darkseagreen;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg3{
+    background-color: lightseagreen;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg4{
+    background-color: hotpink;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg5{
+    background-color: lightsalmon;
+}
+.Review .swiper-wrapper .swiper-slide .slide .itemText .itemInfor {
+    font-size: 0.8rem;
+}
+
+/* 22/07/24 블로그 리뷰 페이지 구성 */
+
+.blogSwiperArea {
+    display: flex;
+    flex-direction: row;
+}
+.mySwiperBlog {
+    width: 35%;
+}
+.mySwiperBlog .swiper-wrapper {
+    width: 100%;
+}
+.mySwiperBlog .swiper-wrapper .swiper-slide .slide .imgBox {
+    width: 100%;
+    height: 200px;
+}
+/* 22/07/24 블로그 리뷰 더보기 설정 */
+.container .blogPlus {
+    position: absolute;
+    z-index: 10;
+    top: 35px;
+    right: 10vw;
+}
+.container .blogPlus a, .container .blogPlus a i{
+    color: orangered;
+    font-size: 1.2rem;
+}
+.container .blogPlus a i {
+    line-height: 5px;
+    vertical-align: middle;
+}
+
+/* 22/07/24 블로그리뷰 텍스트 영역 설정 */
+.blogSwiperArea .blogReviewText{
+    width: 60%;
+    height: 200px;
+    margin-left: 5%;
+    margin-bottom: 100px;
+}
+.blogSwiperArea .blogReviewText .itemText .itemTitle{
+    font-family: 'SEBANG_Gothic_Regular', sans-serif;
+    font-size: 1.5rem;
+    color: orangered;
+    margin: 10px 0 7px;
+}
+.blogSwiperArea .blogReviewText .itemText .itemInfor{
+    font-family: 'BBTreeGR', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+
+
 /* 22/07/21 김정치 footer 설정 */
 .footer{
     height: 250px;
@@ -139,6 +220,9 @@
     top: -21px;
     width: 160px;
 }
+.footerText a{
+    color: orangered;
+}
 .footerText{
     line-height: 25px;
     font-size: 1.2rem;
@@ -148,15 +232,25 @@
     font-size: 0.9rem;
 }
 
+
 @media (max-width: 991px) {
+
+    /* 22/07/24 김정치 화면이 991px 이하이면 캐로셀 버튼 크기 축소 */
     .swiper .caroselNavigation .prev,
     .swiper .caroselNavigation .next{
         width: 40px;
         height: 40px;
     }
+
+    /* 22/07/24 김정치 캐로셀 버튼 크기 축소로 인한 위치 조정 */
     .swiper .caroselNavigation{
         width: 100%;
         position: absolute;
         top: 25%;
+    }
+
+    /* 22/07/24 김정치 화면이 991px 이하일때 하단에 스크롤 생성 */
+    body{
+        overflow-x: scroll;
     }
 }
