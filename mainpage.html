@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="mainpageNavbar.css">
     <link rel="stylesheet" href="mainImage.css">
     <link rel="stylesheet" href="carousel.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> <!-- 22/07/20 Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper-7.4.1/swiper-bundle.min.css"> <!-- 22/07/22 Swiper's CSS 파일로 대체 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> <!-- 22/07/21 XEicon Link -->
 </head>
 
@@ -41,80 +41,75 @@
 <!--
 22/07/19 김정치 메인페이지의 신상품 자동캐로셀 영역 생성
 -->
-    <div class="container">
-        <h1 class="carouselTitle"><i class="xi-new"></i>신상품</h1>
-        <!-- 자동 캐로셀 시작 Swiper 라이브러리 -->
-        <div class="section Newproduct swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">해물 누룽지탕(2인)</h3>
-                            <p class="itemInfor">가격 : 16,000원</p>
-                        </div>
+<div class="container" id="container">
+    <h1 class="carouselTitle"><i class="xi-new"></i> 신상품</h1>
+    <!-- 자동 캐로셀 시작 Swiper 라이브러리 -->
+    <div class="section Newproduct swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" alt="해물 누룽지탕(2인)"> <!-- 상품 이미지 -->
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 알찬 소고기 스키야키(2인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">소고기 스키야키(2인)</h3>
-                            <p class="itemInfor">가격 : 18,000원</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">포크 찹스테이크(2-3인)</h3>
-                            <p class="itemInfor">가격 : 21,000원</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 불고기 퀘사디아(1-2인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">불고기 퀘사디아(1~2인)</h3>
-                            <p class="itemInfor">가격 : 14,000원</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">바질페스토 파스타(2인)</h3>
-                            <p class="itemInfor">가격 : 15,000원</p>
-                        </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">해물 누룽지탕<br><span>2인</span></h3>
+                        <p class="itemInfor">가격 : 16,000원</p>
                     </div>
                 </div>
             </div>
-            <div class="caroselNavigation">
-                <i class="xi-caret-up-circle prev"></i>
-                <i class="xi-caret-up-circle next"></i>
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 알찬 소고기 스키야키(2인).jpg" alt="알찬 소고기 스키야키(2인)"> <!-- 상품 이미지 -->
+                    </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">소고기 스키야키<br><span>2인</span></h3>
+                        <p class="itemInfor">가격 : 18,000원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" alt="포크 찹스테이크(2-3인)"> <!-- 상품 이미지 -->
+                    </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">포크 찹스테이크<br><span>2-3인</span></h3>
+                        <p class="itemInfor">가격 : 21,000원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 불고기 퀘사디아(1-2인).jpg" alt="불고기 퀘사디아(1-2인)"> <!-- 상품 이미지 -->
+                    </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">불고기 퀘사디아<br><span>1~2인</span></h3>
+                        <p class="itemInfor">가격 : 14,000원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt="바질페스토 파스타(2인)"> <!-- 상품 이미지 -->
+                    </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">바질페스토 파스타<br><span>2인</span></h3>
+                        <p class="itemInfor">가격 : 15,000원</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="caroselNavigation">
@@ -124,6 +119,8 @@
             <img class="next" src="images/playbutton.png">
         </div>
     </div>
+    <hr class="sectionLine">
+</div>
 
 <!--
 22/07/21 김정치 메인페이지의 추천 상품 카테고리 추가
@@ -137,7 +134,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" alt="해물 누룽지탕(2인)"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -145,62 +142,58 @@
                         <p class="itemInfor">가격 : 16,000원</p>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 알찬 소고기 스키야키(2인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">소고기 스키야키(2인)</h3>
-                            <p class="itemInfor">가격 : 18,000원</p>
-                        </div>
+            </div>
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 알찬 소고기 스키야키(2인).jpg" alt="알찬 소고기 스키야키(2인)"> <!-- 상품 이미지 -->
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">포크 찹스테이크(2-3인)</h3>
-                            <p class="itemInfor">가격 : 21,000원</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 불고기 퀘사디아(1-2인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">불고기 퀘사디아(1~2인)</h3>
-                            <p class="itemInfor">가격 : 14,000원</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <!-- 상품 박스 -->
-                    <div class="slide">
-                        <div class="imgBox">
-                            <img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt=""> <!-- 상품 이미지 -->
-                        </div>
-                        <div class="itemText">
-                            <!-- 상품 이름 및 가격 정보 -->
-                            <h3 class="itemTitle">바질페스토 파스타(2인)</h3>
-                            <p class="itemInfor">가격 : 15,000원</p>
-                        </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">소고기 스키야키<br><span>2인</span></h3>
+                        <p class="itemInfor">가격 : 18,000원</p>
                     </div>
                 </div>
             </div>
-            <div class="caroselNavigation">
-                <i class="xi-caret-up-circle prev"></i>
-                <i class="xi-caret-up-circle next"></i>
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" alt="포크 찹스테이크(2-3인)"> <!-- 상품 이미지 -->
+                    </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">포크 찹스테이크<br><span>2-3인</span></h3>
+                        <p class="itemInfor">가격 : 21,000원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 불고기 퀘사디아(1-2인).jpg" alt="불고기 퀘사디아(1-2인)"> <!-- 상품 이미지 -->
+                    </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">불고기 퀘사디아<br><span>1~2인</span></h3>
+                        <p class="itemInfor">가격 : 14,000원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <!-- 상품 박스 -->
+                <div class="slide">
+                    <div class="imgBox">
+                        <img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt="바질페스토 파스타(2인)"> <!-- 상품 이미지 -->
+                    </div>
+                    <div class="itemText">
+                        <!-- 상품 이름 및 가격 정보 -->
+                        <h3 class="itemTitle">바질페스토 파스타<br><span>2인</span></h3>
+                        <p class="itemInfor">가격 : 15,000원</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="caroselNavigation">
@@ -210,6 +203,8 @@
             <img class="next" src="images/playbutton.png">
         </div>
     </div>
+    <hr class="sectionLine">
+</div>
 <!--
 22/07/21 김정치 메인페이지의 할인 상품 카테고리 추가
 -->    
@@ -222,7 +217,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/[마이셰프] 해물 누룽지탕(2인).jpg" alt="해물 누룽지탕(2인)"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -236,7 +231,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/[마이셰프] 알찬 소고기 스키야키(2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/[마이셰프] 알찬 소고기 스키야키(2인).jpg" alt="알찬 소고기 스키야키(2인)"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -250,7 +245,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/[마이셰프] 포크 찹스테이크(2-3인).jpg" alt="포크 찹스테이크(2-3인)"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -264,7 +259,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/[마이셰프] 불고기 퀘사디아(1-2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/[마이셰프] 불고기 퀘사디아(1-2인).jpg" alt="불고기 퀘사디아(1-2인)"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -278,7 +273,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/[마이셰프] 바질페스토 파스타(2인).jpg" alt="바질페스토 파스타(2인)"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -288,10 +283,6 @@
                     </div>
                 </div>
             </div>
-            <div class="caroselNavigation">
-                <i class="xi-caret-up-circle prev"></i>
-                <i class="xi-caret-up-circle next"></i>
-            </div>
         </div>
         <div class="caroselNavigation">
             <img class="prev" src="images/playbutton.png">
@@ -300,6 +291,8 @@
             <img class="next" src="images/playbutton.png">
         </div>
     </div>
+    <hr class="sectionLine">
+</div>
 <!--
 22/07/21 김정치 메인페이지의 고객 리뷰 카테고리 추가
 --> 
@@ -311,7 +304,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/customReview1.png" class="reviewImg1" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/customReview1.png" class="reviewImg1" alt="reviewImg1"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -325,7 +318,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/customReview2.png" class="reviewImg2" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/customReview2.png" class="reviewImg2" alt="reviewImg2"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -339,7 +332,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/customReview3.png" class="reviewImg3" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/customReview3.png" class="reviewImg3" alt="reviewImg3"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -353,7 +346,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/customReview4.png" class="reviewImg4" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/customReview4.png" class="reviewImg4" alt="reviewImg4"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -367,7 +360,7 @@
                 <!-- 상품 박스 -->
                 <div class="slide">
                     <div class="imgBox">
-                        <img src="images/customReview1.png" class="reviewImg5" alt=""> <!-- 상품 이미지 -->
+                        <img src="images/customReview1.png" class="reviewImg5" alt="reviewImg5"> <!-- 상품 이미지 -->
                     </div>
                     <div class="itemText">
                         <!-- 상품 이름 및 가격 정보 -->
@@ -377,10 +370,6 @@
                     </div>
                 </div>
             </div>
-            <div class="caroselNavigation">
-                <i class="xi-caret-up-circle prev"></i>
-                <i class="xi-caret-up-circle next"></i>
-            </div>
         </div>
         <div class="caroselNavigation">
             <img class="prev" src="images/playbutton.png">
@@ -389,6 +378,8 @@
             <img class="next" src="images/playbutton.png">
         </div>
     </div>
+    <hr class="sectionLine">
+</div>
 <!--
 22/07/21 김정치 메인페이지의 블로그 리뷰 카테고리 추가 및 링크
 --> 
@@ -402,7 +393,7 @@
                     <!-- 상품 박스 -->
                     <div class="slide">
                         <div class="imgBox">
-                            <img src="blogImg/완료.png" class="reviewImg1" alt=""> <!-- 상품 이미지 -->
+                            <img src="blogImg/완료.png" alt="완료 이미지"> <!-- 상품 이미지 -->
                         </div>
                     </div>
                 </div>
@@ -410,7 +401,7 @@
                     <!-- 상품 박스 -->
                     <div class="slide">
                         <div class="imgBox">
-                            <img src="blogImg/냄비.png" class="reviewImg2" alt=""> <!-- 상품 이미지 -->
+                            <img src="blogImg/냄비.png" alt="냄비 이미지"> <!-- 상품 이미지 -->
                         </div>
                     </div>
                 </div>
@@ -418,7 +409,7 @@
                     <!-- 상품 박스 -->
                     <div class="slide">
                         <div class="imgBox">
-                            <img src="blogImg/떡볶이.png" class="reviewImg3" alt=""> <!-- 상품 이미지 -->
+                            <img src="blogImg/떡볶이.png" alt="떡볶이 이미지"> <!-- 상품 이미지 -->
                         </div>
                     </div>
                 </div>
@@ -426,7 +417,7 @@
                     <!-- 상품 박스 -->
                     <div class="slide">
                         <div class="imgBox">
-                            <img src="blogImg/음식소개사진.png" class="reviewImg4" alt=""> <!-- 상품 이미지 -->
+                            <img src="blogImg/음식소개사진.png" alt="음식소개사진 이미지"> <!-- 상품 이미지 -->
                         </div>
                     </div>
                 </div>
@@ -434,7 +425,7 @@
                     <!-- 상품 박스 -->
                     <div class="slide">
                         <div class="imgBox">
-                            <img src="blogImg/젓가락.png" class="reviewImg5" alt=""> <!-- 상품 이미지 -->
+                            <img src="blogImg/젓가락.png" alt="젓가락 이미지"> <!-- 상품 이미지 -->
                         </div>
                     </div>
                 </div>
@@ -464,10 +455,11 @@
             copyright (c) mealkit.kr all rights reserved.
         </p>
     </div>
-<script src="mainpage.js"></script>
+</div>
+<script src="mainpageNavbar.js"></script>
 
-<!-- 22/07/20 Swiper 및 캐러셀 js -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- 22/07/22 Swiper 및 캐러셀 js 자체 파일로 대체 -->
+<script src="swiper-7.4.1/swiper-bundle.min.js"></script>
 <script src="carousel.js"></script>
 
 </body>
