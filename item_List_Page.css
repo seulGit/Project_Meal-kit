@@ -12,11 +12,19 @@
 메인 아이템 컨테이너 높이 삭제
 인풋 박스 border or outline 수정
 ==============================
+22/07/24 성선규
+장바구니 찜하기 알람 추가
+==============================
+22/07/25 성선규
+미디어쿼리 추가
+아이템 width 변경
+==============================
 */
 :root {
-    --point : orangered;
-    --color : rgb(255, 218, 71);
+    --point: orangered;
+    --color: rgb(255, 218, 71);
 }
+
 /* 폰트 */
 /* 유토이미지고딕R */
 @font-face {
@@ -25,6 +33,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* 세방고딕 BOLD */
 @font-face {
     font-family: 'SEBANG_Gothic_Bold';
@@ -32,6 +41,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* 세방고딕 Regular  */
 @font-face {
     font-family: 'SEBANG_Gothic_Regular';
@@ -39,16 +49,20 @@
     font-weight: normal;
     font-style: normal;
 }
-*{
+
+* {
     /* border: 1px solid red; */
+    /* background: url("item_img/korean-food/소고기-숙주볶음/main_details/t50_1000001487_detail_395.jpg"); */
 }
+
 /* 사용자 전체화면 */
-.container{
+.container {
     width: 100%;
     padding: 0 10vw;
 }
+
 /* 가격, 검색어 컨테이너 */
-.search{
+.search {
     /* margin-top: 10vh; */
     width: 100%;
     height: 50px;
@@ -59,10 +73,11 @@
     margin-bottom: 20px;
     padding-bottom: 80px;
 }
+
 /* 여백을 주기 위한 패딩 
 22/07/24 성선규 수정 : price_box 클래스를 제외
 상단 여백 추가*/
-.search .search_box{
+.search .search_box {
     width: 50%;
     height: 50px;
     padding: 0 5%;
@@ -70,9 +85,10 @@
     justify-content: center;
     margin-top: 15px;
 }
+
 /* flex-wrap으로 개행
 22/07/24 성선규 추가 */
-.search .price_box{
+.search .price_box {
     width: 50%;
     height: 80px;
     padding: 0 5%;
@@ -81,19 +97,22 @@
     justify-content: center;
     align-items: center;
 }
+
 /* 가격 검색 텍스트 영역 추가
 22/07/24 성선규 추가 */
-.search .price_box div{
+.search .price_box div {
     width: 100%;
     margin-top: 5px;
 }
-.search .price_box div > h3{
+
+.search .price_box div>h3 {
     margin-left: 18%;
     font-size: 1rem;
 }
+
 /* 가격 검색 부분에 숫자 여백 
 22/07/24 성선규 수정 */
-.price_box span{
+.price_box span {
     width: 92px;
     line-height: 30px;
     padding: 0 1vw;
@@ -102,60 +121,71 @@
 
 /* 가격 검색 초깃값 
 22/07/24 성선규 수정 : html 수정으로 가격 초기값으로 변경*/
-.price_box span:nth-child(2){
-    width: 70px; /* 22/07/24 성선규 수정 : 가격 사이 물결표에서 html 수정으로 가격 초기값으로 변경되어 너비 수정 */
+.price_box span:nth-child(2) {
+    width: 70px;
+    /* 22/07/24 성선규 수정 : 가격 사이 물결표에서 html 수정으로 가격 초기값으로 변경되어 너비 수정 */
     padding: 0;
 }
+
 /* 가격 검색 사이 물결표
 22/07/24 성선규 추가 */
-.price_box span:nth-child(3){
+.price_box span:nth-child(3) {
     width: 50px;
 }
+
 /* 가격 검색 bar */
-input[type=range]{
+input[type=range] {
     width: 50%;
-    height: 30px; /* 22/07/24 성선규 수정 : 50 -> 30으로 변경 */
+    height: 30px;
+    /* 22/07/24 성선규 수정 : 50 -> 30으로 변경 */
 }
 
 /* 아이템 정렬 */
-.container section:nth-child(2){
+.container section:nth-child(2) {
     padding-bottom: 20px;
     border-bottom: 1px solid gray;
 }
-.item_list_sort{
+
+.item_list_sort {
     width: 100%;
     height: 25px;
 }
-.item_list_sort span:nth-child(1){
+
+.item_list_sort span:nth-child(1) {
     border-bottom: 3px solid var(--point);
 }
+
 /* 애니메이션 속도 조정
 텍스트 가운데 설정
 간격 설정 */
-.item_list_sort span{
+.item_list_sort span {
     margin: 0 0.5vw;
     line-height: 25px;
     transition: all 100ms;
+    user-select: none;
 }
+
 /* 아이템 정렬에 hover시 커서 모양 변경 */
-.item_list_sort span:hover{
+.item_list_sort span:hover {
     cursor: pointer;
     border-bottom: 3px solid var(--color);
 }
+
 /* 아이템 정렬에 active시 폰트 색상 변경 */
-.item_list_sort span:active{
+.item_list_sort span:active {
     color: var(--color);
 }
 
 /* 아이템 검색 
 input 요소를 잡아주기 위한 포지션*/
-.search_box{
+.search_box {
     position: relative;
     z-index: 2;
 }
+
 /* input 컨테이너에 position 설정 
 안쪽 텍스트에 여백 */
-input[type=text]{
+input[type=text] {
     position: absolute;
     left: 13vw;
     height: 100%;
@@ -163,52 +193,64 @@ input[type=text]{
     padding-left: 10px;
     padding-right: 80px;
     font-size: 1rem;
-    border: none; /* 22/07/21 성선규 수정 : border 전체 삭제 */
-    border-bottom: 1px solid black; /* 22/07/21 성선규 추가 : 기본값을 밑에만 있도록 */
-    z-index: 3; /* 22/07/21 성선규 수정 : 검색 컨테이너보다 높이기 */
+    border: none;
+    /* 22/07/21 성선규 수정 : border 전체 삭제 */
+    border-bottom: 1px solid black;
+    /* 22/07/21 성선규 추가 : 기본값을 밑에만 있도록 */
+    z-index: 3;
+    /* 22/07/21 성선규 수정 : 검색 컨테이너보다 높이기 */
 }
+
 /* input 요소와 똑같이 .search_box에 position 설정
 label 안쪽에 span만큼만 범위 설정 
 border때문에 input border가 묻혀서 삭제*/
-input[type=text] ~ label{
+input[type=text]~label {
     position: absolute;
     left: 13vw;
     width: 59%;
     display: flex;
     justify-content: end;
     border: none;
-    z-index: 4; /* 22/07/21 성선규 수정 : input 보다 높이기 */
+    z-index: 4;
+    /* 22/07/21 성선규 수정 : input 보다 높이기 */
 }
+
 /* 돋보기 두껍게 */
-input[type=text] ~ label span{
+input[type=text]~label span {
     font-size: 2rem;
     padding: 0.5vh 1vw;
     font-weight: 900;
     transition: all 0.5s;
 }
+
 /* input */
-input[type=text]:focus ~ label span{
+input[type=text]:focus~label span {
     color: var(--point);
 }
+
 /* input focus시 아웃라인 제거
 밑에 border만 올라오게 */
-input[type=text]:focus{
+input[type=text]:focus {
     border-bottom: 3px solid var(--point);
     outline: none;
     transition: all 0.3s;
 }
+
 /* 메인 아이템 나열 */
-.container section:nth-child(3){
-    width: 100%;
+.container section:nth-child(3) {
+    width: 80vw;
     /* height: 2900px; 22/07/21 성선규 수정 : 동적으로 움직이기 위한 삭제 */
     display: flex;
     flex-wrap: wrap;
-    border-top: 1px solid gray; /* 22/07/22 성선규 수정 : 양쪽 border 삭제 */
-    border-bottom: 1px solid gray;
+    border-top: 1px solid rgb(77, 77, 77);
+    /* 22/07/22 성선규 수정 : 양쪽 border 삭제 */
+    border-bottom: 1px solid rgb(77, 77, 77);
+    justify-content: center;
 }
-.container section:nth-child(3) > div{
-    width: 32%;
-    height: 690px;
+
+.container section:nth-child(3)>div {
+    width: 25.5vw;
+    height: 70vh;
     margin: 10px;
     display: flex;
     align-items: center;
@@ -217,7 +259,7 @@ input[type=text]:focus{
 }
 
 /* 아이템 내부 이미지*/
-.container section:nth-child(3) .item .item_img_1{
+.container section:nth-child(3) .item .item_img_1 {
     width: 95%;
     height: 66%;
     position: relative;
@@ -225,98 +267,119 @@ input[type=text]:focus{
     border: 2px solid black;
     overflow: hidden;
 }
-.item_img_1:hover{
+
+.item_img_1:hover {
     cursor: pointer;
 }
+
 /* 아이템 이미지 hover 시 아이콘 상단으로 올라오기 */
-.item_img_1:hover span{
+.item_img_1:hover span {
     transform: translateY(0);
 }
+
 /* 아이템 이미지 안쪽 아이콘 */
-.item_img_1 .material-symbols-outlined{ /* 22/07/21 성선규 수정 : 검색창 돋보기와 중복되어 수정 */
+.item_img_1 .material-symbols-outlined {
+    /* 22/07/21 성선규 수정 : 검색창 돋보기와 중복되어 수정 */
     position: absolute;
     bottom: 0;
     transition: all 0.3s;
-    user-select: none; /* 22/07/21 성선규 추가 : 사용자 드래그 불가 처리 */
-    transform: translateY(50px); /* 22/07/21 성선규 추가 : 하단으로 내려서 안보이게 처리 */
+    user-select: none;
+    /* 22/07/21 성선규 추가 : 사용자 드래그 불가 처리 */
+    transform: translateY(50px);
+    /* 22/07/21 성선규 추가 : 하단으로 내려서 안보이게 처리 */
 }
-.item_img_1 .material-symbols-outlined:nth-child(1){
+
+.item_img_1 .material-symbols-outlined:nth-child(1) {
     right: 0;
     padding: 4px;
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
-.item_img_1 .material-symbols-outlined:nth-child(2){
+
+.item_img_1 .material-symbols-outlined:nth-child(2) {
     right: 48px;
     padding: 4px;
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
-.item_img_1 .material-symbols-outlined:hover{
+
+.item_img_1 .material-symbols-outlined:hover {
     color: var(--point);
     cursor: pointer;
 }
+
 /* 아이템 타이틀 */
-.title{
+.title {
     width: 95%;
     margin-top: 15px;
     margin-bottom: 10px;
 }
-.title h1{
+
+.title h1 {
     font-size: 1.7rem;
-    height: 70px; /* 22/07/21 성선규 추가 : 높이가 설정되어 있지 않아 이미지 크기가 찌그러짐 */
+    height: 70px;
+    /* 22/07/21 성선규 추가 : 높이가 설정되어 있지 않아 이미지 크기가 찌그러짐 */
 }
+
 /* 22/07/21 성선규 추가
 마우스 hover시 색상 변경 및 커서 변경 */
-.title h1:hover{
+.title h1:hover {
     color: var(--point);
     cursor: pointer;
     transition: all 0.2s;
 }
+
 /* 아이템 설명 */
-.title h3{
+.title h3 {
     margin-top: 5px;
     font-size: 1.2rem;
-    font-family: 'BBTreeGR'; /* 22/07/21 성선규 수정 : 폰트가 너무 두꺼워서 변경 */
+    font-family: 'BBTreeGR';
+    /* 22/07/21 성선규 수정 : 폰트가 너무 두꺼워서 변경 */
     color: rgb(84, 84, 84);
     height: 75px;
 }
+
 /* 아이템 가격 */
-.item div.price{
+.item div.price {
     margin-bottom: 12px;
     width: 95%;
     height: 10%;
     display: flex;
     flex-direction: row;
-    font-family: 'BBTreeGR' Arial, Helvetica, sans-serif;
+    font-family: 'BBTreeGR'Arial, Helvetica, sans-serif;
     justify-content: end;
     align-items: flex-end;
 }
+
 /* 아이템 원래 가격 */
-.price i{
+.price i {
     font-size: 1.3rem;
     text-decoration: line-through;
     margin-bottom: 23px;
     opacity: 0.5;
 }
+
 /* 아이템 할인율 */
-.price span{
+.price span {
     color: red;
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
+
 /* 아이템 할인 가격 */
-.price h4{
+.price h4 {
     font-size: 2rem;
     color: black;
 }
+
 /* 22/02/24 성선규 추가 */
 /* 최상단 이동 버튼 */
-.scroll_up_container{
+.scroll_up_container {
     position: fixed;
     right: 1%;
     bottom: 3%;
     user-select: none;
 }
-.scroll_up_container div{
+
+.scroll_up_container div {
     border: 3px solid var(--color);
     border-radius: 50%;
     width: 40px;
@@ -326,13 +389,14 @@ input[type=text]:focus{
     justify-content: center;
     cursor: pointer;
 }
-.scroll_up_container div:hover{
+
+.scroll_up_container div:hover {
     background-color: var(--color);
 }
 
 /* 22/07/24 성선규 추가
 알람 추가 */
-.alarm{
+.alarm {
     border: 3px solid var(--point);
     background-color: white;
     border-radius: 10px;
@@ -346,42 +410,169 @@ input[type=text]:focus{
     align-items: center;
     justify-content: center;
 }
-.shopping_alarm{
+
+.shopping_alarm {
     transform: translateX(-350px);
+    opacity: 0;
 }
-.like_alarm{
+.shopping_alarm >div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.like_alarm {
     transform: translateX(-350px);
+    opacity: 0;
 }
-.shopping_alarm div img{
+.shopping_alarm_img{
+    border: 1px solid black;
+    width: 75px;
+    height: 75px;
+}
+.shopping_alarm div img {
     width: 25px;
     position: absolute;
     right: 0;
     top: 0;
     cursor: pointer;
 }
-.like_alarm div img{
+.alarm div span{
+    display: inline-block;
+    width: 70%;
+    border: 1px solid red;
+}
+.like_alarm div img {
     width: 25px;
     position: absolute;
     right: 0;
     top: 0;
     cursor: pointer;
 }
-.move_alarm{
+
+.move_alarm {
     animation-name: alarm;
-	animation-duration: 4s;
-	animation-timing-function: ease-in;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
 }
+
 @keyframes alarm {
-    0%{
+
+    /* 아이콘 클릭 시 상단의 클래스 추가 */
+    0% {
         transform: translateX(-350px);
     }
-    15%{
+
+    15% {
         transform: translateX(0);
     }
-    85%{
+
+    85% {
         transform: translateX(0);
     }
-    100%{
+
+    100% {
         transform: translateX(-350px);
     }
+}
+
+
+/* Large Devices, Wide Screens : ~ 1500px */
+@media only screen and (max-width : 1500px) {
+    .container section:nth-child(3)>div {
+        width: 24.5vw;
+        height: 54vh;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+        height: 50px;
+    }
+
+    /* 아이템 설명 */
+    .title h3 {
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    /* 아이템 가격 */
+    .item div.price {
+        margin-bottom: 10px;
+    }
+
+    /* 아이템 원래 가격 */
+    .price i {
+        font-size: 1.1rem;
+    }
+
+    /* 아이템 할인율 */
+    .price span {
+        margin-bottom: 15px;
+        font-size: 1rem;
+    }
+
+    /* 아이템 할인 가격 */
+    .price h4 {
+        font-size: 1.8rem;
+    }
+}
+/* Medium Devices, Desktops : ~ 1200px */
+@media only screen and (max-width : 1200px) {
+    .container section:nth-child(3)>div {
+        width: 24.5vw;
+        height: 45vh;
+    }
+
+    .title h1 {
+        font-size: 1.2rem;
+        height: 40px;
+    }
+
+    /* 아이템 설명 */
+    .title h3 {
+        height: 45px;
+        font-size: 0.9rem;
+    }
+
+    /* 아이템 가격 */
+    .item div.price {
+        margin-bottom: 10px;
+    }
+
+    /* 아이템 원래 가격 */
+    .price i {
+        font-size: 0.9rem;
+    }
+
+    /* 아이템 할인율 */
+    .price span {
+        margin-bottom: 15px;
+        font-size: 0.8rem;
+    }
+
+    /* 아이템 할인 가격 */
+    .price h4 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Medium Devices, Desktops : ~ 992px */
+/* @media only screen and (max-width : 992px) {
+
+} */
+/* Small Devices, Tablets : ~ 768px */
+/* @media only screen and (max-width : 768px) {
+
+} */
+/* Extra Small Devices, Phones : ~ 480px */
+/* @media only screen and (max-width : 480px) {
+
+} */
+/* Custom, iPhone Retina : ~ 320px */
+/* @media only screen and (max-width : 320px) {
+
+} */
+
+*{
+    /* background-image: url("item_img/korean-food/궁중-소고기-버섯잡채/details/royal_beef_mushroom_japchae.jpg"); */
 }

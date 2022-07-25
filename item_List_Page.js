@@ -146,7 +146,7 @@ price_value.oninput = function () {
 // 텍스트 검색 기능 구현
 // 22/07/24 성선규 추가
 const search = document.querySelector("input[type=text]");
-search.addEventListener("keyup", function () { // input 박스에 값이 들어간 후 키업 할때
+search.addEventListener("keyup", function (e) { // input 박스에 값이 들어간 후 키업 할때
     search_value();
 })
 
@@ -175,7 +175,6 @@ function search_value(value) {
     }
 }
 
-
 // JSON 연동하여 아이템 정보 내보내기
 $(function () {
     $.ajax({
@@ -183,9 +182,6 @@ $(function () {
         url: 'item_List.json',
         dataType: 'json',
         success: function (data) {
-            // console.log(data["item"].length)
-            // console.log("접속 성공");
-            // console.log(data["item"][0]);
             for (let i = 0; i < data["korean_food"].length; i++) {
                 create_item_box();
             }
@@ -204,8 +200,10 @@ $(function () {
                 discount_price[i].innerHTML = data["korean_food"][i].discount_price;
                 // 아이템 메인 이미지에 mouseover 시 이미지 변경
                 item_img_1[i].addEventListener("mouseover", function () {
-                    item_img_1[i].style.background = `url(${data["korean_food"][i].sub_main_img}) 50% 50%/100% no-repeat`;
-                    item_img_1[i].style.transition = "all 0.5s";
+                    if (data["korean_food"][i].sub_main_img != "") {
+                        item_img_1[i].style.background = `url(${data["korean_food"][i].sub_main_img}) 50% 50%/100% no-repeat`;
+                        item_img_1[i].style.transition = "all 0.5s";
+                    }
                 })
                 item_img_1[i].addEventListener("mouseout", function () {
                     item_img_1[i].style.background = `url(${data["korean_food"][i].main_img}) 50% 50%/100% no-repeat`;
@@ -215,6 +213,7 @@ $(function () {
     });
 
 });
+
 
 // 페이지 상단으로
 // 22/07/24 성선규 추가
