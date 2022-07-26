@@ -7,8 +7,10 @@
 220721 왼쪽 네비바 js 기능 추가
 220722 왼쪽 메뉴 영역 위치 변경 
 220723 왼쪽 메뉴 내부 디자인 수정, footer 내용 추가,
-       댓글눌렀을 때 토글 효과
-220724 댓글 기능 수정, 상단 메뉴 토글 기능 공부
+       댓글눌렀을 때 드롭다운 효과
+220724 댓글 기능 수정, 상단 메뉴 드롭다운 공부, 애니메이션 추가
+220725 상단 메뉴 아이콘 수정, 이미지 opacity 효과 수정,
+       다크모드 시 header 글자 색 수정
 ===============================================================
  */
 
@@ -58,20 +60,24 @@ body{
 }
 /* 메인 이미지 색상 */
 .container.dark .main{
-    filter : opacity(1);
+    filter : opacity(0.6);
 }
 /* con2 배경색 */
 .container.dark .con2{
-    background-color: gray;
+    background-color: #1e1f21;
 }
 /* 상단 메뉴 배경색 */
 .container.dark .topNav{
-    background-color: gray;
+    /* background-color: #1e1f21; */
+    color: black;
+}
+.container.dark header{
+    color: black;
 }
 /* 왼쪽 메뉴 배경색 */
 .container.dark .leftNav{
-    background-color: gray;
-    border: 1px solid black;
+    background-color:#1e1f21;
+    border: 1px solid gray;
 }
 /* 왼쪽 메뉴 글자 색깔 */
 .container.dark a{
@@ -79,7 +85,7 @@ body{
 }
 /* 왼쪽 메뉴 호버 시 글자 색깔 */
 .container.dark a:hover{
-    color: black;
+    color: blue;
 }
 /* footer span태그 색깔 */
 .container.dark span{
@@ -89,10 +95,29 @@ body{
 .container.dark .footerBorder2{
     border-bottom: 1px solid white;
 }
+/* foodblog 인기글 색깔 */
 .container.dark .colorRed{
-    color: red;
+    color: orangered;
 }
-
+/* 220725 이전/다음 글자 호버 시 효과 */
+.container.dark .darkModeColor:hover{
+    color: blue;
+}
+/* 220725 댓글 텍스트 창 배경 색 */
+.container.dark input{
+    background-color: #1e1f21;
+    color: white;
+    border: 1px solid gray;
+}
+/* 220725 댓글 박스 배경 색 */
+.container.dark .footerText{
+    background-color: #55575a;
+    color: white;
+}
+/* 220725 답글 박스 배경 색 */
+.container.dark .footerAnswer{
+    background-color: #404246;
+}
 /* 상단 이미지 */
 .main{
     width: 100%;
@@ -100,7 +125,9 @@ body{
     background-size: 100%; 
     background-image: url("blogImg/food2.jpg"); 
     background-repeat: no-repeat;   /* 이미지 중복 제거 */
-    filter: opacity(0.8);  /* opacity로 배경 살짝 흐리게 함 */
+    filter: opacity(0.6);  /* opacity로 배경 살짝 흐리게 함 */
+    /* 220725 강사님 피드백 : 이미지가 글자를 먹는 느낌이라고 하셔서 
+    opacity로 이미지 흐리게 수정하였음 */
     position: fixed;       /* 스크롤 시 배경 고정되도록 fixed */
     z-index: -100;         /* 배경이 맨 뒤로 가도록 index 설정 */
     /* 왼쪽 메뉴 생성 후 이미지가 위쪽, 왼쪽이 살짝 공간이 생겨 top과 left에 0을 주어 붙였음 */
@@ -205,7 +232,77 @@ body{
     cursor: pointer;
     margin-left: 8px;
 }
-
+/* 220724 div 상단 메뉴 아이콘 감싸주었음 */
+.topIconMenu{
+    width: 150px;
+    height: 35px;
+    position:relative;
+    top : 0;
+    left: 0;
+    /* div 요소 밖으로 나가면 아이콘이 보이지 않도록 hidden 효과 주었음 */
+    overflow: hidden;
+}
+/* 아이콘 위치 설정 */
+.settingPo{
+    position:absolute;
+    top : 0;
+}
+/* 홈과 공유 아이콘 위치 */
+.topIconMenuPosition1{
+    position: absolute;
+    top : 0;
+    right: 80px;
+}
+/* 프로필과 로그아웃 아이콘 위치 */
+.topIconMenuPosition2{
+    position : absolute;
+    top : 35px;
+    right: 80px;
+}
+/* 상단 메뉴 아이콘 위치 변경 애니메이션 효과 */
+/* 홈과 공유 아이콘 위로 위치 이동 */
+@keyframes iconTop1 {
+    0%{top : 0;
+        right: 80px;
+    }
+    100%{
+        top : -30px;
+        right: 80px;
+    }
+}
+/* 홈과 공유 아이콘 원래 위치 이동 */
+@keyframes iconTop2 {
+    0%{
+         top : -30px;
+         right: 80px;
+    }
+    100%{
+          top :0px;
+          right: 80px; 
+    }
+}
+/* 프로필과 로그아웃 아이콘 위로 이동 */
+@keyframes iconDown1 {
+    0%{
+        top : 35px;
+        right: 80px;
+    }
+    100%{
+        top : 0px;
+        right: 80px;
+    }
+}
+/* 프로필과 로그아웃 아이콘 원래 위치 이동 */
+@keyframes iconDown2 {
+    0%{
+        top : 0px;
+        right: 80px;
+    }
+    100%{
+        top : 35px;
+        right: 80px;
+    }
+}
 /* 왼쪽 메뉴 */
 .leftNav{
     background-color: rgb(246, 245, 245);
@@ -432,9 +529,9 @@ flex 효과를 주어 요소를 정렬하였음 */
     cursor: pointer;
     border-radius: 5px;
 }
-.xi-angle-left-min{
+/* .xi-angle-left-min{
     margin-right: 10px;
-}
+} */
 /* 댓글 쓰는 창과 댓글 버튼 감싼 div */
 .footerTextAndBtn{
     position: relative;
