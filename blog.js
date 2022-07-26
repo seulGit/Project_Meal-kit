@@ -6,14 +6,12 @@
        전구 누르면 다크모드 
 220723 footer 내용 추가, 왼쪽 메뉴 트랜지션 효과, 다크모드 수정
        댓글,답글 창 드롭다운 효과
+220724 상단 메뉴 드롭다운 효과
+220725 상단 메뉴 다크모드 시 색깔 변경.. 안됬음
+해결해야 할 것들 : 다크모드할 때 상단 메뉴 색깔,
+답글 기능
 =============================================================
 */
-
-let home = document.querySelector('#home');
-
-let share = document.querySelector('#share');
-let logout = document.querySelector('#logout');
-let profile = document.querySelector('#profile');
 
 
 // 220719 상단 메뉴 아이콘 효과
@@ -23,29 +21,19 @@ let topbtn = document.querySelector('#setting'); // 상단 메뉴 설정 아이�
 let flag = false;
 topbtn.addEventListener("click", function () {
     if (flag == true) { // 아이콘 오른쪽으로 돌아갔을 때 다시 왼쪽으로 돌아옴
-        topbtn.style.transition = 'all 1s'; // 아이콘 돌아가는 모습 보기 위해 트랜지션 주었음
-        topbtn.style.color = 'black';  // 아이콘 색 설정 : 검은색
-        topbtn.style.transform = 'rotate(-180deg)'; //클릭 시 왼쪽으로 돌아감
+        topbtn.style.transition = 'all 0.5s'; // 아이콘 돌아가는 모습 보기 위해 트랜지션 주었음
+        // topbtn.style.color = 'black';  // 아이콘 색 설정 : 검은색 // 0725 색 수정이 어려워 아이콘 변경함
+        topbtn.style.transform = 'rotate(0deg)'; //클릭 시 왼쪽으로 돌아감
         flag = !flag;
     } else if (flag == false) { //아이콘 처음 눌렀을 때 오른쪽으로 돌아감
-        topbtn.style.transition = 'all 1s';
-        topbtn.style.color = 'blue'; // 아이콘 색 설정 : 파란색
-        topbtn.style.transform = 'rotate(180deg)'; // 클릭 시 오른쪽으로 돌아감
+        topbtn.style.transition = 'all 0.5s';
+        // topbtn.style.color = 'blue'; // 아이콘 색 설정 : 파란색 // 0725 색 수정이 어려워 아이콘 변경함
+        topbtn.style.transform = 'rotate(90deg)'; // 클릭 시 오른쪽으로 돌아감
         flag = !flag;
     }
 
 });
 
-//220720 스크롤 시 상단 메뉴 배경이 생기는 효과
-window.addEventListener("scroll", function () {
-    if (window.scrollY !== 0) {  
-        topNav.style.background = 'white'; // 스크롤 시 상단 메뉴 배경 흰색 효과 주었음
-        topNav.style.borderBottom='1px solid gray'; // 220723 상단 메뉴의 구분선이 있으면 좋겠다는 조원들의 피드백 반영
-    } else if (window.scrollY == 0) {
-        topNav.style.background = 'none'; // 스크롤 맨 위로 올렸을 때 뒷 배경 사라질 수 있도록 none 효과를 주었음
-        topNav.style.border='none'; // 스크롤 맨 위로 올렸을 때 바닥 선 사라짐
-    }
-});
 
 
 //  220720 전구 아이콘 누르면 아이콘 바뀜
@@ -67,7 +55,47 @@ light.addEventListener("click", function(){
 let container = document.querySelector('.container');  // 모든 요소 담고 있는 컨테이너
 light.addEventListener("click",function(){
    container.classList.toggle('dark'); // css에 dark 클래스 이름 주어 토글 효과 주었음
+
+//    topNav.style.background = '#1e1f21';
+   
 });
+
+//220720 스크롤 시 상단 메뉴 배경이 생기는 효과
+window.addEventListener("scroll", function () {
+    if (window.scrollY !== 0) {  
+    topNav.style.background = 'white'
+        
+        // if (topNav.style.background = 'white'){
+        //     window.addEventListener("scroll", function(){
+        //         topNav.style.background = 'white';
+        //     })
+        
+        // } else if(window.addEventListener("scroll", function(){
+        //     topNav.style.background = 'black'
+        //     console.log("black : " + topNav);
+        // })) {
+
+        // }
+        // 스크롤 시 상단 메뉴 배경 흰색 효과 주었음
+        // if(topNav.style.background == '#1e1f21'){
+        //         window.addEventListener("scroll", function(){
+        //             if(window.scrollY !== 0){
+        //                 topNav.style.background = '#1e1f21';
+                    
+        //             }
+        //     })
+        // }
+
+        topNav.style.borderBottom='1px solid gray'; // 220723 상단 메뉴의 구분선이 있으면 좋겠다는 조원들의 피드백 반영
+       
+    }else if (window.scrollY == 0) {
+        topNav.style.background = 'none'; // 스크롤 맨 위로 올렸을 때 뒷 배경 사라질 수 있도록 none 효과를 주었음
+        topNav.style.border='none'; // 스크롤 맨 위로 올렸을 때 바닥 선 사라짐
+    } 
+
+});
+
+
 
 
 // 220723 상단 메뉴 아이콘 누르면 왼쪽 메뉴 나옴
@@ -107,17 +135,38 @@ let footerAnswer = document.querySelectorAll('.footerAnswer'); // 답글 창
 let answerBtn = false;
 
  for(let i=0; i<footerTextBtn.length; i++){ 
-    for(let j=0; j<footerAnswer.length; j++){    // 배열로 가져왔기 때문에 for문 사용
+    for(let i=0; i<footerAnswer.length; i++){    //댓글 수와 답글 수가 같기 때문에 i를 주었음
  footerTextBtn[i].addEventListener("click",function(){
     if(answerBtn == true){              
         footerTextBtn[i].style.backgroundColor="white";
-        footerAnswer[j].style.display='none';   // 댓글 창 숨기기   
+        footerAnswer[i].style.display='none';   // 댓글 창 숨기기   
         answerBtn = !answerBtn;
     }else if(answerBtn == false){
         footerTextBtn[i].style.backgroundColor="powderblue";
-        footerAnswer[j].style.display='block';  // 댓글 창 보이기
+        footerAnswer[i].style.display='block';  // 댓글 창 보이기
         answerBtn = !answerBtn;
     }
  });
   }
 }
+
+// 220724 상단 메뉴 드롭다운 효과
+let topIconMenuPosition1 = document.querySelector('.topIconMenuPosition1');  // 홈과 공유 아이콘 담은 div
+let topIconMenuPosition2 = document.querySelector('.topIconMenuPosition2');  //프로필과 로그아웃 아이콘 담은 div
+
+let up = true;
+topbtn.addEventListener("click",function(){
+   if(up == true){
+    topIconMenuPosition1.style.animation='iconTop1 0.5s';  // 홈과 공유 아이콘 위로 올라감
+    topIconMenuPosition1.style.animationFillMode='forwards'; // 애니메이션 속성 유지
+    topIconMenuPosition2.style.animation='iconDown1 0.5s'; // 프로필과 로그아웃 아이콘 보임
+    topIconMenuPosition2.style.animationFillMode='forwards';
+    up = !up;
+   } else if(up == false){
+    topIconMenuPosition1.style.animation='iconTop2 0.5s';  // 홈과 공유 아이콘 원래 위치 돌아옴
+    topIconMenuPosition1.style.animationFillMode='forwards'; 
+    topIconMenuPosition2.style.animation='iconDown2 0.5s'; // 프로필과 로그아웃 아이콘 사라짐
+    topIconMenuPosition2.style.animationFillMode='forwards';
+    up = !up;
+   }
+});

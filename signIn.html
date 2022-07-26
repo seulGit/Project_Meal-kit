@@ -16,11 +16,16 @@
                 <div class="logoContainer">
                     <img src="logo.png" alt="로고" id="logo">
                 </div>
-
             <div class="wrapBox">
                 <!-- input 부분 -->
-                <input type="text" placeholder="User ID">
-                <input type="password" placeholder="password">
+                <input type="text" id="id" placeholder="User ID">
+              
+               <span id="idMessage"></span>
+            
+                <input type="password" id="pw" placeholder="password">
+                
+                <div><p id="idMessage"></p></div>
+                
                 <!-- 버튼 -->
                 <button type="submit" class="loginBtn">로 그 인</button>
                 <button type="submit" class="signUpBtn">회원가입</button>
@@ -31,6 +36,8 @@
             </div>
         </div>
     </div>
+
+    <script src="signIn.js"></script>
 </body>
 
 </html>

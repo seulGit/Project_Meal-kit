@@ -4,6 +4,7 @@
 220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업 및 상단 제품이름,가격,버튼 부분 디자인 작업
 220722 오슬기 세부 디자인 조정 
 220723 오슬기 버튼 간격 및 속성 수정/페이지본문 영역구분선설정/리뷰테이블폼 정렬수정/일부div 너비,높이 px->%로 변경
+220725 오슬기 상세페이지 내 이미지 너비,높이 단위변경(vw,vh), 본문내비바 구성 변경 및 디자인 조정, 이미지 클릭시 변경되는 js구현, json 이미지데이터 적용 1차 완료
 ===========================*/
 
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
@@ -41,15 +42,14 @@
 
 /* 상품사진(메인사진)  */
 .main_details_img { /*220720 오슬기 수정: 메인페이지에 중복되는 클래스명이 있어서 수정*/
-    width: 70%;
-    height: 70%;
-    border: 1px solid orangered;
+    width: 25vw;
+    height: 35vh;
 }
 
 /* 상품사진(추가사진) div */
 .subimgbox {
-    width: 70%;
-    height: 20%;
+    width: 25vw;
+    height: 10vh;
     margin-top: 5px;
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,6 @@
 .subimg {
     width: 24%;
     height: 100%;
-    border: 1px solid orangered;
     cursor: pointer;
 }
 
@@ -198,12 +197,11 @@
     justify-content: space-around;
     align-items: flex-end;
     border-bottom: 1px solid gray;
-    margin-bottom: 15px;
 }
 
 /* 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div */
 .bodymenu {
-    width: 390px;
+    width: 100%;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -242,21 +240,115 @@
 /* 본문 내용(공통) 각 div 설정 */
 .middlebox {
     width: 100%;
-    height: 400px;
+    /* height: 400px; */
 }
 
-.middlebox>h3 {
+/* .middlebox>h3 {
     font-family: 'SEBANG_Gothic_Regular', sans-serif;
-}
+    display: block;
+    height: 20px;
+} */
 
-.middlebox>hr {
+/* .middlebox>hr {
     border: .3px solid rgba(3, 3, 3, 0.078);
-}
+} */
 /* 본문 내용(이미지 또는 목록) div */
 .middle {
     width: 100%;
-    height: 370px;
+    /* height: 370px; */
+    display: flex;
+    justify-content: center;
 }
+
+.middle>img {
+    width: 100%;
+}
+
+.middleboxInfo>.bodymenubox>.detail{
+    color: gray;
+    background-color: white;
+}
+
+.middleboxInfo>.bodymenubox>.detail>span{
+    color: gray;
+}
+
+.middleboxInfo>.bodymenubox>.info{
+    background-color: rgba(0, 0, 0, 0.030);
+}
+
+.middleboxInfo>.bodymenubox>.info>span{
+    color: black;
+}
+
+.middleboxReview>.bodymenubox>.detail{
+    color: gray;
+    background-color: white;
+}
+
+.middleboxReview>.bodymenubox>.detail>span{
+    color: gray;
+}
+
+.middleboxReview>.bodymenubox>.review{
+    background-color: rgba(0, 0, 0, 0.030);
+}
+
+.middleboxReview>.bodymenubox>.review>span{
+    color: black;
+}
+
+.middleboxBlog>.bodymenubox>.detail{
+    color: gray;
+    background-color: white;
+}
+
+.middleboxBlog>.bodymenubox>.detail>span{
+    color: gray;
+}
+
+.middleboxBlog>.bodymenubox>.blog{
+    background-color: rgba(0, 0, 0, 0.030);
+}
+
+.middleboxBlog>.bodymenubox>.blog>span{
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 네비메뉴바(상품디테일,상품정보,리뷰,블로그) 폰트 굵기,색상 지정 */
+.bodymenu>span{
+    font-family: 'SEBANG_Gothic_Regular', sans-serif;
+    color: gray;
+}
+
+/* 네비메뉴바(현재적용부분:상품디테일) 클릭시 해당 div 배경색 나타나게 구현 예정*/
+.bodymenubox>.detail {
+    background-color: rgba(0, 0, 0, 0.030);
+}
+
+/* 네비메뉴바(현재적용부분:상품디테일) 클릭시 폰트 컬러 강조기능 구현 예정 */
+.bodymenubox>.detail>span{
+    color: black;
+}
+
+
+
+
+
+
 
 /* 리뷰 부분 시작 */
 
@@ -360,6 +452,7 @@
     font-family: 'BBTreeGR', sans-serif;
 }
 /* 오슬기 파트 끝 */
+
 
 
 
