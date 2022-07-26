@@ -4,7 +4,7 @@
 // =======================
 
 let eyeOne = document.querySelector('#eye1');
-const pw = document.querySelector('#pw');
+const pw = document.querySelector('#password');
 
 eyeOne.addEventListener('click',function(){
     if(pw.type ==='password'){
