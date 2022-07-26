@@ -4,23 +4,23 @@
 =================================
 */
 
-/* 22/07/19 캐로셀 전체 영역 설정 */
+/* 22/07/22 캐로셀 전체 영역 및 섹션 타이틀 설정 */
 .container {
+    padding: 0 10vw;
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: -100;
+    z-index: 1;
     min-width: 820px;
 }
 .container .carouselTitle {
     text-align: center;
-    margin: 40px 0 10px;
+    margin: 40px 0 20px;
 }
 .container .carouselTitle i{
     color: orangered;
     font-size: 27px;
 }
-
 
 /* 22/07/21 섹션별 구분 라인 설정 */
 .sectionLine {
@@ -31,27 +31,32 @@
 /* 22/07/21 캐로셀 네비게이션 설정 */
 .swiper .caroselNavigation{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
     position: absolute;
-    top: 35%;
-    z-index: 10;
+    top: 29%;
 }
 .swiper .caroselNavigation .prev,
 .swiper .caroselNavigation .next
 {
+    width: 50px;
+    height: 50px;
     font-size: 3rem;
     color: orangered;
-    margin: 0 5px;
+    margin: 0 10px;
+    opacity: 0.9;
 }
 .swiper .caroselNavigation .prev{
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
+    position: relative;
+    float: left;
+    z-index: 10;
 }
 .swiper .caroselNavigation .next{
-    transform: rotate(90deg);
+    float: right;
+    position: relative;
+    z-index: 10;
 }
 
-/* 22/07/20 캐로셀 타이틀 설정 */
+/* 22/07/22 캐로셀 각 상품 타이틀 설정 */
 .swiper-wrapper .swiper-slide .slide .imgBox {
     height: 100%;
 }
@@ -59,6 +64,17 @@
     font-family: 'SEBANG_Gothic_Regular', sans-serif;
     font-size: 1.2rem;
     margin: 10px 0 7px;
+}
+.swiper-wrapper .swiper-slide .slide .itemText .itemTitle span {
+    font-family: 'SEBANG_Gothic_Regular', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-block;
+    margin: 2px 0 0px;
+    padding: 5px 5px 2px;
+    line-height: 20px;
+    color: white;
+    background-color: orangered;
 }
 .swiper-wrapper .swiper-slide .slide .itemText .salesPrice {
     font-family: 'BBTreeGR', sans-serif;
@@ -74,12 +90,11 @@
     line-height: 1.2;           /* 22/07/21 할인 상품 원래 가격 세로위치 조정을 위한 세팅 */
 }
 
-/* 22/07/20 스위프 캐로셀 설정 */
+/* 22/07/20 스와이프 캐로셀 설정 */
 .swiper {
     width: 100%;
     height: 100%;
 }
-
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -106,18 +121,108 @@
     object-fit: cover;
 }
 
+.swiper-wrapper .swiper-slide .slide {
+    width: 100%;
+}
+
+/* 22/07/24 김정치 고객 리뷰 이미지 및 사이즈 조정 */
+
+.Review .swiper-wrapper .swiper-slide .slide .imgBox{
+    width: 100%;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox img{
+    width: 70%;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg1{
+    background-color: rgb(148, 180, 209);
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg2{
+    background-color: darkseagreen;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg3{
+    background-color: lightseagreen;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg4{
+    background-color: hotpink;
+}
+.Review .swiper-wrapper .swiper-slide .slide .imgBox .reviewImg5{
+    background-color: lightsalmon;
+}
+.Review .swiper-wrapper .swiper-slide .slide .itemText .itemInfor {
+    font-size: 0.8rem;
+}
+
+/* 22/07/24 블로그 리뷰 페이지 구성 */
+
+.blogSwiperArea {
+    display: flex;
+    flex-direction: row;
+}
+.mySwiperBlog {
+    width: 35%;
+}
+.mySwiperBlog .swiper-wrapper {
+    width: 100%;
+}
+.mySwiperBlog .swiper-wrapper .swiper-slide .slide .imgBox {
+    width: 100%;
+    height: 200px;
+}
+/* 22/07/24 블로그 리뷰 더보기 설정 */
+.container .blogPlus {
+    position: absolute;
+    z-index: 10;
+    top: 35px;
+    right: 10vw;
+}
+.container .blogPlus a, .container .blogPlus a i{
+    color: orangered;
+    font-size: 1.2rem;
+}
+.container .blogPlus a i {
+    line-height: 5px;
+    vertical-align: middle;
+}
+
+/* 22/07/24 블로그리뷰 텍스트 영역 설정 */
+.blogSwiperArea .blogReviewText{
+    width: 60%;
+    height: 200px;
+    margin-left: 5%;
+    margin-bottom: 100px;
+}
+.blogSwiperArea .blogReviewText .itemText .itemTitle{
+    font-family: 'SEBANG_Gothic_Regular', sans-serif;
+    font-size: 1.5rem;
+    color: orangered;
+    margin: 10px 0 7px;
+}
+.blogSwiperArea .blogReviewText .itemText .itemInfor{
+    font-family: 'BBTreeGR', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+
+
 /* 22/07/21 김정치 footer 설정 */
 .footer{
     height: 250px;
-    padding: 25px 0 0 20px;
+    padding: 25px 0 0 10vw;
     border-top: 2px solid rgb(155, 154, 154);
     background-color: rgba(214, 214, 214, 0.747);
     display: flex;
 }
 .footer .footerImg .footerLogo{
     position: relative;
+    left: -25px;
     top: -21px;
     width: 160px;
+}
+.footerText a{
+    color: orangered;
 }
 .footerText{
     line-height: 25px;
@@ -126,4 +231,27 @@
 .footContent{
     font-family: 'BBTreeGR', sans-serif;
     font-size: 0.9rem;
+}
+
+
+@media (max-width: 991px) {
+
+    /* 22/07/24 김정치 화면이 991px 이하이면 캐로셀 버튼 크기 축소 */
+    .swiper .caroselNavigation .prev,
+    .swiper .caroselNavigation .next{
+        width: 40px;
+        height: 40px;
+    }
+
+    /* 22/07/24 김정치 캐로셀 버튼 크기 축소로 인한 위치 조정 */
+    .swiper .caroselNavigation{
+        width: 100%;
+        position: absolute;
+        top: 25%;
+    }
+
+    /* 22/07/24 김정치 화면이 991px 이하일때 하단에 스크롤 생성 */
+    body{
+        overflow-x: scroll;
+    }
 }

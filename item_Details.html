@@ -7,12 +7,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="item_Details.css">
     <link rel="stylesheet" href="item_List.css">
-    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="mainpageNavbar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 <body>
 <!-- 220719 오슬기 기본 레이아웃 작업
      220720 오슬기 공통영역 추가(병합)
-     220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업-->
+     220721 오슬기 리뷰,블로그 부분 상세레이아웃 작업
+     220722 오슬기 세부 디자인(상단:가격,버튼/하단:리뷰,블로그) 조정 
+     220723 오슬기 리뷰부분 이미지미리보기 div 삭제(테이블폼만 남겨두는걸로 결정)/클래스명 조정
+     220725 오슬기 본문내비바 구성 변경, 클래스명 조정, js,json 스크립트 적용
+-->
 <!-- 헤더부분 -->
 <div class="header">
     <!-- 로고 -->
@@ -34,7 +39,6 @@
         <a href="">회원가입</a>
     </div>
 </div>
-<div class="mainImg"></div>
 
 
 
@@ -110,14 +114,29 @@
                     <!-- 구매/찜/장바구니 버튼 div -->
                     <div class="item_details_box">
                         <!-- 구매/찜/장바구니 버튼 -->
-                        <div class="item_details_btn">
-                            <button>바로 구매</button>
+                        <div class="item_details_btn buyNow">
+                            <button>
+                                <span class="material-symbols-outlined">
+                                    paid
+                                </span>
+                                <span>바로 구매</span>
+                            </button>
                         </div>
                         <div class="item_details_btn">
-                            <button>장바구니</button>
+                            <button>
+                                <span class="material-symbols-outlined">
+                                    shopping_cart
+                                </span>
+                                <span>장바구니</span>
+                            </button>
                         </div>
                         <div class="item_details_btn">
-                            <button>찜하기</button>
+                            <button>
+                                <span class="material-symbols-outlined">
+                                    favorite
+                                </span>
+                                <span>찜하기</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -132,19 +151,38 @@
             </div>
             <!-- 본문 내용1(상품디테일) div -->
             <div class="middlebox">
-                <h1>Details</h1>
+                <!-- <h3>상품상세정보</h3> -->
+                <!-- <hr> -->
                 <!-- 본문 내용1(상품디테일) 이미지  -->
-                <div class="middle detailimg"></div>
+                <div class="middle detailimg">
+                    <img src="" alt="">
+                </div>
             </div>
             <!-- 본문 내용2(상품정보) div -->
-            <div class="middlebox">
-                <h1>Info</h1>
+            <div class="middlebox middleboxInfo">
+                <div class="bodymenubox">
+                    <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div -->
+                    <div class="bodymenu detail"><span>상품상세정보</span></div>
+                    <div class="bodymenu info"><span>배송안내</span></div>
+                    <div class="bodymenu review"><span>리뷰</span></div>
+                    <div class="bodymenu blog"><span>블로그후기</span></div>
+                </div>
+                <!-- <h3>배송안내</h3> -->
+                <!-- <hr> -->
                 <!-- 본문 내용2(상품정보) 이미지  -->
                 <div class="middle infoimg"></div>
             </div>
             <!-- 본문 내용3(리뷰) div -->
-            <div class="middlebox">
-                <h1>Review</h1>
+            <div class="middlebox middleboxReview">
+                <div class="bodymenubox">
+                    <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div -->
+                    <div class="bodymenu detail"><span>상품상세정보</span></div>
+                    <div class="bodymenu info"><span>배송안내</span></div>
+                    <div class="bodymenu review"><span>리뷰</span></div>
+                    <div class="bodymenu blog"><span>블로그후기</span></div>
+                </div>
+                <!-- <h3>리뷰</h3> -->
+                <!-- <hr> -->
                 <!-- 본문 내용3(리뷰) 목록 div-->
                 <div class="middle reviewlist">
                     <!-- 리뷰 목록 -->
@@ -157,9 +195,30 @@
                                 <i class="xi-star"></i>
                                 <i class="xi-star"></i>
                             </td>
-                            <td>떡볶이 겁나 맛있어용</td>
-                            <td>이은지</td>
+                            <td>이 집 잘하네. 꿀맛입니다.</td>
+                            <td>김정치</td>
                             <td>2022.07.20</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>대량구매했슴돠 많이파십쇼</td>
+                            <td>노현</td>
+                            <td>2022.07.22</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>혼자 4인분 먹었습니다 더 매운맛 좀 출시해주세요</td>
+                            <td>성선규</td>
+                            <td>2022.07.22</td>
                         </tr>
                         <tr>
                             <td>
@@ -169,56 +228,81 @@
                             <td>오슬기</td>
                             <td>2022.07.22</td>
                         </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>매콤달콤 졸맛탱>_&lt; 블로그에 내돈내산 후기 남겼으니 보러오세요!!</td>
+                            <td>이은지</td>
+                            <td>2022.07.22</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>딸래미 사줬는데 잘 먹네요 많이 파세요</td>
+                            <td>은지맘</td>
+                            <td>2022.07.22</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                                <i class="xi-star"></i>
+                            </td>
+                            <td>어? 맛있다</td>
+                            <td>김형준</td>
+                            <td>2022.07.22</td>
+                        </tr>
                     </table>
-                    <!-- 리뷰 캐러셀 -->
-                    <div class="review_container">
-                        <div class="anglebox">
-                            <i class="angleicon xi-angle-left"></i>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"></div>
-                            <div class="review_details"></div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"></div>
-                            <div class="review_details"></div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"></div>
-                            <div class="review_details"></div>
-                        </div>
-                        <div class="review_box">
-                            <div class="review_img"></div>
-                            <div class="review_details">
-                                <div class="review_details_title">별점부분</div>
-                                <div class="review_details_contents">리뷰내용입니다내용입니다내용입니다내용입니다내용입니다</div>
-                            </div>
-                        </div>
-                        <div class="anglebox">
-                            <i class="angleicon xi-angle-right"></i>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- 본문 내용4(블로그) div -->
-            <div class="middlebox">
-                <h1>Blog</h1>
+            <div class="middlebox middleboxBlog">
+                <div class="bodymenubox">
+                    <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div -->
+                    <div class="bodymenu detail"><span>상품상세정보</span></div>
+                    <div class="bodymenu info"><span>배송안내</span></div>
+                    <div class="bodymenu review"><span>리뷰</span></div>
+                    <div class="bodymenu blog"><span>블로그후기</span></div>
+                </div>
+                <!-- <h3>블로그</h3> -->
+                <!-- <hr> -->
                 <!-- 본문 내용4(블로그) 목록 -->
                 <div class="middle bloglist">
                     <div class="bloglist_box">
-                        <div class="bloglist_img"></div>
-                        <div class="bloglist_details"></div>
+                        <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                        <div class="bloglist_details">
+                            <div class="bloglist_details_title">블로그후기제목</div>
+                            <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                        </div>
                     </div>
                     <div class="bloglist_box">
-                        <div class="bloglist_img"></div>
-                        <div class="bloglist_details"></div>
+                        <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                        <div class="bloglist_details">
+                            <div class="bloglist_details_title">블로그후기제목</div>
+                            <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                        </div>
                     </div>
                     <div class="bloglist_box">
-                        <div class="bloglist_img"></div>
-                        <div class="bloglist_details"></div>
+                        <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
+                        <div class="bloglist_details">
+                            <div class="bloglist_details_title">블로그후기제목</div>
+                            <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                        </div>
                     </div>
                     <div class="bloglist_box">
-                        <div class="bloglist_img"></div>
+                        <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
                         <div class="bloglist_details">
                             <div class="bloglist_details_title">블로그후기제목</div>
                             <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
@@ -230,5 +314,10 @@
         <!-- 슬기 파트 끝 -->
         <div class="footer"></div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="item_Details.js"></script>
+    <script src="item_List.json"></script>
 </body>
 </html>
+
+

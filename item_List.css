@@ -11,7 +11,7 @@
 드래그 불가 요소 추가
 ==================================
 */
-/* 세방고딕 Regular  */
+/* 세방고딕 Regular  */ 
 @font-face {
     font-family: 'SEBANG_Gothic_Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Regular.woff') format('woff');
@@ -31,13 +31,11 @@
 /* css 적용을 위한 라인 확인용 
     - 작업 완료 후 주석 처리 예정
 */
-/* *{ */
+*{
     /* border: 1px solid red; */
-
     /* transition: all .5s; 220720 오슬기 수정: 시간 줄였음 
                             220720 성선규 수정 : 전체 딜레이가 너무 심해서 삭제 후 해당 요소에 직접 추가*/
-
-/* } */
+}
 /* 페이지 기존 margin 제거 */
 body{
     margin: 0;
@@ -57,7 +55,6 @@ margin 조정 가능*/
     z-index: 999;
     border-radius: 2px; /*220720 오슬기 수정: 줄였음*/
     border: 1px solid rgba(128, 128, 128, 0.416); /* 220720 오슬기 수정: 사이드바 전체div 보더 수정*/
-
     left: 1%; /* 220720 오슬기 추가: 사이드바 전체 왼쪽으로 붙임*/
     top: 40%;
 }
@@ -76,26 +73,13 @@ margin 조정 가능*/
 input[type=radio]{
     display: none; 
 }
-
-/* label 텍스트에 색상 및 폰트 두께 설정 */
-input[type=radio] ~ label{
-    width: 120px;
-    height: 30px;
-    line-height: 30px; /* 텍스트 가운데 정렬 */
-    font-weight: 300;
-    border-top: 1px solid rgb(255, 255, 255); /* 버튼 상단 테두리 */
-    border-bottom: 1px solid rgb(255, 255, 255); /* 버튼 하단 테두리 */
-    border-collapse: collapse; /* 상하단 테두리 중복되는 부분 삭제 */
-}   
-
 /* label에 커서가 올라갔을 때 pointer로 변경
 상하단 white 에서 black으로 변경 */
 input[type=radio] ~ label:hover{
     cursor: pointer;
-
-    /* border-top: 1px solid black;
-    border-bottom: 1px solid black;  0720 오슬기 수정: 라디오박스 보더 삭제 */
-
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    transition: all .5s;
 }
 /* 폰트 세방 고딕체 설정
 폰트 사이즈 조정
@@ -112,7 +96,6 @@ label{
     border-bottom: 1px solid rgb(255, 255, 255); 
     border-collapse: collapse;
     border-radius: 2px; /* 220720 오슬기 추가: 라디오박스 보더*/
-
     user-select: none; /* 220721 성선규 추가 : 사용자 드래그 불가 */
 }
 /* 너비 높이 설정 후 요소 숨김 */

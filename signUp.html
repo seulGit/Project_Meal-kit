@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signUp.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+
+<body>
+    <div class="wrap">
+        
+        <div class="wrapContainer">
+            <div class="wrapBox">
+                
+                <!-- 로고 감싼 div -->
+                <div class="logoContainer">
+                    <img src="logo.png" alt="로고" id="logo">
+                </div>
+
+                <!-- 로고 밑 라인 -->
+                <div class="borderLine"></div>
+
+                <!-- input 과 button 감싸는 div -->
+                <div class="inputContainer">
+
+                    <label for="id">아이디</label>
+                    <input type="text" id="id" placeholder="ID">
+
+                    <label for="pw">패스워드</label>
+                    <label for="eye1">
+                        <i id="eye1" class="xi-eye-o"></i></label>
+                    <input type="password" id="pw" placeholder="password">
+
+                    <label for="pwConfirm">패스워드 확인</label>
+                    <label for="eye2">
+                        <i id="eye2" class="xi-eye-o"></i></label>
+                    <input type="password" id="pwConfirm" placeholder="password confirm">
+
+                    <label for="name">이름</label>
+                    <input type="text" id="name" placeholder="name">
+
+                    <label for="gender">성별</label>
+                    <div class="genderBox">
+                        남<input type="radio" id="gender" name="a">
+                        여<input type="radio" id="gender" name="a">
+                    </div>
+
+                    <label for="birth">생년월일</label>
+                    <input type="date" id="birth">
+
+                    <label for="phone">휴대전화</label>
+                    <input type="text" id="phone" placeholder="phone number">
+
+                    <label for="address">주소</label>
+                    <input type="text" id="address" placeholder="address">
+
+                    <label for="email">이메일</label>
+                    <input type="text" id="email" placeholder="Email">
+
+                    <div class="btnBox">
+                        <button type="submit" class="btn">가입하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="pwEye.js"></script>
+</body>
+
+</html>

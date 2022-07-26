@@ -1,0 +1,125 @@
+/* 
+===============================
+22/07/24 노현
+로그인 폼 생성
+===============================
+*/
+@font-face {
+    font-family: 'BBTreeGR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 세방고딕 BOLD */
+@font-face {
+    font-family: 'SEBANG_Gothic_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 세방고딕 Regular  */
+@font-face {
+    font-family: 'SEBANG_Gothic_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'SEBANG_Gothic_Regular';
+    /* border: 1px solid royalblue; */
+ 
+}
+body{
+    margin: 0;
+}
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.wrapContainer{
+    margin-bottom: 300px;
+}
+
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5vh;
+    border-bottom: 2.5px solid rgb(255, 69, 0);
+}
+/* 로고 */
+.logoContainer>img{
+    width: 150px;
+    height: 150px;
+}
+/* input 이랑 button 쌓은 div */
+.wrapBox{
+    width: 400px;
+}
+/* input */
+.wrapBox>input{
+    width: 100%;
+    height: 5vh;
+    margin: 10px 0;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    font-size: 19px;
+    padding-left: 12px;
+}
+.wrapBox>input[type=text]{
+    margin-top: 50px;
+}
+
+/* 버튼 */
+.loginBtn {
+    margin-top: 20px;
+    font-weight: bolder;
+    color: white;
+    font-size: 18px;
+    background-color: rgb(255, 69, 0);
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    font-family: 'BBTreeGR';
+
+}
+.signUpBtn {
+    margin-top: 20px;
+    font-weight: bolder;
+    color: black;
+    font-size: 18px;
+    background-color:white;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    font-family: 'BBTreeGR';
+
+}
+
+.loginBtn:active {
+    transition: all 0.4s;
+    background-color: white;
+    color: rgb(255, 69, 0);
+    border: 1px solid gainsboro;
+}
+/* 아이디찾기 */
+.wrapBox>.findIdBox{
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+    
+}
+.findId>span{
+    margin-left: 15px;
+    cursor: pointer;
+}

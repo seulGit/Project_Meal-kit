@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signIn.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="wrapContainer">
+                <!-- 로고 -->
+                <div class="logoContainer">
+                    <img src="logo.png" alt="로고" id="logo">
+                </div>
+            <div class="wrapBox">
+                <!-- input 부분 -->
+                <input type="text" id="id" placeholder="User ID">
+              
+               <span id="idMessage"></span>
+            
+                <input type="password" id="pw" placeholder="password">
+                
+                <div><p id="idMessage"></p></div>
+                
+                <!-- 버튼 -->
+                <button type="submit" class="loginBtn">로 그 인</button>
+                <button type="submit" class="signUpBtn">회원가입</button>
+                <!-- 아이디찾기 부분 -->
+                <div class="findIdBox">
+                <div class="findId"><span>아이디 찾기</span> <span>비밀번호 찾기</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="signIn.js"></script>
+</body>
+
+</html>

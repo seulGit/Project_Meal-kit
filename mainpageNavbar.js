@@ -9,7 +9,8 @@
 */
 const nav = document.querySelector('.navbar'); // 네비바 부분
 const topOfNav = nav.offsetTop;
-
+// window.pageYOffset
+// documnet가 수직으로 스크롤 된 만큼의 픽셀 값을 계산하는 윈도우 속성
 window.addEventListener('scroll', function () {
     if (window.pageYOffset >= topOfNav) { // pageYOffset 대신 scrollY도 가능
         // document.body.classList.add("fixed-nav"); 오류나서 안됨 이유는 모르겠음.
@@ -42,10 +43,10 @@ window.addEventListener('scroll', function () {
     //     nav.style.backgroundColor='';
     //     nav.style.opacity=1;
     // }
-    if (window.pageYOffset >= 800){//네비바 밑 메인이미지 Y축길이가 200~800 정도라서 수치를 저렇게 잡음.
-        nav.style.backgroundColor='';
+    // if (window.pageYOffset >= 800){//네비바 밑 메인이미지 Y축길이가 200~800 정도라서 수치를 저렇게 잡음. // 22/07/22 노현 수정 - 필요없어져서 주석처리.
+        // nav.style.backgroundColor=''; // 22/07/22 노현 수정 - 스크롤할때 백그라운드 전부 흰색주려고 주석처리.
         // nav.style.opacity=1; // 22/07/21 노현 수정 - 투명도 빼버림
-    }else if (window.pageYOffset >= 155 ){
+    if (window.pageYOffset >= 155 ){
         nav.style.backgroundColor='white';
         // ==================================
         // 22/07/21 노현 수정
