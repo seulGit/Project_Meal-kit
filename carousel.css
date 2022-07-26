@@ -123,9 +123,13 @@
 
 .swiper-wrapper .swiper-slide .slide {
     width: 100%;
+    cursor: pointer;
 }
 
 /* 22/07/24 김정치 고객 리뷰 이미지 및 사이즈 조정 */
+.Review .swiper-wrapper .swiper-slide .slide{
+    cursor: auto;
+}
 
 .Review .swiper-wrapper .swiper-slide .slide .imgBox{
     width: 100%;
@@ -231,6 +235,13 @@
 .footContent{
     font-family: 'BBTreeGR', sans-serif;
     font-size: 0.9rem;
+}
+
+.recent_box{
+    padding: 5px;
+}
+.recent_box img{
+    width: 100%;
 }
 
 
