@@ -210,13 +210,14 @@
 /* 22/07/21 김정치 footer 설정 */
 .footer{
     height: 250px;
-    padding: 25px 0 0 20px;
+    padding: 25px 0 0 10vw;
     border-top: 2px solid rgb(155, 154, 154);
     background-color: rgba(214, 214, 214, 0.747);
     display: flex;
 }
 .footer .footerImg .footerLogo{
     position: relative;
+    left: -25px;
     top: -21px;
     width: 160px;
 }
