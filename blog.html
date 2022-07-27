@@ -41,7 +41,7 @@
         </nav>
 
         <!-- header 영역 -->
-        <header>
+        <header id="header">
             <div>우정분식 아찔떡볶잉 먹은 후기</div>
             <div>내돈내산</div>
             <div id="headFont">by food July 19 2022</div>
@@ -234,8 +234,10 @@
                                 </div>
                                 <button class="footerTextBtn">답글</button>
                                 <div class="footerAnswer">
-                                    <input type="text" name="" id="" class="answerInput" placeholder="답글을 작성해주세요">
+                                   <div class="answerText"></div>
+                                    <input type="text" name="" id="text" class="answerInput" placeholder="답글을 작성해주세요">
                                     <button class="answerBtn">답글 입력</button>
+                                    
                                 </div>
                             </div>
                             <div class="footerIcon">
@@ -304,8 +306,14 @@
                 </footer>
             </div>
         </div>
+         <!--220727 맨 위로 올라가기 버튼 생성-->
+        <div class="topToBtn">
+            <a href="#header">
+                <i class="xi-caret-up-circle-o"></i>
+            </a>
+        </div>
     </div>
-
+      
     <script src="blog.js"></script>
 </body>
 
