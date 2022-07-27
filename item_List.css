@@ -10,6 +10,9 @@
 2022-07-21 19:24 성선규
 드래그 불가 요소 추가
 ==================================
+2022/07/26 17:41 성선규
+미디어 쿼리 추가
+==================================
 */
 /* 세방고딕 Regular  */ 
 @font-face {
@@ -57,6 +60,7 @@ margin 조정 가능*/
     border: 1px solid rgba(128, 128, 128, 0.416); /* 220720 오슬기 수정: 사이드바 전체div 보더 수정*/
     left: 1%; /* 220720 오슬기 추가: 사이드바 전체 왼쪽으로 붙임*/
     top: 40%;
+    transition: all 1s;
 }
 /* 텍스트 가운데 설정 */
 .basket_box > div{
@@ -155,3 +159,63 @@ label{
 사이드 장바구니 생성 작업 완료
 ======================================
 */
+
+/* 22/07/26 성선규
+max-width가 1300px 이하로 내려갈경우 나타나기 */
+.media_basket_btn_box{
+    display: none;
+    position: fixed;
+    width: 40px;
+    height: 50px;
+    top: 50%;
+    background-color: var(--color);
+    border: 1px solid rgb(174, 153, 70);
+    border-left: none;
+}
+.media_basket_btn_box div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.media_basket_btn_box div span{
+    font-size: 50px;
+    font-weight: 900;
+}
+
+
+/* Medium Devices, Desktops : ~ 992px */
+@media only screen and (max-width : 1300px) {
+    .basket_box{
+        transform: translateX(-200px);
+        top: 320px;
+        left: 0;
+        width: 200px;
+        height: 50vh;
+        transition: all 1s;
+    }
+    .basket_box > div > input[type=radio] ~ label{
+        width: 200px;
+        background-color: white;
+    }
+    #recent:checked ~ label{
+        width: 200px;
+    }
+    #like:checked ~ label{
+        width: 200px;
+    }
+    #select:checked ~ label{
+        width: 200px;
+    }
+    .basket_box > div > div[class *= box]{
+        width: 200px;
+        height: 36.5vh;
+        background-color: white;
+    }
+    .media_basket_btn_box{
+        display: block;
+        z-index: 999;
+        transition: all 1s;
+    }
+}

@@ -475,7 +475,6 @@ input[type=text]:focus {
     }
 }
 
-
 /* Large Devices, Wide Screens : ~ 1500px */
 @media only screen and (max-width : 1500px) {
     .container section:nth-child(3)>div {

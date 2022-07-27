@@ -15,7 +15,16 @@
 </head>
 
 <body>
-
+    <!-- 
+    ================================================
+    22/07/24 성선규 추가
+    장바구니 추가 및 찜하기 클릭 시 왼쪽 하단에 알림창 띄우기 
+    최상단으로 바로 올라갈수 있는 버튼
+    ================================================
+    22/07/26 성선규
+    미디어 쿼리 구현을 위한 코드 추가
+    ================================================
+ -->
     <!-- 네비게이션 바 -->
     <!-- 헤더부분 -->
     <div class="header">
@@ -58,6 +67,15 @@
             <input type="radio" id="select" name="basket">
             <label for="select">장바구니</label>
             <div class="select_box"></div>
+        </div>
+    </div>
+    <!-- 미디어 쿼리 1300px 이하로 내려갈 경우 
+        22/07/26 성선규 추가 -->
+    <div class="media_basket_btn_box">
+        <div>
+            <span class="material-symbols-outlined">
+                chevron_right
+            </span>
         </div>
     </div>
 
@@ -150,12 +168,12 @@
         </section> -->
 
 
-        <!-- 최하단 -->
-        <footer></footer>
+            <!-- 최하단 -->
+            <footer></footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="item_List_Page_alarm.js"></script>
+    <script src="item_List_Page_alarm.js"></script>
     <script src="item_List_Page.js"></script>
     <script src="mainpageNavbar.js"></script>
 </body>
