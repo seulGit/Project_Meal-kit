@@ -66,11 +66,7 @@ body{
 .container.dark .con2{
     background-color: #1e1f21;
 }
-/* 상단 메뉴 배경색 */
-.container.dark .topNav{
-    /* background-color: #1e1f21; */
-    color: black;
-}
+/* header 글자 색 */
 .container.dark header{
     color: black;
 }

@@ -1,5 +1,5 @@
 /*
-=============================================================
+===========================================================================
 220719 이은지 상단 메뉴 설정 아이콘 누르면 rotate 효과
 220720 상단 메뉴 스크롤 시 뒷배경 생기는 효과
        하얀 전구 아이콘 누를 시 검은 전구 아이콘 전환 효과
@@ -8,10 +8,12 @@
        댓글,답글 창 드롭다운 효과
 220724 상단 메뉴 드롭다운 효과
 220725 상단 메뉴 다크모드 시 색깔 변경.. 안됬음
-해결해야 할 것들 : 다크모드할 때 상단 메뉴 색깔,
-답글 기능
-=============================================================
+220726 답글 버튼 두 번 눌러야 창 나오는 것 한 번만 눌러도 나올 수 있도록 수정, 
+       다크모드 상단 메뉴 색상 해결!!!!
+       선규 피드백 -> 답글 입력했을 때 자식 요소로 들어갈 수 있도록 기능 요청
+===========================================================================
 */
+
 
 
 // 220719 상단 메뉴 아이콘 효과
@@ -22,12 +24,12 @@ let flag = false;
 topbtn.addEventListener("click", function () {
     if (flag == true) { // 아이콘 오른쪽으로 돌아갔을 때 다시 왼쪽으로 돌아옴
         topbtn.style.transition = 'all 0.5s'; // 아이콘 돌아가는 모습 보기 위해 트랜지션 주었음
-        // topbtn.style.color = 'black';  // 아이콘 색 설정 : 검은색 // 0725 색 수정이 어려워 아이콘 변경함
+        // topbtn.style.color = 'black';  // 아이콘 색 설정 : 검은색 // 0725 다크모드 시 색 수정이 어려워 아이콘 변경함
         topbtn.style.transform = 'rotate(0deg)'; //클릭 시 왼쪽으로 돌아감
         flag = !flag;
     } else if (flag == false) { //아이콘 처음 눌렀을 때 오른쪽으로 돌아감
         topbtn.style.transition = 'all 0.5s';
-        // topbtn.style.color = 'blue'; // 아이콘 색 설정 : 파란색 // 0725 색 수정이 어려워 아이콘 변경함
+        // topbtn.style.color = 'blue'; // 아이콘 색 설정 : 파란색 // 0725 다크모드 시 색 수정이 어려워 아이콘 변경함
         topbtn.style.transform = 'rotate(90deg)'; // 클릭 시 오른쪽으로 돌아감
         flag = !flag;
     }
@@ -35,13 +37,12 @@ topbtn.addEventListener("click", function () {
 });
 
 
-
 //  220720 전구 아이콘 누르면 아이콘 바뀜
 let light = document.querySelector('.xi-lightbulb-o'); // 전구 아이콘
 let darkMode = true; // 처음 모습은 하얀 전구 아이콘
 light.addEventListener("click", function(){
     if(darkMode == true){
-        light.className ='xi-lightbulb';  // 하얀 전구 아이콘 클릭하면 검은 전구 아이콘으로 바뀜
+        light.className ='xi-lightbulb';  // 하얀 전구 아이콘 클릭하면 검은 전구 아이콘으로 바뀜 
         darkMode = !darkMode;    // 계속 클릭할 수 있도록 fasle와 true효과 주었음
     }else if(darkMode == false){
         light.className ='xi-lightbulb-o'; // 검은 전구 아이콘 클릭하면 하얀 전구 아이콘으로 바뀜
@@ -49,46 +50,39 @@ light.addEventListener("click", function(){
     }
 });
 
-
 // 220720 다크모드
-// 다크모드할 때 topNav 뒷 배경이 색깔이 변하지 않음 css 우선순위때문인 것 같음
+// 다크모드할 때 topNav 뒷 배경이 색깔이 변하지 않음 css 우선순위때문인 것 같음 --> 220726 css 지웠음
 let container = document.querySelector('.container');  // 모든 요소 담고 있는 컨테이너
 light.addEventListener("click",function(){
    container.classList.toggle('dark'); // css에 dark 클래스 이름 주어 토글 효과 주었음
-
-//    topNav.style.background = '#1e1f21';
-   
 });
 
-//220720 스크롤 시 상단 메뉴 배경이 생기는 효과
+// 220720 스크롤 시 상단 메뉴 배경이 생기는 효과
+// 220726 스크롤 시 상단 메뉴 색이 바뀔 수 있도록 위 다크모드 플래그를 활용하여 조건문 작성
+
 window.addEventListener("scroll", function () {
-    if (window.scrollY !== 0) {  
-    topNav.style.background = 'white'
-        
-        // if (topNav.style.background = 'white'){
-        //     window.addEventListener("scroll", function(){
-        //         topNav.style.background = 'white';
-        //     })
-        
-        // } else if(window.addEventListener("scroll", function(){
-        //     topNav.style.background = 'black'
-        //     console.log("black : " + topNav);
-        // })) {
-
-        // }
-        // 스크롤 시 상단 메뉴 배경 흰색 효과 주었음
-        // if(topNav.style.background == '#1e1f21'){
-        //         window.addEventListener("scroll", function(){
-        //             if(window.scrollY !== 0){
-        //                 topNav.style.background = '#1e1f21';
-                    
-        //             }
-        //     })
-        // }
-
-        topNav.style.borderBottom='1px solid gray'; // 220723 상단 메뉴의 구분선이 있으면 좋겠다는 조원들의 피드백 반영
+    if (window.scrollY !== 0) {      // 스크롤을 내렸을 때
+      if(darkMode == false){         // 다크모드일 때
+         topNav.style.background='#1e1f21';   // 상단 메뉴 검정색 설정
+         topNav.style.color='white';          // 상단 메뉴 글자 하얀색 설정
+         topNav.style.borderBottom='1px solid gray';  // 220723 상단 메뉴의 구분선이 있으면 좋겠다는 조원들의 피드백 반영
+      }  else if(darkMode == true){          // 다크모드가 아닐 때
+         topNav.style.background='white';    // 상단 메뉴 하얀색 설정
+         topNav.style.color='black';          // 상단 메뉴 글자 검정색 설정
+         topNav.style.borderBottom='1px solid gray';
+      }
        
-    }else if (window.scrollY == 0) {
+    }else if (window.scrollY == 0) {      // 스크롤 0일 때
+        if(darkMode==false){              // 다크모드일 때
+            topNav.style.color='black';   // 상단 메뉴 글자 검정색 설정
+            // 상단 메뉴 글자 검정색 설정한 이유 
+            // 다크모드 시 상단 메뉴 글자가 하얀색으로 바뀌는데 스크롤 맨 위로 올렸을 때
+            // 글자가 하얀색 그대로여서 뒷 배경 이미지에 묻히는 느낌임
+            // 그래서 다크모드일 때도 스크롤 맨 위로 올렸을 땐 글자 검정색으로 바꾸어주었음
+
+        }else if(darkMode==true){         // 다크모드 아닐 때
+            topNav.style.color='black';   
+        }
         topNav.style.background = 'none'; // 스크롤 맨 위로 올렸을 때 뒷 배경 사라질 수 있도록 none 효과를 주었음
         topNav.style.border='none'; // 스크롤 맨 위로 올렸을 때 바닥 선 사라짐
     } 
@@ -129,26 +123,33 @@ talkclick.addEventListener("click",function(){  // 댓글 글자 누를 때
 
 // 220723 답글 창 드롭다운 효과
 // 배열로 가져왔는데 하나의 댓글 창 누를 때 다른 댓글 창도 같이 열림..
+// 220726 -> 댓글 수와 답글 수가 같아 변수 i를 주어 해결하였음
+// 답글을 두 번 눌러야 창이 나오는 오류가 있어 조원(성선규)이 코드 수정을 도와주었음
+
 let footerTextBtn = document.querySelectorAll('.footerTextBtn'); // 답글 버튼
 let footerAnswer = document.querySelectorAll('.footerAnswer'); // 답글 창
  
-let answerBtn = false;
+// let answerBtn = false;
+// 플래그를 사용하지 않고 답글 창 display 설정으로 조건문을 설정할 수 있음
 
  for(let i=0; i<footerTextBtn.length; i++){ 
     for(let i=0; i<footerAnswer.length; i++){    //댓글 수와 답글 수가 같기 때문에 i를 주었음
  footerTextBtn[i].addEventListener("click",function(){
-    if(answerBtn == true){              
-        footerTextBtn[i].style.backgroundColor="white";
-        footerAnswer[i].style.display='none';   // 댓글 창 숨기기   
-        answerBtn = !answerBtn;
-    }else if(answerBtn == false){
+    if(footerAnswer[i].style.display == ""){         
+         // 220726 답글 창이 안보일 때 답글 창을 누르면 버튼 색이 보이고 답글 창이 보이도록  
         footerTextBtn[i].style.backgroundColor="powderblue";
-        footerAnswer[i].style.display='block';  // 댓글 창 보이기
-        answerBtn = !answerBtn;
+        footerAnswer[i].style.display='block';   // 댓글 창 숨기기   
+        // answerBtn = !answerBtn;
+    }else if(footerAnswer[i].style.display == "block"){  
+        // 220726 답글 창이 보일 때 답글 창을 누르면 버튼 색이 하얀색이 되고 답글 창이 닫히도록
+        footerTextBtn[i].style.backgroundColor="white";
+        footerAnswer[i].style.display='';  // 댓글 창 보이기
+        // answerBtn = !answerBtn;
     }
  });
   }
 }
+
 
 // 220724 상단 메뉴 드롭다운 효과
 let topIconMenuPosition1 = document.querySelector('.topIconMenuPosition1');  // 홈과 공유 아이콘 담은 div
@@ -165,7 +166,7 @@ topbtn.addEventListener("click",function(){
    } else if(up == false){
     topIconMenuPosition1.style.animation='iconTop2 0.5s';  // 홈과 공유 아이콘 원래 위치 돌아옴
     topIconMenuPosition1.style.animationFillMode='forwards'; 
-    topIconMenuPosition2.style.animation='iconDown2 0.5s'; // 프로필과 로그아웃 아이콘 사라짐
+    topIconMenuPosition2.style.animation='iconDown2 0.5s'; // 프로필과 로그아웃 아이콘 아래로 내려감
     topIconMenuPosition2.style.animationFillMode='forwards';
     up = !up;
    }
