@@ -44,14 +44,11 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-color:  rgb(255, 69, 0);
+    
    
 }
 .wrapContainer{
     padding: 0 16vw;
-    border-left: 2.5px solid rgb(255, 69, 0);
-    border-right: 2.5px solid rgb(255, 69, 0);
-    background-color: white;
 }
 
 .wrapBox {
