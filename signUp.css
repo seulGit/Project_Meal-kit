@@ -64,7 +64,7 @@ body {
   
 }
 /* 로고 */
-.logoContainer > #logo {
+.logoContainer> a > #logo {
     width: 150px;
     height: 150px;
 }

@@ -56,7 +56,13 @@ x축 스크롤바 제거 */
 .header {
     text-align: center;
 }
-
+/* 22/07/27 노현 수정
+a태그 사이즈가 작아서 로고사이즈랑 같게 맞춤 */
+.logo{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}
 /* 22/07/19 노현
 네비바 로고 사이즈 */
 .logo>img {
