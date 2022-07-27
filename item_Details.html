@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="item_Details.css">
     <link rel="stylesheet" href="item_List.css">
     <link rel="stylesheet" href="mainpageNavbar.css">
+    <link rel="stylesheet" href="swiper-7.4.1/swiper-bundle.min.css"> <!-- 22/07/22 Swiper's CSS 파일로 대체 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 <body>
@@ -17,6 +18,7 @@
      220722 오슬기 세부 디자인(상단:가격,버튼/하단:리뷰,블로그) 조정 
      220723 오슬기 리뷰부분 이미지미리보기 div 삭제(테이블폼만 남겨두는걸로 결정)/클래스명 조정
      220725 오슬기 본문내비바 구성 변경, 클래스명 조정, js,json 스크립트 적용
+     220726 오슬기 블로그 부분 캐러셀로 변경, footer 추가(병합)
 -->
 <!-- 헤더부분 -->
 <div class="header">
@@ -170,7 +172,9 @@
                 <!-- <h3>배송안내</h3> -->
                 <!-- <hr> -->
                 <!-- 본문 내용2(상품정보) 이미지  -->
-                <div class="middle infoimg"></div>
+                <div class="middle infoimg">
+                    <img src="" alt="">
+                </div>
             </div>
             <!-- 본문 내용3(리뷰) div -->
             <div class="middlebox middleboxReview">
@@ -280,7 +284,7 @@
                 <!-- <hr> -->
                 <!-- 본문 내용4(블로그) 목록 -->
                 <div class="middle bloglist">
-                    <div class="bloglist_box">
+                    <!-- <div class="bloglist_box">
                         <div class="bloglist_img"><img src="/0722/0722 T1745/blogImg/떡볶이.png" alt="이미지 오류"></div>
                         <div class="bloglist_details">
                             <div class="bloglist_details_title">블로그후기제목</div>
@@ -306,18 +310,111 @@
                         <div class="bloglist_details">
                             <div class="bloglist_details_title">블로그후기제목</div>
                             <div class="bloglist_details_contents">블로그후기내용입니다내용입니다내용입니다내용입니다내용입니다</div>
+                        </div>
+                    </div> -->
+
+
+
+
+
+                    <div class="blogPlus"><a href="blog.html"><i class="xi-plus-square"></i> 더보기</a></div>
+    <div class="blogSwiperArea">
+        <div class="section Blogs swiper mySwiperBlog">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!-- 상품 박스 -->
+                    <div class="slide">
+                        <div class="imgBox">
+                            <img src="blogImg/완료.png" alt="완료 이미지"><!-- 상품 이미지 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <!-- 상품 박스 -->
+                    <div class="slide">
+                        <div class="imgBox">
+                            <img src="blogImg/냄비.png" alt="냄비 이미지"> <!-- 상품 이미지 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <!-- 상품 박스 -->
+                    <div class="slide">
+                        <div class="imgBox">
+                            <img src="blogImg/떡볶이.png" alt="떡볶이 이미지"> <!-- 상품 이미지 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <!-- 상품 박스 -->
+                    <div class="slide">
+                        <div class="imgBox">
+                            <img src="blogImg/완료.png" alt="완료 이미지"><!--상품 이미지-->
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <!-- 상품 박스 -->
+                    <div class="slide">
+                        <div class="imgBox">
+                            <img src="blogImg/젓가락.png" alt="젓가락 이미지"> <!-- 상품 이미지 -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="blogReviewText">
+            <div class="itemText">
+                <!-- 상품 이름 및 가격 정보 -->
+                <div class="blogerContents">
+                    <h3 class="itemTitle">우정분식 아찔떡볶잉 먹은 후기</h3>
+                    <p class="itemInfor">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        A, consequuntur placeat nisi reiciendis quae illo nobis, a.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ex soluta quod ad vel ipsam. Porro in perspiciatis beatae eaque exercitationem
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum nulla minus 
+                        delectus maiores necessitatibus
+                </div>  
+                <div class="blogerInfo">
+                    <div class="blogerName"><h4>파워블로거 푸드파이터이은지</h4></div>
+                    <div class="blogerImg"></div>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
         <!-- 슬기 파트 끝 -->
-        <div class="footer"></div>
+        <div class="footer">
+            <div class="footerImg"><img class="footerLogo" src="logo.png" alt="로고"></div>
+            <div>
+                <p class="footerText"><a href="">회사소개</a>&nbsp; <a href="">이용약관</a>&nbsp; 
+                    <a href="">개인정보</a>&nbsp; <a href="">처리방침</a>&nbsp; <a href="">이용안내</a></p><br>
+                <p class="footerText footContent">
+                    상호 :주식회사 밀키트 | 참여인원 :김정치 노현 성선규 오슬기 이은지 <br>
+                    대표번호 :02-0000-0000 | 팩스번호 :000-000-0000 | 문의 :sales@mealkit.kr <br>
+                    주소 :서울 구로구 시흥대로163길 33 | 개인정보관리자 :노현 <br>
+                    copyright (c) mealkit.kr all rights reserved.
+                </p>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="item_Details.js"></script>
     <script src="item_List.json"></script>
+    <script src="swiper-7.4.1/swiper-bundle.min.js"></script>
+    <script src="carousel.js"></script>
 </body>
 </html>
+
 
 

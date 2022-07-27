@@ -1,5 +1,6 @@
 /* ========================
 220725 오슬기 상세 페이지 내 이미지 클릭시 변경되는 js구현, json 이미지데이터 적용 1차 완료
+220726 오슬기 json 이미지데이터 2차 완료
 ===========================*/
 
 
@@ -43,9 +44,9 @@ $(function () {
             const details_info_btn = document.querySelector('.info');
             const details_review_btn = document.querySelector('.review');
             const details_blog_btn = document.querySelector('.blog');
+            
             const details_detail_img = document.querySelector('.detailimg > img');
-            const details_info_img = document.querySelector('.infoimg');
-
+            const details_info_img = document.querySelector('.infoimg > img');
 
 
             item_img_1.style.background = `url(${data["korean_food"][0].main_img1}) 50% 50%/100% no-repeat`;
@@ -58,7 +59,7 @@ $(function () {
             discount_rate.innerHTML = data["korean_food"][0].discount_rate;
             discount_price.innerHTML = data["korean_food"][0].discount_price;
             details_detail_img.setAttribute('src',data["korean_food"][0].details_img1);
-            details_info_img.style.background = `url(${data["korean_food"][0].shipping_img2}) 50% 50%/100% no-repeat`;
+            details_info_img.setAttribute('src',data["korean_food"][0].shipping_img1);
 
 
 
@@ -68,3 +69,4 @@ $(function () {
         }
     })
 });
+

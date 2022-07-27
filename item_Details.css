@@ -5,6 +5,7 @@
 220722 오슬기 세부 디자인 조정 
 220723 오슬기 버튼 간격 및 속성 수정/페이지본문 영역구분선설정/리뷰테이블폼 정렬수정/일부div 너비,높이 px->%로 변경
 220725 오슬기 상세페이지 내 이미지 너비,높이 단위변경(vw,vh), 본문내비바 구성 변경 및 디자인 조정, 이미지 클릭시 변경되는 js구현, json 이미지데이터 적용 1차 완료
+220726 오슬기 블로그캐러셀 적용 및 페이지에 맞게 일부 속성 수정, 페이지 레이아웃 및 디자인 작업 최종 완료
 ===========================*/
 
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
@@ -260,9 +261,9 @@
     justify-content: center;
 }
 
-.middle>img {
+/* .middle>img {
     width: 100%;
-}
+} */
 
 .middleboxInfo>.bodymenubox>.detail{
     color: gray;
@@ -353,9 +354,9 @@
 /* 리뷰 부분 시작 */
 
 /* 리뷰전체div 높이 조절 */
-.middleboxReview {
+/* .middleboxReview {
     height: 330px;
-}
+} */
 
 /* 본문 내용(리뷰) div */
 .reviewlist {
@@ -409,9 +410,103 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
+
+
+
+.blogSwiperArea {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: center;
+    height: 45vh;
+}
+.mySwiperBlog {
+    width: 35%;
+}
+.mySwiperBlog .swiper-wrapper {
+    width: 100%;
+}
+.mySwiperBlog .swiper-wrapper .swiper-slide .slide .imgBox {
+    width: 100%;
+}
+/* 22/07/24 블로그 리뷰 더보기 설정 */
+.blogPlus {
+    position: absolute;
+    z-index: 10;
+    top:5px;
+    right: 0;
+}
+.blogPlus a, .blogPlus a i{
+    color: orangered;
+    font-size: 1.2rem;
+}
+.blogPlus a i {
+    line-height: 5px;
+    vertical-align: middle;
+}
+
+/* 22/07/24 블로그리뷰 텍스트 영역 설정 */
+.blogReviewText{
+    width: 60%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+    /* margin-left: 5%;
+    margin-bottom: 100px; */
+}
+
+.blogerContents {
+    width: 100%;
+    height: 100%;
+}
+.blogSwiperArea .blogReviewText .itemText .itemTitle{
+    font-family: 'SEBANG_Gothic_Regular', sans-serif;
+    font-size: 2rem;
+    color: orangered;
+    margin: 20px 0 7px;
+}
+.blogSwiperArea .blogReviewText .itemText .itemInfor{
+    font-family: 'BBTreeGR', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.blogerInfo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-top: 5px;
+    border-top: 1px solid gray;
+}
+
+.blogerImg {
+    width: 50px; 
+    height: 50px; 
+    background-color: green;
+    border-radius: 50%;
+    float: right;
+}
+
+.blogerName {
+    float: right;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
 /* 블로그 목록의 각 div */
-.bloglist_box {
+/* .bloglist_box {
     width: 20%;
     height: 90%;
     margin: 0 3px;
@@ -421,36 +516,36 @@
     justify-content: center;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.176);
-}
+} */
 /* 블로그 미리보기이미지 */
-.bloglist_img {
+/* .bloglist_img {
     width: 90%;
     height: 60%;
     display: flex;
     align-items: center;
-}
+} */
 
 /* 블로그 미리보기이미지 크기조정 */
-.bloglist_img>img {
+/* .bloglist_img>img {
     width: 100%;
-}
+} */
 
 /* 블로그 미리보기텍스트 */
-.bloglist_details {
+/* .bloglist_details {
     width: 90%;
     height: 30%;
-}
+} */
 /* 블로그 미리보기텍스트 중 포스팅제목 */
-.bloglist_details_title {
+/* .bloglist_details_title {
     text-align: left;
     font-size: 17px;
-}
+} */
 /* 블로그 미리보기텍스트 중 포스팅내용 */
-.bloglist_details_contents {
+/* .bloglist_details_contents {
     text-align: left;
     font-size: 11px;
     font-family: 'BBTreeGR', sans-serif;
-}
+} */
 /* 오슬기 파트 끝 */
 
 
@@ -458,3 +553,27 @@
 
 
 
+.footer{
+    height: 250px;
+    padding: 25px 0 0 10vw;
+    border-top: 2px solid rgb(155, 154, 154);
+    background-color: rgba(214, 214, 214, 0.747);
+    display: flex;
+}
+.footer .footerImg .footerLogo{
+    position: relative;
+    left: -25px;
+    top: -21px;
+    width: 160px;
+}
+.footerText a{
+    color: orangered;
+}
+.footerText{
+    line-height: 25px;
+    font-size: 1.2rem;
+}
+.footContent{
+    font-family: 'BBTreeGR', sans-serif;
+    font-size: 0.9rem;
+}
