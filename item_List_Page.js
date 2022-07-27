@@ -226,3 +226,22 @@ up_btn.addEventListener("click", function () {
         behavior: 'smooth'
     });
 })
+
+const media_basket_btn = document.querySelector(".media_basket_btn_box");
+const basket_box = document.querySelector(".basket_box");
+const basket_box_icon = document.querySelector(".media_basket_btn_box > div > span")
+let media_basket_flag = true;
+media_basket_btn.addEventListener("click", function(){
+    if(media_basket_flag == true){
+        basket_box_icon.innerHTML = "chevron_left";
+        media_basket_btn.style.transform = "translateX(200px)"
+        basket_box.style.transform = "translateX(0px)";
+        basket_box.style.display = "block";
+        media_basket_flag = !media_basket_flag;
+    } else{
+        basket_box_icon.innerHTML = "chevron_right";
+        media_basket_btn.style.transform = "translateX(0px)"
+        basket_box.style.transform = "translateX(-200px)";
+        media_basket_flag = !media_basket_flag;
+    }
+})
