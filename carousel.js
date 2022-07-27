@@ -9,6 +9,19 @@ let con = document.querySelector('#container');
 let prev = document.querySelectorAll('.prev');
 let next = document.querySelectorAll('.next')
 
+let btn = document.querySelectorAll('.productBtn');
+let recentBox = document.querySelector('.recent_box');
+
+for(let i = 0; i < btn.length ; i++){
+    btn[i].addEventListener('click', function(e){
+        recentBox.innerHTML = btn[i].children[0].children[0].outerHTML;
+        console.log(btn[i].children[0].children[0].attributes[0].nodeValue);
+        console.dir(btn[i].children[0].children[0].attributes[0].nodeValue);
+    })
+}
+
+
+
 let swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,           // 아이템 갯수
     spaceBetween: 30,           // 아이템 사이 간격 유지
@@ -31,4 +44,4 @@ let swiperBlog = new Swiper(".mySwiperBlog", {
         disableOnInteraction: false,  // 자동 캐러셀 이외 동작 이후도 자동 적용 // true시에는 클릭이동 후 정지
         pauseOnMouseEnter: true,      // 마우스오버시 자동 캐러셀 멈춤
     }
-});
+});s
