@@ -38,7 +38,6 @@ const favorite = document.querySelector(".favorite_btn")            //찜하기 
             }
         });
 
-
 const close_shopping_alarm = document.querySelector(".shopping_alarm img");
 const close_like_alarm = document.querySelector(".like_alarm img");
 close_shopping_alarm.addEventListener("click", function () {

@@ -690,6 +690,7 @@
     animation-timing-function: ease-in;
 }
 
+
 @keyframes alarm {
 
     /* 아이콘 클릭 시 상단의 클래스 추가 */

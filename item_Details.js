@@ -94,7 +94,6 @@ const bodymenu_review_btn = document.querySelectorAll(".bodymenubox>.review");
 const bodymenu_blog_btn = document.querySelectorAll(".bodymenubox>.blog");
 const bodymenubox = document.querySelectorAll(".bodymenubox");
 
-
 for (let i = 0; i < bodymenu_detail_btn.length; i++) {
     bodymenu_detail_btn[i].addEventListener("click", function () {
         bodymenubox[0].scrollIntoView();
