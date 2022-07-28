@@ -245,11 +245,12 @@ input[type=text]:focus {
     /* 22/07/22 성선규 수정 : 양쪽 border 삭제 */
     border-bottom: 1px solid rgb(77, 77, 77);
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .container section:nth-child(3)>div {
     width: 25.5vw;
-    height: 70vh;
+    height: 75vh;
     margin: 10px;
     display: flex;
     align-items: center;
@@ -263,7 +264,7 @@ input[type=text]:focus {
     height: 66%;
     position: relative;
     margin-top: 11px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     overflow: hidden;
 }
 
@@ -415,19 +416,32 @@ input[type=text]:focus {
     opacity: 0;
 }
 .shopping_alarm >div{
+    width: 100%; /* 22/07/27 성선규 추가 : 넓이 추가하여 컨텐츠 사이에 여백 추가 */
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between; /* 22/07/27 성선규 수정 : 컨텐츠 사이 여백  */
     align-items: center;
 }
 .like_alarm {
     transform: translateX(-350px);
     opacity: 0;
 }
+.like_alarm > div{
+    width: 100%; /* 22/07/27 성선규 추가 : 넓이 추가하여 컨텐츠 사이에 여백 추가 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* 22/07/27 성선규 수정 : 컨텐츠 사이 여백  */
+    align-items: center;
+}
 .shopping_alarm_img{
-    border: 1px solid black;
-    width: 75px;
-    height: 75px;
+    width: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
+    height: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
+    margin-left: 10px; /* 22/07/27 성선규 추가 : 왼쪽에 여백 추가 */
+}
+.like_alarm_img {
+    width: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
+    height: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
+    margin-left: 10px; /* 22/07/27 성선규 추가 : 왼쪽에 여백 추가 */
 }
 .shopping_alarm div img {
     width: 25px;
@@ -439,7 +453,7 @@ input[type=text]:focus {
 .alarm div span{
     display: inline-block;
     width: 70%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .like_alarm div img {
     width: 25px;
@@ -453,6 +467,39 @@ input[type=text]:focus {
     animation-name: alarm;
     animation-duration: 4s;
     animation-timing-function: ease-in;
+}
+
+/* 22/07/27 성선규 추가 */
+.footer{
+    height: 250px;
+    padding: 25px 0 0 10vw;
+    border-top: 2px solid rgb(155, 154, 154);
+    background-color: rgba(214, 214, 214, 0.747);
+    display: flex;
+}
+.footer .footerImg .footerLogo{
+    position: relative;
+    left: -25px;
+    top: -21px;
+    width: 160px;
+}
+.footerText a{
+    color: orangered;
+}
+.footerText{
+    line-height: 25px;
+    font-size: 1.2rem;
+}
+.footContent{
+    font-family: 'BBTreeGR', sans-serif;
+    font-size: 0.9rem;
+}
+
+.recent_box{
+    padding: 5px;
+}
+.recent_box img{
+    width: 100%;
 }
 
 @keyframes alarm {
@@ -477,6 +524,9 @@ input[type=text]:focus {
 
 /* Large Devices, Wide Screens : ~ 1500px */
 @media only screen and (max-width : 1500px) {
+    body{
+        overflow-x: hidden;
+    }
     .container section:nth-child(3)>div {
         width: 24.5vw;
         height: 54vh;
@@ -516,6 +566,9 @@ input[type=text]:focus {
 }
 /* Medium Devices, Desktops : ~ 1200px */
 @media only screen and (max-width : 1200px) {
+    body{
+        overflow-x: hidden;
+    }
     .container section:nth-child(3)>div {
         width: 24.5vw;
         height: 45vh;
@@ -570,7 +623,3 @@ input[type=text]:focus {
 /* @media only screen and (max-width : 320px) {
 
 } */
-
-*{
-    /* background-image: url("item_img/korean-food/궁중-소고기-버섯잡채/details/royal_beef_mushroom_japchae.jpg"); */
-}
