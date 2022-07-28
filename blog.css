@@ -114,6 +114,14 @@ body{
 .container.dark .footerAnswer{
     background-color: #404246;
 }
+/* 220727 맨 위로 올라가기 버튼 색 변경 */
+.container.dark .topToBtn>a>.xi-caret-up-circle-o{
+    color: white;
+}
+.container.dark .topToBtn>a>.xi-caret-up-circle-o:hover{
+    color: blue;
+}
+
 /* 상단 이미지 */
 .main{
     width: 100%;
@@ -648,5 +656,16 @@ footer>div:nth-child(2){
     display: flex;
 }
 
-
-
+/* 220727 오른쪽 하단에 상단 메뉴로 올라가기 버튼 */
+.xi-caret-up-circle-o{
+    font-family: 'BBTreeGR';
+    font-size: 2rem;
+    transition: all 0.5;
+}
+.topToBtn{
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    display: none;
+   
+}

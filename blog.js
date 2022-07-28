@@ -11,6 +11,8 @@
 220726 답글 버튼 두 번 눌러야 창 나오는 것 한 번만 눌러도 나올 수 있도록 수정, 
        다크모드 상단 메뉴 색상 해결!!!!
        선규 피드백 -> 답글 입력했을 때 자식 요소로 들어갈 수 있도록 기능 요청
+220727 선규 피드백 -> 하지 못함..
+        오른쪽 하단에 맨 위로 올라가기 버튼 생성
 ===========================================================================
 */
 
@@ -59,10 +61,13 @@ light.addEventListener("click",function(){
 
 // 220720 스크롤 시 상단 메뉴 배경이 생기는 효과
 // 220726 스크롤 시 상단 메뉴 색이 바뀔 수 있도록 위 다크모드 플래그를 활용하여 조건문 작성
+// 220727 오른쪽 하단에 맨 위로 올라가기 버튼 스크롤 시 보이기
+let topToBtn = document.querySelector('.topToBtn');  // 위로 올라가기 버튼
 
 window.addEventListener("scroll", function () {
     if (window.scrollY !== 0) {      // 스크롤을 내렸을 때
-      if(darkMode == false){         // 다크모드일 때
+        topToBtn.style.display='block';  // 위로 올라가기 버튼 생김
+        if(darkMode == false){         // 다크모드일 때
          topNav.style.background='#1e1f21';   // 상단 메뉴 검정색 설정
          topNav.style.color='white';          // 상단 메뉴 글자 하얀색 설정
          topNav.style.borderBottom='1px solid gray';  // 220723 상단 메뉴의 구분선이 있으면 좋겠다는 조원들의 피드백 반영
@@ -73,6 +78,7 @@ window.addEventListener("scroll", function () {
       }
        
     }else if (window.scrollY == 0) {      // 스크롤 0일 때
+        topToBtn.style.display='none';    // 위로 올라가기 버튼 사라짐
         if(darkMode==false){              // 다크모드일 때
             topNav.style.color='black';   // 상단 메뉴 글자 검정색 설정
             // 상단 메뉴 글자 검정색 설정한 이유 
@@ -171,3 +177,5 @@ topbtn.addEventListener("click",function(){
     up = !up;
    }
 });
+
+
