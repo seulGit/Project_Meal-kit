@@ -16,7 +16,7 @@ window.addEventListener('scroll', function () {
         // document.body.classList.add("fixed-nav"); 오류나서 안됨 이유는 모르겠음.
         nav.style.position = 'fixed' // 위에꺼 오류나서 직접 fixed값 줬음
         nav.style.top = '0' // 탑에 붙이려고
-        nav.style.width = '100%' // 스크롤 내릴때 사이즈 그대로 가져가려고 넣음.
+        nav.style.width = '100vw' // 스크롤 내릴때 사이즈 그대로 가져가려고 넣음.
         nav.style.zIndex = '100'; // 22/07/21 성선규 추가 : 다른 요소에 네비게이션바가 묻혀서 해당 내용 추가
     }
     else {

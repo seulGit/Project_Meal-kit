@@ -54,7 +54,7 @@ body{
     border-bottom: 2.5px solid rgb(255, 69, 0);
 }
 /* 로고 */
-.logoContainer>img{
+.logoContainer>a>img{
     width: 150px;
     height: 150px;
 }
