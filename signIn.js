@@ -16,9 +16,8 @@ let signUpBtn = document.querySelector('.signUpBtn'); // 회원가입 버튼
 
 const idInput = /^[a-zA-Z0-9]*$/;
 // 아이디 영문(대,소문자 상관없이), 숫자 작성해야함
-const pwInput =/(?=.*[a-zA-Z])+(?=.*[~`!@#$%\^&*()-+=])+(?=.*[a-zA-Z])+.{1,}$/
-// 비밀번호 영문(대,소문자 상관없이), 특수문자, 숫자 1개 이상 작성해야함
-
+const pwInput = /(?=.*\d)+(?=.*[~`!@#$%\^&*()-+=])+(?=.*[a-z])(?=.*[A-Z])+.{1,}$/;
+// 비밀번호 - 영문(대,소문자), 특수문자, 숫자 1개 이상 작성해야함
 
 loginBtn.addEventListener("click",function(){
      if(id.value.length==0){
@@ -33,7 +32,7 @@ loginBtn.addEventListener("click",function(){
         alert("비밀번호를 입력해주세요");
        
     } else if(pwInput.test(pw.value) ==! true){   // 비밀번호가 맞지 않을 때
-        alert("비밀번호는 영문과 특수문자, 숫자를 입력해주세요");
+        alert("비밀번호는 영문(대,소문자)과 특수문자, 숫자를 입력해주세요");
     
     } else if(pwInput.test(pw.value)==true){  // 비밀 번호가 맞을 때
         location.href="mainpage.html"; 
@@ -45,7 +44,7 @@ loginBtn.addEventListener("click",function(){
 
 
 // 회원가입 버튼을 누를 때 회원가입 창으로 이동
-
+// location객체는 문서의 주소와 관련된 객체로 window 객체의 속성
 signUpBtn.addEventListener("click",function(){         
     location.href="signUp.html";
 });

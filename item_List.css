@@ -185,10 +185,9 @@ max-width가 1300px 이하로 내려갈경우 나타나기 */
 }
 
 
-/* Medium Devices, Desktops : ~ 992px */
 @media only screen and (max-width : 1300px) {
     .basket_box{
-        transform: translateX(-200px);
+        transform: translateX(-210px);
         top: 320px;
         left: 0;
         width: 200px;

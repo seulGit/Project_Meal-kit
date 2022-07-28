@@ -1,6 +1,7 @@
 /* ========================
 220725 오슬기 상세 페이지 내 이미지 클릭시 변경되는 js구현, json 이미지데이터 적용 1차 완료
 220726 오슬기 json 이미지데이터 2차 완료
+220727 오슬기 클릭시 뷰포트이동 기능 구현
 ===========================*/
 
 
@@ -44,7 +45,7 @@ $(function () {
             const details_info_btn = document.querySelector('.info');
             const details_review_btn = document.querySelector('.review');
             const details_blog_btn = document.querySelector('.blog');
-            
+
             const details_detail_img = document.querySelector('.detailimg > img');
             const details_info_img = document.querySelector('.infoimg > img');
 
@@ -58,8 +59,8 @@ $(function () {
             item_price.innerHTML = data["korean_food"][0].price;
             discount_rate.innerHTML = data["korean_food"][0].discount_rate;
             discount_price.innerHTML = data["korean_food"][0].discount_price;
-            details_detail_img.setAttribute('src',data["korean_food"][0].details_img1);
-            details_info_img.setAttribute('src',data["korean_food"][0].shipping_img1);
+            details_detail_img.setAttribute('src', data["korean_food"][0].details_img1);
+            details_info_img.setAttribute('src', data["korean_food"][0].shipping_img1);
 
 
 
@@ -70,3 +71,40 @@ $(function () {
     })
 });
 
+
+
+
+
+// 페이지 상단으로
+// 22/07/24 성선규 추가
+const up_btn = document.querySelector(".scroll_up_container > div");
+
+up_btn.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+})
+
+
+const bodymenu_detail_btn = document.querySelectorAll(".bodymenubox>.detail");
+const bodymenu_info_btn = document.querySelectorAll(".bodymenubox>.info");
+const bodymenu_review_btn = document.querySelectorAll(".bodymenubox>.review");
+const bodymenu_blog_btn = document.querySelectorAll(".bodymenubox>.blog");
+const bodymenubox = document.querySelectorAll(".bodymenubox");
+
+for (let i = 0; i < bodymenu_detail_btn.length; i++) {
+    bodymenu_detail_btn[i].addEventListener("click", function () {
+        bodymenubox[0].scrollIntoView();
+    });
+    bodymenu_info_btn[i].addEventListener("click", function () {
+        bodymenubox[1].scrollIntoView();
+    });
+    bodymenu_review_btn[i].addEventListener("click", function () {
+        bodymenubox[2].scrollIntoView();
+    });
+    bodymenu_blog_btn[i].addEventListener("click", function () {
+        bodymenubox[3].scrollIntoView();
+    });
+};
