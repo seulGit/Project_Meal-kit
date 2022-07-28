@@ -13,6 +13,10 @@
 2022/07/26 17:41 성선규
 미디어 쿼리 추가
 ==================================
+22/07/28 성선규
+최근 본 상품 및 찜한상품 및 장바구니
+요소 스타일 추가
+==============================
 */
 /* 세방고딕 Regular  */ 
 @font-face {
@@ -182,6 +186,69 @@ max-width가 1300px 이하로 내려갈경우 나타나기 */
 .media_basket_btn_box div span{
     font-size: 50px;
     font-weight: 900;
+}
+
+/* 22/07/28 성선규 
+최근 본 상품 찜한 상품 장바구니 안쪽 아이템 스타일 추가*/
+/* 최근 본 상품 아이템 */
+.recent_box > .recent_item{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+.recent_box > .recent_item > div{
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.recent_box > .recent_item > div > img{
+    position: absolute;
+    width: 30px;
+    right: 0;
+}
+/* 장바구니 아이템 */
+.select_box > .select_item{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+.select_box > .select_item > div{
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.select_box > .select_item > div > img{
+    position: absolute;
+    width: 30px;
+    right: 0;
+}
+/* 찜한 상품 아이템 */
+.like_box > .like_item{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+.like_box > .like_item > div{
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.like_box > .like_item > div > img{
+    position: absolute;
+    width: 30px;
+    right: 0;
 }
 
 
