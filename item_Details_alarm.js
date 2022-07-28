@@ -37,7 +37,6 @@ const favorite = document.querySelector(".favorite_btn")            //찜하기 
                 }, 4001);                                //알람 생기는 애니메이션이 4초라 4001로 줬음
             }
         });
-    
 
 
 const close_shopping_alarm = document.querySelector(".shopping_alarm img");
