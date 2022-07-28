@@ -17,12 +17,20 @@
 <body>
     <!-- 
     ================================================
+    22/07/20 성선규 추가
+    메인 페이지 상단 검색 기능
+    메인 페이지 상단 리스트 정렬
+    메인 아이템 리스트 삭제
+    ================================================
     22/07/24 성선규 추가
     장바구니 추가 및 찜하기 클릭 시 왼쪽 하단에 알림창 띄우기 
     최상단으로 바로 올라갈수 있는 버튼
     ================================================
     22/07/26 성선규
     미디어 쿼리 구현을 위한 코드 추가
+    ================================================
+    22/07/28 성선규
+    장바구니 컨테이너에 요소 추가할 div 추가
     ================================================
  -->
     <!-- 네비게이션 바 -->
@@ -54,19 +62,30 @@
         <div>
             <input type="radio" id="recent" name="basket" checked="checked">
             <label for="recent">최근 본 상품</label>
-            <div class="recent_box"></div>
+            <div class="recent_box">
+                <div class="recent_item">
+
+                </div>
+            </div>
         </div>
         <!-- 찜한 상품 -->
         <div>
             <input type="radio" id="like" name="basket">
             <label for="like">찜한 상품</label>
-            <div class="like_box"></div>
+            <div class="like_box">
+                <div class="like_item">
+
+                </div>
+            </div>
         </div>
         <!-- 장바구니 -->
         <div>
             <input type="radio" id="select" name="basket">
             <label for="select">장바구니</label>
-            <div class="select_box"></div>
+            <div class="select_box">
+                <div class="select_item">
+                </div>
+            </div>
         </div>
     </div>
     <!-- 미디어 쿼리 1300px 이하로 내려갈 경우 
