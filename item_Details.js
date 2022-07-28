@@ -4,22 +4,7 @@
 220727 오슬기 클릭시 뷰포트이동 기능 구현
 ===========================*/
 
-
-
-const mainDetailsImg = document.querySelector('.main_details_img');
-const subImg = document.querySelectorAll('.subimg');
-
-//서브이미지 클릭 시 메인사진변경 
-for (let i = 0; i < subImg.length; i++) {
-    subImg[i].addEventListener('click', function () {
-        mainDetailsImg.style.background = subImg[i].style.background;
-    })
-};
-
-
-
-
-
+let index = location.href.slice(location.href.indexOf("index") + 6);
 
 // JSON 연동하여 아이템 정보 내보내기
 $(function () {
@@ -31,6 +16,7 @@ $(function () {
             // console.log(data["korean_food"].length);
             // console.log("접속 성공");
             // console.log(data["korean_food"][0]);
+
             const item_img_1 = document.querySelector(".main_details_img");
             const item_img_2 = document.querySelector('.subimgbox > .subimg:nth-child(1)');
             const item_img_3 = document.querySelector('.subimgbox > .subimg:nth-child(2)');
@@ -49,23 +35,68 @@ $(function () {
             const details_detail_img = document.querySelector('.detailimg > img');
             const details_info_img = document.querySelector('.infoimg > img');
 
+            const item_quantity = document.querySelector('.item_quantity > span:nth-child(2) > input');
 
-            item_img_1.style.background = `url(${data["korean_food"][0].main_img1}) 50% 50%/100% no-repeat`;
-            item_img_2.style.background = `url(${data["korean_food"][0].main_img2}) 50% 50%/100% no-repeat`;
-            item_img_3.style.background = `url(${data["korean_food"][0].main_img3}) 50% 50%/100% no-repeat`;
-            item_img_4.style.background = `url(${data["korean_food"][0].main_img4}) 50% 50%/100% no-repeat`;
-            item_img_5.style.background = `url(${data["korean_food"][0].main_img5}) 50% 50%/100% no-repeat`;
-            item_title.innerHTML = data["korean_food"][0].item_Name;
-            item_price.innerHTML = data["korean_food"][0].price;
-            discount_rate.innerHTML = data["korean_food"][0].discount_rate;
-            discount_price.innerHTML = data["korean_food"][0].discount_price;
-            details_detail_img.setAttribute('src', data["korean_food"][0].details_img1);
-            details_info_img.setAttribute('src', data["korean_food"][0].shipping_img1);
+            item_quantity.addEventListener('change', function () {
+
+                const dc_price_data = data["korean_food"][index].discount_price;
+                const price_data = data["korean_food"][index].price;
+
+                let dc_value_slice = dc_price_data.slice(0, dc_price_data.indexOf(",")) + dc_price_data.slice(dc_price_data.indexOf(",") + 1, dc_price_data.indexOf("원"));
+                let value_slice = price_data.slice(0, price_data.indexOf(",")) + price_data.slice(price_data.indexOf(",") + 1, price_data.indexOf("원"));
+
+                let dc_value = dc_value_slice * this.value;
+                let value = value_slice * this.value;
+
+                if (dc_value >= 1000000) {
+                    discount_price.innerHTML = (String(dc_value).slice(0, -6)) + "," + (String(dc_value).slice(1, -3)) + "," + (String(dc_value).slice(-3)) + "원";
+                } else {
+                    discount_price.innerHTML = (String(dc_value).slice(0, -3)) + "," + (String(dc_value).slice(-3)) + "원";
+                }
+
+                if (value >= 1000000) {
+                    item_price.innerHTML = (String(value).slice(0, -6)) + "," + (String(value).slice(1, -3)) + "," + (String(value).slice(-3)) + "원";
+                } else {
+                    item_price.innerHTML = (String(value).slice(0, -3)) + "," + (String(value).slice(-3)) + "원";
+                }
+            })
+            
+            item_img_1.style.background = `url(${data["korean_food"][index].main_img1}) 50% 50%/100% no-repeat`; //메인사진
+            item_img_2.style.background = `url(${data["korean_food"][index].main_img2}) 50% 50%/100% no-repeat`; //서브사진1
+            item_img_3.style.background = `url(${data["korean_food"][index].main_img3}) 50% 50%/100% no-repeat`; //서브사진2
+            item_img_4.style.background = `url(${data["korean_food"][index].main_img4}) 50% 50%/100% no-repeat`; //서브사진3
+            item_img_5.style.background = `url(${data["korean_food"][index].main_img5}) 50% 50%/100% no-repeat`; //서브사진4
+            item_title.innerHTML = data["korean_food"][index].item_Name;
+            item_price.innerHTML = data["korean_food"][index].price;
+            discount_rate.innerHTML = data["korean_food"][index].discount_rate;
+            discount_price.innerHTML = data["korean_food"][index].discount_price;
+            details_detail_img.setAttribute('src', data["korean_food"][index].details_img1);
+            details_info_img.setAttribute('src', data["korean_food"][index].shipping_img1);
+
+            const mainDetailsImg = document.querySelector('.main_details_img');
+            const subImg = document.querySelectorAll('.subimg');
+            const subImgBox = document.querySelector('.subimgbox');
+
+            //서브이미지 클릭 시 메인사진변경 
+            for (let i = 0; i < subImg.length; i++) {
+                if (data["korean_food"][index].main_img2 != "") {
+                    subImg[i].addEventListener('click', function () {
+                        mainDetailsImg.style.background = subImg[i].style.background;
+                    });
+                } else if (data["korean_food"][index].main_img2 == "") {
+                    console.log("as");
+                    subImgBox.style.display = 'none';
+                }
+            };
+
+
+            //서브이미지div에서 마우스가 밖으로 나가면 메인사진으로 다시 보이는 기능 
+            subImgBox.addEventListener('mouseout',function(){
+                item_img_1.style.background = `url(${data["korean_food"][index].main_img1}) 50% 50%/100% no-repeat`;
+            })
 
 
 
-            // details_detail_btn.addEventListener('click')
-            // .style.background = `url(${data["korean_food"][0].main_details1}) 50% 50%/100% no-repeat`;
 
         }
     })

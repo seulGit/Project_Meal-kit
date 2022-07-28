@@ -53,19 +53,25 @@
         <div>
             <input type="radio" id="recent" name="basket" checked="checked">
             <label for="recent">최근 본 상품</label>
-            <div class="recent_box"></div>
+            <div class="recent_box">
+                <div class="recent_item"></div>
+            </div>
         </div>
         <!-- 찜한 상품 -->
         <div>
             <input type="radio" id="like" name="basket">
             <label for="like">찜한 상품</label>
-            <div class="like_box"></div>
+            <div class="like_box">
+                <div class="like_item"></div>
+            </div>
         </div>
         <!-- 장바구니 -->
         <div>
             <input type="radio" id="select" name="basket">
             <label for="select">장바구니</label>
-            <div class="select_box"></div>
+            <div class="select_box">
+                <div class="select_item"></div>
+            </div>
         </div>
     </div>
     <!-- 미디어 쿼리 1300px 이하로 내려갈 경우 
@@ -111,7 +117,6 @@
 
 
     <div class="main_container">
-        <div class="header"></div>
         <!-- 슬기 파트 시작-->
         <div class="mainbody">
             <!-- 상품사진,정보 및 가격 부분 div -->
@@ -128,20 +133,20 @@
                         <div class="subimg"></div>
                         <div class="subimg"></div>
                     </div>
-                </div>
+                </div> <!--  -->
                 <!-- 상품정보 및 가격 전체div -->
                 <div class="topright">
                     <!-- 상품 정보 및 가격 각 div -->
                     <div class="item_details_box item_name">
-                        <span>우정분식 아찔 떡볶잉(2인)</span>
+                        <span></span>
                     </div>
                     <div class="item_details_box item_price_original">
                         <span>판매가</span>
-                        <span>15,900원</span>
+                        <span></span>
                     </div>
                     <div class="item_details_box item_price_dcRate">
                         <span>할인율</span>
-                        <span>50%</span>
+                        <span></span>
                     </div>
                     <div class="item_details_box item_quantity">
                         <span>수량</span>
@@ -149,7 +154,7 @@
                     </div>
                     <div class="item_details_box item_price_total">
                         <span>총 합계금액</span>
-                        <span>15,900원</span>
+                        <span></span>
                     </div>
                     <!-- 구매/찜/장바구니 버튼 div -->
                     <div class="item_details_box">
@@ -179,10 +184,10 @@
                             </button>
                         </div>
                     </div>
-                </div>
-            </div> 
+                </div> <!-- topright end -->
+            </div>  <!-- top end -->
             <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) 전체 div-->
-            <div class="bodymenubox">
+            <div class="bodymenubox menubox_one">
                 <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div -->
                 <div class="bodymenu detail"><span>상품상세정보</span></div>
                 <div class="bodymenu info"><span>배송안내</span></div>
@@ -198,7 +203,7 @@
                     <img src="" alt="">
                 </div>
             </div>
-            <div class="bodymenubox">
+            <div class="bodymenubox menubox_two">
                 <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div -->
                 <div class="bodymenu detail"><span>상품상세정보</span></div>
                 <div class="bodymenu info"><span>배송안내</span></div>
@@ -214,7 +219,7 @@
                     <img src="" alt="">
                 </div>
             </div>
-            <div class="bodymenubox">
+            <div class="bodymenubox menubox_three">
                 <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div -->
                 <div class="bodymenu detail"><span>상품상세정보</span></div>
                 <div class="bodymenu info"><span>배송안내</span></div>
@@ -309,7 +314,7 @@
                     </table>
                 </div>
             </div>
-            <div class="bodymenubox">
+            <div class="bodymenubox menubox_four">
                 <!-- 본문 네비메뉴바(상품디테일,상품정보,리뷰,블로그) div -->
                 <div class="bodymenu detail"><span>상품상세정보</span></div>
                 <div class="bodymenu info"><span>배송안내</span></div>
@@ -414,8 +419,12 @@
                         delectus maiores necessitatibus
                 </div>  
                 <div class="blogerInfo">
-                    <div class="blogerName"><h4>파워블로거 푸드파이터이은지</h4></div>
-                    <div class="blogerImg"></div>
+                    <div class="blogerName"><span>파워블로거</span><h4>푸드파이터이은지</h4></div>
+                    <div class="blogerImg material-symbols-outlined">
+                        <span class="material-symbols-outlined">
+                        face_3
+                        </span>
+                    </div>
                 </div>
                 </p>
             </div>
