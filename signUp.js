@@ -49,7 +49,7 @@ let flag = ['fail', 'fail', 'fail', 'fail', 'fail', 'fail', 'fail', 'fail', 'fai
 
 // 아이디 확인
 id.addEventListener("keyup",function(){
-    if(id.value.length == 0){
+    if(id.value.length == 1){    // 글자 1개 입력했을 때
         id.nextElementSibling.innerHTML="아이디를 입력하세요";
         id.nextElementSibling.style.color='red';
         flag[0] = 'fail';
@@ -73,7 +73,7 @@ id.addEventListener("keyup",function(){
 
 // 비밀번호 확인
 password.addEventListener("keyup",function(){
-   if(password.value.length==0){
+   if(password.value.length==1){  // 글자 1개 입력했을 때
     password.nextElementSibling.innerHTML="비밀번호를 입력하세요";
     password.nextElementSibling.style.color='red';
     flag[1] = 'fail';
@@ -106,7 +106,7 @@ pwConfirm.addEventListener("keyup",function(){
 
 // 이름 확인
 nameCheak.addEventListener("keyup",function(){
-     if(nameCheak.value.length==0){
+     if(nameCheak.value.length==1){  // 글자 1개 입력했을 때
         nameCheak.nextElementSibling.innerHTML="이름을 입력하세요";
         nameCheak.nextElementSibling.style.color='red';
         flag[3] = 'fail';
@@ -144,7 +144,7 @@ var radios = document.querySelectorAll('input[name="gender"]'); // 라디오버�
      
 // 생년월일
 birth.addEventListener("keyup",function(){
-    if(birth.value.length==0){
+    if(birth.value.length==1){  // 글자 1개 입력했을 때
         birth.nextElementSibling.innerHTML="생년월일 8자리를 입력하세요";
         birth.nextElementSibling.style.color='red';
         flag[5] = 'fail';
@@ -165,7 +165,7 @@ birth.addEventListener("keyup",function(){
 
 // 휴대전화 확인
 phone.addEventListener("keyup", function(){
-    if(phone.value.length==0){
+    if(phone.value.length==1){  // 글자 1개 입력했을 때
         phone.nextElementSibling.innerHTML="휴대전화(-포함)를 입력하세요";
         phone.nextElementSibling.style.color='red';
         flag[6] = 'fail';
@@ -184,7 +184,7 @@ phone.addEventListener("keyup", function(){
 
 // 주소 확인
 address.addEventListener("keyup",function(){
-    if(address.value.length==0){
+    if(address.value.length==1){  // 글자 1개 입력했을 때
         address.nextElementSibling.innerHTML="밀키트를 배송받을 주소를 입력하세요";
         address.nextElementSibling.style.color='red';
         flag[7] = 'fail';
@@ -203,7 +203,7 @@ address.addEventListener("keyup",function(){
 
 // 이메일 확인
 email.addEventListener("keyup",function(){
-    if(email.value.length==0){
+    if(email.value.length==1){  // 글자 1개 입력했을 때
         email.nextElementSibling.innerHTML="이메일을 입력하세요";
         email.nextElementSibling.style.color='red';
         flag[8] = 'fail';
