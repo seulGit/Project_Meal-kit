@@ -220,6 +220,7 @@
     align-items: center;
     font-size: 17px;
     cursor: pointer;
+    background-color: white;
 }
 
 /* 네비메뉴바(상품디테일,상품정보,리뷰,블로그) 폰트 굵기,색상 지정 */
@@ -229,43 +230,44 @@
     color: gray;
 }
 
+/* 네비메뉴바 뷰포트 이동 시 해당 네비메뉴바 속성 설정 */
 /* 네비메뉴바(적용부분:상품디테일) 클릭시 해당 div 배경색 나타나게 구현 예정*/
-.mainbody>.bodymenubox:nth-child(1)>.detail{
+.mainbody>.menubox_one>.detail{
     background-color: rgba(0, 0, 0, 0.030);
 }
 
 /* 네비메뉴바(적용부분:상품디테일) 클릭시 폰트 컬러 강조기능 구현 예정 */
-.mainbody>.bodymenubox:nth-child(1)>.detail>span{
+.mainbody>.menubox_one>.detail>span{
     color: black;
 }
 
 /* 네비메뉴바(적용부분:배송정보) 클릭시 해당 div 배경색 나타나게 구현 예정*/
-.mainbody>.bodymenubox:nth-child(2)>.info{
+.mainbody>.menubox_two>.info{
     background-color: rgba(0, 0, 0, 0.030);
 }
 
 /* 네비메뉴바(적용부분:배송정보) 클릭시 폰트 컬러 강조기능 구현 예정 */
-.mainbody>.bodymenubox:nth-child(2)>.info>span{
+.mainbody>.menubox_two>.info>span{
     color: black;
 }
 
 /* 네비메뉴바(적용부분:리뷰) 클릭시 해당 div 배경색 나타나게 구현 예정*/
-.mainbody>.bodymenubox:nth-child(3)>.review{
+.mainbody>.menubox_three>.review{
     background-color: rgba(0, 0, 0, 0.030);
 }
 
 /* 네비메뉴바(적용부분:리뷰) 클릭시 폰트 컬러 강조기능 구현 예정 */
-.mainbody>.bodymenubox:nth-child(3)>.review>span{
+.mainbody>.menubox_three>.review>span{
     color: black;
 }
 
 /* 네비메뉴바(적용부분:블로그) 클릭시 해당 div 배경색 나타나게 구현 예정*/
-.mainbody>.bodymenubox:nth-child(4)>.blog{
+.mainbody>.menubox_four>.blog{
     background-color: rgba(0, 0, 0, 0.030);
 }
 
 /* 네비메뉴바(적용부분:블로그) 클릭시 폰트 컬러 강조기능 구현 예정 */
-.mainbody>.bodymenubox:nth-child(4)>.blog>span{
+.mainbody>.menubox_four>.blog>span{
     color: black;
 }
 
@@ -287,15 +289,6 @@
     /* height: 400px; */
 }
 
-/* .middlebox>h3 {
-    font-family: 'SEBANG_Gothic_Regular', sans-serif;
-    display: block;
-    height: 20px;
-} */
-
-/* .middlebox>hr {
-    border: .3px solid rgba(3, 3, 3, 0.078);
-} */
 /* 본문 내용(이미지 또는 목록) div */
 .middle {
     width: 100%;
@@ -304,106 +297,10 @@
     justify-content: center;
 }
 
-/* .middle>img {
-    width: 100%;
-} */
-
-/* .middleboxInfo>.bodymenubox>.detail{
-    color: gray;
-    background-color: white;
-}
-
-.middleboxInfo>.bodymenubox>.detail>span{
-    color: gray;
-}
-
-.middleboxInfo>.bodymenubox>.info{
-    background-color: rgba(0, 0, 0, 0.030);
-}
-
-.middleboxInfo>.bodymenubox>.info>span{
-    color: black;
-}
-
-.middleboxReview>.bodymenubox>.detail{
-    color: gray;
-    background-color: white;
-}
-
-.middleboxReview>.bodymenubox>.detail>span{
-    color: gray;
-}
-
-.middleboxReview>.bodymenubox>.review{
-    background-color: rgba(0, 0, 0, 0.030);
-}
-
-.middleboxReview>.bodymenubox>.review>span{
-    color: black;
-}
-
-.middleboxBlog>.bodymenubox>.detail{
-    color: gray;
-    background-color: white;
-}
-
-.middleboxBlog>.bodymenubox>.detail>span{
-    color: gray;
-}
-
-.middleboxBlog>.bodymenubox>.blog{
-    background-color: rgba(0, 0, 0, 0.030);
-}
-
-.middleboxBlog>.bodymenubox>.blog>span{
-    color: black;
-} */
-
-
-
-.bodymenubox
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 네비메뉴바(상품디테일,상품정보,리뷰,블로그) 폰트 굵기,색상 지정 */
-.bodymenu>span{
-    font-family: 'SEBANG_Gothic_Regular', sans-serif;
-    color: gray;
-}
-
-/* 네비메뉴바(현재적용부분:상품디테일) 클릭시 해당 div 배경색 나타나게 구현 예정*/
-.bodymenubox>.detail {
-    background-color: rgba(0, 0, 0, 0.030);
-}
-
-/* 네비메뉴바(현재적용부분:상품디테일) 클릭시 폰트 컬러 강조기능 구현 예정 */
-.bodymenubox>.detail>span{
-    color: black;
-}
-
-
-
-
 
 
 
 /* 리뷰 부분 시작 */
-
-/* 리뷰전체div 높이 조절 */
-/* .middleboxReview {
-    height: 330px;
-} */
 
 /* 본문 내용(리뷰) div */
 .reviewlist {
@@ -460,8 +357,7 @@
     position: relative;
 }
 
-
-
+/* 블로그 자동캐러셀 시작*/
 .blogSwiperArea {
     display: flex;
     flex-direction: row;
@@ -478,6 +374,10 @@
 .mySwiperBlog .swiper-wrapper .swiper-slide .slide .imgBox {
     width: 100%;
 }
+
+/* 블로그 자동캐러셀 끝 */
+
+
 /* 22/07/24 블로그 리뷰 더보기 설정 */
 .blogPlus {
     position: absolute;
@@ -533,9 +433,13 @@
 .blogerImg {
     width: 50px; 
     height: 50px; 
-    background-color: green;
     border-radius: 50%;
     float: right;
+}
+
+.blogerImg>span{
+    font-size: 35px;
+    padding-top: 10px;
 }
 
 .blogerName {
@@ -543,59 +447,14 @@
     margin-right: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-/* 블로그 목록의 각 div */
-/* .bloglist_box {
-    width: 20%;
-    height: 90%;
-    margin: 0 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.176);
-} */
-/* 블로그 미리보기이미지 */
-/* .bloglist_img {
-    width: 90%;
-    height: 60%;
-    display: flex;
-    align-items: center;
-} */
-
-/* 블로그 미리보기이미지 크기조정 */
-/* .bloglist_img>img {
-    width: 100%;
-} */
-
-/* 블로그 미리보기텍스트 */
-/* .bloglist_details {
-    width: 90%;
-    height: 30%;
-} */
-/* 블로그 미리보기텍스트 중 포스팅제목 */
-/* .bloglist_details_title {
+.blogerName>span {
+    font-size: 5px;
+    color: orangered;
+    display: block;
     text-align: left;
-    font-size: 17px;
-} */
-/* 블로그 미리보기텍스트 중 포스팅내용 */
-/* .bloglist_details_contents {
-    text-align: left;
-    font-size: 11px;
-    font-family: 'BBTreeGR', sans-serif;
-} */
+}
+
 /* 오슬기 파트 끝 */
-
-
 
 
 
@@ -650,19 +509,32 @@
     opacity: 0;
 }
 .shopping_alarm >div{
+    width: 100%; /* 22/07/27 성선규 추가 : 넓이 추가하여 컨텐츠 사이에 여백 추가 */
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between; /* 22/07/27 성선규 수정 : 컨텐츠 사이 여백  */
     align-items: center;
 }
 .like_alarm {
     transform: translateX(-350px);
     opacity: 0;
 }
+.like_alarm > div{
+    width: 100%; /* 22/07/27 성선규 추가 : 넓이 추가하여 컨텐츠 사이에 여백 추가 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* 22/07/27 성선규 수정 : 컨텐츠 사이 여백  */
+    align-items: center;
+}
 .shopping_alarm_img{
-    border: 1px solid black;
-    width: 75px;
-    height: 75px;
+    width: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
+    height: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
+    margin-left: 10px; /* 22/07/27 성선규 추가 : 왼쪽에 여백 추가 */
+}
+.like_alarm_img {
+    width: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
+    height: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
+    margin-left: 10px; /* 22/07/27 성선규 추가 : 왼쪽에 여백 추가 */
 }
 .shopping_alarm div img {
     width: 25px;
@@ -674,7 +546,7 @@
 .alarm div span{
     display: inline-block;
     width: 70%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .like_alarm div img {
     width: 25px;

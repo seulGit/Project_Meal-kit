@@ -11,6 +11,7 @@ let next = document.querySelectorAll('.next')
 // let recentBox = document.querySelector('.recent_box');
 
 
+
 // 22/07/28 김정치 성선규 클릭 이벤트 후 링크 이동 및 클릭 미적용 해결 
 $(function () {
     $.ajax({
@@ -64,8 +65,8 @@ $(function () {
 });
 
 
-
 let swiper = new Swiper(".mySwiper", {
+
     slidesPerView: 4,           // 아이템 갯수
     spaceBetween: 30,           // 아이템 사이 간격 유지
     // loop: true,                 // 무한 루프
@@ -79,6 +80,7 @@ let swiper = new Swiper(".mySwiper", {
         prevEl: ".prev",
     },
 });
+
 let swiperReview = new Swiper(".mySwiperReview", {
     slidesPerView: 4,           // 아이템 갯수
     spaceBetween: 30,           // 아이템 사이 간격 유지
