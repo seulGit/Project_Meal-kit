@@ -217,6 +217,45 @@
     line-height: 1.2;
 }
 
+/* 22/07/29 김정치 사이드 추천상품 영역 설정 */
+.recommendItem{
+    width: 9vw;
+    border-radius: 2px;
+    border: 1px solid rgba(128, 128, 128, 0.416);
+    height: 18vw;
+    position: fixed;
+    top: 30vw;
+    left: -10vw;
+    transition: all 1s;
+    z-index: 1000;
+}
+.recommendItem h2{
+    text-align: center;
+    font-family: 'SEBANG_Gothic_Bold';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    background-color: rgb(255, 218, 71);
+    height: 40px;
+    line-height: 40px;
+}
+.recommendItem .recoImgBox{
+    width: 90%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 5%;
+}
+.recommendItem .recoImgBox .recoImgBoxImg{
+    width: 100%;
+    /* height: 100%; */
+}
+.recommendItem .recoItemTitle{
+    font-size: .8rem;
+    width: 90%;
+    margin: 5%;
+    text-align: center;
+}
 
 
 /* 22/07/21 김정치 footer 설정 */
@@ -254,7 +293,6 @@
         width: 40px;
         height: 40px;
     }
-
     /* 22/07/24 김정치 캐로셀 버튼 크기 축소로 인한 위치 조정 */
     .swiper .caroselNavigation{
         width: 100%;
