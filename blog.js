@@ -44,10 +44,14 @@ let light = document.querySelector('.xi-lightbulb-o'); // 전구 아이콘
 let darkMode = true; // 처음 모습은 하얀 전구 아이콘
 light.addEventListener("click", function(){
     if(darkMode == true){
-        light.className ='xi-lightbulb';  // 하얀 전구 아이콘 클릭하면 검은 전구 아이콘으로 바뀜 
+        light.className ='xi-lightbulb';  // 하얀 전구 아이콘 클릭하면 검은 전구 아이콘으로 바뀜
+        topNav.style.background='#1e1f21';   // 상단 메뉴 검정색 설정 
+        topNav.style.color='white';  
         darkMode = !darkMode;    // 계속 클릭할 수 있도록 fasle와 true효과 주었음
     }else if(darkMode == false){
         light.className ='xi-lightbulb-o'; // 검은 전구 아이콘 클릭하면 하얀 전구 아이콘으로 바뀜
+        topNav.style.background='white';    // 상단 메뉴 하얀색 설정
+        topNav.style.color='black';  
         darkMode = !darkMode;
     }
 });
