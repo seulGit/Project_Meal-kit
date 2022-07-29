@@ -326,7 +326,8 @@ body{
     width: 100%;
     height: 30%;
     display:flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     position:relative;
 }
@@ -358,6 +359,9 @@ body{
     margin: 5px;
     font-size: 25px;
     cursor: pointer;
+    position: absolute;
+    top:0;
+    right: 5px;
 }
 /* 왼쪽 메뉴 위 영역 글씨체 */
 .leftTopText{
