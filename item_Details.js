@@ -154,7 +154,6 @@ $(function () {
 
 
 
-
             //수량 증감 시 판매가, 총합계금액 변동 기능
             item_quantity.addEventListener('change', function () { //수량이 바뀔시 메서드실행
 
