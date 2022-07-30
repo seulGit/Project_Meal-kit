@@ -10,15 +10,6 @@ let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length
 let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
 let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;
 
-if(recent_item_count == 0){
-    recent_item_count = 1;
-}
-if(select_item_count == 0){
-    select_item_count = 1;
-}
-if(like_item_count == 0){
-    like_item_count = 1;
-}
 
 //22/07/29 성선규 추가
 // 장바구니 로컬 스터리지를 위한 배열 선언

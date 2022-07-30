@@ -507,13 +507,6 @@ input[type=text]:focus {
     font-size: 0.9rem;
 }
 
-.recent_box{
-    padding: 5px;
-}
-.recent_box img{
-    width: 100%;
-}
-
 /* 22/07/30 성선규 추가 */
 /* 아이템 검색 시 하나도 안나올 경우를 대비 */
 section > .empty_item{
