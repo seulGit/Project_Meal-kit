@@ -36,6 +36,7 @@ function checkVisible( elm, eval ) {
     if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
     if (eval == "above") return ((y < (viewportHeight + scrolltop)));
 }
+// 김정치 사이드 추천상품박스 좌측 등장 이벤트 끝
 
 
 // 22/07/28 김정치 성선규 클릭 이벤트 후 링크 이동 및 클릭 미적용 해결 
@@ -48,29 +49,29 @@ $(function () {
             const imgBox = document.querySelectorAll(".productImage");                      // 신상품 카테고리 이미지 태그
             const imgBox2 = document.querySelectorAll(".recommendImg");                     // 추천상품 카테고리 이미지 태그
             const imgBox3 = document.querySelectorAll(".salesImg");                         // 할인상품 카테고리 이미지 태그
-            const product_title = document.querySelectorAll(".productTitle");
-            const recommend_title = document.querySelectorAll(".recommendTitle");
-            const sales_title = document.querySelectorAll(".salesTitle");
-            const product_price = document.querySelectorAll(".productPrice");
-            const recommend_price = document.querySelectorAll(".recommendPrice");
-            const discounted_price = document.querySelectorAll(".discountedPrice");
-            const sales_price = document.querySelectorAll(".salesPrice");
+            const product_title = document.querySelectorAll(".productTitle");               // 신상품 카테고리 타이틀 태그
+            const recommend_title = document.querySelectorAll(".recommendTitle");           // 추천상품 카테고리 타이틀 태그
+            const sales_title = document.querySelectorAll(".salesTitle");                   // 할인상품 카테고리 타이틀 태그
+            const product_price = document.querySelectorAll(".productPrice");               // 신상품 카테고리 가격 태그
+            const recommend_price = document.querySelectorAll(".recommendPrice");           // 추천상품 카테고리 가격 태그
+            const discounted_price = document.querySelectorAll(".discountedPrice");         // 할인상품 카테고리 할인 후 가격 태그
+            const sales_price = document.querySelectorAll(".salesPrice");                   // 할인상품 카테고리 할인 전 가격 태그
             
-            const recoImgBox = document.querySelector(".recoImgBoxImg");
-            const recoItemTitle = document.querySelector(".recoItemTitle");
+            const recoImgBox = document.querySelector(".recoImgBoxImg");                    // 추천상품 박스 이미지 태그
+            const recoItemTitle = document.querySelector(".recoItemTitle");                 // 추천상품 박스 타이틀 태그
             for(let i = 0; i < imgBox.length; i++){
                                                                                             // 22/07/29 김정치 JSON 정보 적용
                                                                                             // JSON 이미지 정보 적용
                 imgBox[i].setAttribute("src", `${data["korean_food"][i].main_img}`);        // 신상품 카테고리
                 imgBox2[i].setAttribute("src", `${data["korean_food"][i+7].main_img}`);     // 추천상품 카테고리
                 imgBox3[i].setAttribute("src", `${data["korean_food"][i+10].main_img}`);    // 할인상품 카테고리
-                recoImgBox.setAttribute("src", `${data["korean_food"][7].main_img}`);    // 할인상품 카테고리
+                recoImgBox.setAttribute("src", `${data["korean_food"][7].main_img}`);       // 추천상품 박스 카테고리
 
-                                                                                            // JSON 아이템 네임 적용
+                                                                                            // JSON 아이템 타이틀 적용
                 product_title[i].innerHTML = `${data["korean_food"][i].item_Name}`;         // 신상품 카테고리
                 recommend_title[i].innerHTML = `${data["korean_food"][i+7].item_Name}`;     // 추천상품 카테고리
                 sales_title[i].innerHTML = `${data["korean_food"][i+10].item_Name}`;        // 할인상품 카테고리
-                recoItemTitle.innerHTML = `${data["korean_food"][7].item_Name}`;        // 할인상품 카테고리
+                recoItemTitle.innerHTML = `${data["korean_food"][7].item_Name}`;            // 추천상품 박스 카테고리
 
                                                                                             // JSON 아이템 가격 적용
                 product_price[i].innerHTML = `${data["korean_food"][i].price}`;             // 신상품 카테고리
@@ -78,7 +79,7 @@ $(function () {
                 sales_price[i].innerHTML = `${data["korean_food"][i+10].price}`;            // 할인 전 가격 카테고리
                 discounted_price[i].innerHTML = `${data["korean_food"][i+10].discount_price}`;  // 할인 후 가격 카테고리
                 
-                                                                                            // 상세페이지로 이동
+                                                                                            // 상세페이지로 이동 시작
                 imgBox[i].addEventListener("click", function(){                             // 신상품 카테고리
                     for(let j = 0; j < data["korean_food"].length; j++){
 
@@ -103,16 +104,18 @@ $(function () {
                         }
                     }
                 })
-                recoImgBox.addEventListener("click", function(){                            // 할인상품 카테고리
+                recoImgBox.addEventListener("click", function(){                            // 추천상품 박스 카테고리
                         if(recoImgBox.getAttribute("src") == data["korean_food"][7].main_img){
                             location.href = "item_Details.html?index=" + 7;
                         }
                 })
+                                                                                            // 상세페이지로 이동 끝
             }
         }
     })
 });
 
+// 22/07/30
 
 let swiper = new Swiper(".mySwiper", {
 
@@ -147,9 +150,9 @@ let swiperReview = new Swiper(".mySwiperReview", {
 let swiperBlog = new Swiper(".mySwiperBlog", {
     slidesPerView: 1,           // 아이템 갯수
     loop: true,                 // 무한 루프
-    // autoplay: {                 // 자동 캐러셀 시작
-    //     delay: 3000,            // 캐로셀 이동시간
-    //     disableOnInteraction: false,  // 자동 캐러셀 이외 동작 이후도 자동 적용 // true시에는 클릭이동 후 정지
-    //     pauseOnMouseEnter: true,      // 마우스오버시 자동 캐러셀 멈춤
-    // }
+    autoplay: {                 // 자동 캐러셀 시작
+        delay: 3000,            // 캐로셀 이동시간
+        disableOnInteraction: false,  // 자동 캐러셀 이외 동작 이후도 자동 적용 // true시에는 클릭이동 후 정지
+        pauseOnMouseEnter: true,      // 마우스오버시 자동 캐러셀 멈춤
+    }
 });

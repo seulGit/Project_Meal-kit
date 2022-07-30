@@ -4,6 +4,12 @@
 =================================
 */
 
+/* 22/07/30 자주쓰는 색상 지정 */
+:root {
+    --point: orangered;
+    --color: rgb(255, 218, 71);
+}
+
 /* 22/07/22 캐로셀 전체 영역 및 섹션 타이틀 설정 */
 .container {
     padding: 0 10vw;
@@ -18,14 +24,14 @@
     margin: 40px 0 20px;
 }
 .container .carouselTitle i{
-    color: orangered;
+    color: var(--point);
     font-size: 27px;
 }
 
 /* 22/07/21 섹션별 구분 라인 설정 */
 .sectionLine {
     margin-top: 35px;
-    border-color: orangered;
+    border-color: var(--point);
 }
 
 /* 22/07/21 캐로셀 네비게이션 설정 */
@@ -40,7 +46,7 @@
     width: 50px;
     height: 50px;
     font-size: 3rem;
-    color: orangered;
+    color: var(--point);
     margin: 0 10px;
     opacity: 0.9;
     cursor: pointer;
@@ -75,7 +81,7 @@
     padding: 5px 5px 2px;
     line-height: 20px;
     color: white;
-    background-color: orangered;
+    background-color: var(--point);
 }
 .swiper-wrapper .swiper-slide .slide .itemText .salesPrice {
     font-family: 'BBTreeGR', sans-serif;
@@ -190,7 +196,7 @@
     right: 10vw;
 }
 .container .blogPlus a, .container .blogPlus a i{
-    color: orangered;
+    color: var(--point);
     font-size: 1.2rem;
 }
 .container .blogPlus a i {
@@ -208,7 +214,7 @@
 .blogSwiperArea .blogReviewText .itemText .itemTitle{
     font-family: 'SEBANG_Gothic_Regular', sans-serif;
     font-size: 1.5rem;
-    color: orangered;
+    color: var(--point);
     margin: 10px 0 7px;
 }
 .blogSwiperArea .blogReviewText .itemText .itemInfor{
@@ -222,9 +228,9 @@
     width: 9vw;
     border-radius: 2px;
     border: 1px solid rgba(128, 128, 128, 0.416);
-    height: 18vw;
+    height: 15vw;
     position: fixed;
-    top: 30vw;
+    top: 28vw;
     left: -10vw;
     transition: all 1s;
     z-index: 1000;
@@ -235,7 +241,7 @@
     font-weight: normal;
     font-style: normal;
     font-size: 15px;
-    background-color: rgb(255, 218, 71);
+    background-color: var(--color);
     height: 40px;
     line-height: 40px;
 }
@@ -273,7 +279,7 @@
     width: 160px;
 }
 .footerText a{
-    color: orangered;
+    color: var(--point);
 }
 .footerText{
     line-height: 25px;
