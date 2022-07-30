@@ -26,7 +26,12 @@
     font-weight: normal;
     font-style: normal;
 }
-* {
+:root {
+    --point: orangered;
+    --color: rgb(255, 218, 71);
+}
+* 
+{
     box-sizing: border-box;
     font-family: 'SEBANG_Gothic_Regular';
     /* border: 1px solid royalblue; */
@@ -51,7 +56,7 @@ body{
     display: flex;
     justify-content: center;
     padding-bottom: 5vh;
-    border-bottom: 2.5px solid rgb(255, 69, 0);
+    border-bottom: 2.5px solid var(--point);
 }
 /* 로고 */
 .logoContainer>a>img{
@@ -77,12 +82,13 @@ body{
 }
 
 /* 버튼 */
+/* 로그인 버튼 */
 .loginBtn {
     margin-top: 20px;
     font-weight: bolder;
     color: white;
     font-size: 18px;
-    background-color: rgb(255, 69, 0);
+    background-color: var(--point);
     border: 1px solid gainsboro;
     border-radius: 3px;
     width: 100%;
@@ -91,6 +97,7 @@ body{
     font-family: 'BBTreeGR';
 
 }
+/* 회원가입 버튼 */
 .signUpBtn {
     margin-top: 20px;
     font-weight: bolder;
@@ -109,7 +116,7 @@ body{
 .loginBtn:active {
     transition: all 0.4s;
     background-color: white;
-    color: rgb(255, 69, 0);
+    color: var(--point);
     border: 1px solid gainsboro;
 }
 /* 아이디찾기 */

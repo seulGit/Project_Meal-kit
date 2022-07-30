@@ -12,23 +12,19 @@
 
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 
-
-
+/* 컨셉컬러 미리 설정  */
 :root {
     --point: orangered;
     --color: rgb(255, 218, 71);
 }
 
 
-
+/* 오슬기 파트 시작 */
 .main_container { /*220720 오슬기 수정: 메인페이지에 중복되는 클래스명이 있어서 수정*/
-    /* height: 250vh; */
     justify-content: center;
     align-items: center;
     padding: 0 10vw;
 }
-
-/* 오슬기 파트 시작 */
 
 /* 전체 컨테이너 */
 .mainbody {
@@ -127,7 +123,7 @@
 
 /* 할인율 숫자부분 폰트컬러 */
 .item_price_dcRate>span:nth-child(2){
-    color: red;
+    color: var(--point);
 }
 
 /* 수량 부분 아래 구분선 */
@@ -172,9 +168,9 @@
 .item_details_btn>button {
     width: 100%;
     height: 100%;
-    border: 1px solid orangered;
+    border: 1px solid var(--point);
     border-radius: 1px;
-    color: orangered;
+    color: var(--point);
     background-color: white;
     font-size: 20px;
     cursor: pointer;
@@ -197,7 +193,7 @@
 /* 구매 버튼 강조하기위해 색상 별도 지정 */
 .buyNow>button {
     width: 100%;
-    background-color: orangered;
+    background-color: var(--point);
     color: white;
 }
 
@@ -297,7 +293,19 @@
     justify-content: center;
 }
 
+.detailimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 
+.infoimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 
 
 /* 리뷰 부분 시작 */
@@ -308,6 +316,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
 
@@ -315,7 +324,7 @@
 .reviewlist>table{
     width: 90%;
     height: 300px;
-    margin: 10px 0;
+    margin-top: 10px;
     color: rgba(0, 0, 0, 0.765)
 }
 
@@ -342,14 +351,21 @@
 
 /* 리뷰 별점 스타일 */
 .xi-star {
-    color: orangered;
+    color: var(--point);
     font-size: 20px;
+}
+
+/* 리뷰 new! 표시 아이콘 스타일 */
+.xi-new {
+    color: var(--point);
+    font-size: 15px;
 }
 /* 리뷰 부분 끝 */
 
 /* 블로그 부분 시작 */
 /* 블로그 목록 감싸는 컨테이너 */
-.bloglist {
+.middleboxBlog {
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -374,53 +390,63 @@
 .mySwiperBlog .swiper-wrapper .swiper-slide .slide .imgBox {
     width: 100%;
 }
-
 /* 블로그 자동캐러셀 끝 */
 
 
-/* 22/07/24 블로그 리뷰 더보기 설정 */
+/* 22/07/24 블로그후기 "더보기" 설정 */
+/* 더보기 div */
 .blogPlus {
     position: absolute;
     z-index: 10;
     top:5px;
     right: 0;
 }
+
+/* 더보기 폰트 설정 */
 .blogPlus a, .blogPlus a i{
-    color: orangered;
+    color: var(--point);
     font-size: 1.2rem;
 }
+
+/* 더보기 폰트(아이콘) 별도 속성 지정 */
 .blogPlus a i {
     line-height: 5px;
     vertical-align: middle;
 }
 
-/* 22/07/24 블로그리뷰 텍스트 영역 설정 */
+/* 22/07/24 블로그후기 텍스트 영역 설정 */
 .blogReviewText{
     width: 60%;
-    height: 75%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     margin-bottom: 28px;
-    /* margin-left: 5%;
-    margin-bottom: 100px; */
 }
 
+/* 블로그후기 텍스트부분 크기 설정 */
 .blogerContents {
     width: 100%;
-    height: 100%;
+    /* margin-bottom: 20px; */
 }
+
+/* 블로그후기 텍스트(제목) 디자인 */
 .blogSwiperArea .blogReviewText .itemText .itemTitle{
     font-family: 'SEBANG_Gothic_Regular', sans-serif;
     font-size: 2rem;
-    color: orangered;
+    color: var(--point);
     margin: 20px 0 7px;
 }
+
+/* 블로그후기 텍스트(내용) 디자인 */
 .blogSwiperArea .blogReviewText .itemText .itemInfor{
     font-family: 'BBTreeGR', sans-serif;
     font-size: 1.2rem;
     line-height: 1.2;
+    height: 220px;
+    overflow: hidden;
 }
 
+/* 블로거 정보 부분 */
 .blogerInfo {
     width: 100%;
     display: flex;
@@ -430,6 +456,21 @@
     border-top: 1px solid gray;
 }
 
+/* 블로거 이름 div */
+.blogerName {
+    float: right;
+    margin-right: 10px;
+}
+
+/* 블로거 이름위에 달려있는 "파워블로거"*/
+.blogerName>span {
+    font-size: 5px;
+    color: var(--point);
+    display: block;
+    text-align: left;
+}
+
+/* 블로거 이미지 div*/
 .blogerImg {
     width: 50px; 
     height: 50px; 
@@ -437,28 +478,16 @@
     float: right;
 }
 
+/* 블로거 이미지 */
 .blogerImg>span{
     font-size: 35px;
     padding-top: 10px;
 }
 
-.blogerName {
-    float: right;
-    margin-right: 10px;
-}
-
-.blogerName>span {
-    font-size: 5px;
-    color: orangered;
-    display: block;
-    text-align: left;
-}
-
 /* 오슬기 파트 끝 */
 
 
-
-
+/* 공통영역-footer */
 .footer{
     height: 250px;
     padding: 25px 0 0 10vw;
@@ -473,7 +502,7 @@
     width: 160px;
 }
 .footerText a{
-    color: orangered;
+    color: var(--point);
 }
 .footerText{
     line-height: 25px;
@@ -498,7 +527,7 @@
     height: 8%;
     bottom: 20px;
     left: 20px;
-    z-index: 10;
+    z-index: 1000; /* 0729 오슬기 수정: 알람 뜰 시 추가된 제품이미지에 가려져버려서 숫자증가시킴*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -536,6 +565,8 @@
     height: 60px; /* 22/07/27 성선규 수정 : 이미지 크기 수정  */
     margin-left: 10px; /* 22/07/27 성선규 추가 : 왼쪽에 여백 추가 */
 }
+
+/* 장바구니 알람 이미지 기본속성*/
 .shopping_alarm div img {
     width: 25px;
     position: absolute;
@@ -543,11 +574,15 @@
     top: 0;
     cursor: pointer;
 }
+
+/* 장바구니,찜 알람 시 뜨는 문구 */
 .alarm div span{
     display: inline-block;
     width: 70%;
     /* border: 1px solid red; */
 }
+
+/* 찜 알람 이미지 기본속성 */
 .like_alarm div img {
     width: 25px;
     position: absolute;
@@ -556,35 +591,46 @@
     cursor: pointer;
 }
 
+/* 알람 애니메이션 적용 */
 .move_alarm {
     animation-name: alarm;
     animation-duration: 4s;
     animation-timing-function: ease-in;
 }
 
+/* 0730 오슬기 추가  */
+/* 장바구니 박스 내 x 아이콘  */
+.close_icon {
+    color: var(--point);
+    position: absolute;
+    font-size: 40px;
+    font-weight: bolder;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
 
+
+/* 알람 나타났다 사라지는 애니메이션 */
 @keyframes alarm {
-
     /* 아이콘 클릭 시 상단의 클래스 추가 */
     0% {
         transform: translateX(-350px);
     }
-
     15% {
         transform: translateX(0);
     }
-
     85% {
         transform: translateX(0);
     }
-
     100% {
         transform: translateX(-350px);
     }
 }
 
-/* 22/02/24 성선규 추가 */
+/* 22/07/24 성선규 추가 */
 /* 최상단 이동 버튼 */
+/* 버튼 div 기본 속성 */
 .scroll_up_container {
     position: fixed;
     right: 1%;
@@ -592,6 +638,7 @@
     user-select: none;
 }
 
+/* 버튼 디자인 */
 .scroll_up_container div {
     border: 3px solid var(--color);
     border-radius: 50%;
@@ -603,6 +650,7 @@
     cursor: pointer;
 }
 
+/* 버튼 hover시 배경 컬러 변경 */
 .scroll_up_container div:hover {
     background-color: var(--color);
 }

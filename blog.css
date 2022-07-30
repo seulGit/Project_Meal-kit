@@ -38,6 +38,12 @@
     font-style: normal;
 }
 
+/* 밀키트 대표 색상 */ 
+:root {
+    --point: orangered;
+    --color: rgb(255, 218, 71);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -93,7 +99,7 @@ body{
 }
 /* foodblog 인기글 색깔 */
 .container.dark .colorRed{
-    color: orangered;
+    color: var(--point);
 }
 /* 220725 이전/다음 글자 호버 시 효과 */
 .container.dark .darkModeColor:hover{
@@ -120,6 +126,16 @@ body{
 }
 .container.dark .topToBtn>a>.xi-caret-up-circle-o:hover{
     color: blue;
+}
+/* 220730 다크 모드 시 답글생성 창 색 */
+.container.dark #inputTextBox{
+    width: 90%;
+    height: 50px;
+    background-color:  #404246;
+    color: white;
+    margin: 5px 0 5px;
+    padding: 10px;
+    font-family: 'BBTreeGR';
 }
 
 /* 상단 이미지 */
@@ -537,9 +553,7 @@ flex 효과를 주어 요소를 정렬하였음 */
     cursor: pointer;
     border-radius: 5px;
 }
-/* .xi-angle-left-min{
-    margin-right: 10px;
-} */
+
 /* 댓글 쓰는 창과 댓글 버튼 감싼 div */
 .footerTextAndBtn{
     position: relative;
@@ -606,6 +620,16 @@ input{
     border-radius: 5px;
 }
 
+/* 220730 답글 기능에 추가될 div 박스 스타일 */
+#inputTextBox{
+    width: 90%;
+    height: 50px;
+    background-color:  rgb(233, 233, 233);
+    margin: 5px 0 5px;
+    padding: 10px;
+    font-family: 'BBTreeGR';
+}
+
 
 /* 220723 footer 영역 */
 footer{
@@ -662,7 +686,6 @@ footer>div:nth-child(2){
 
 /* 220727 오른쪽 하단에 상단 메뉴로 올라가기 버튼 */
 .xi-caret-up-circle-o{
-    font-family: 'BBTreeGR';
     font-size: 2rem;
     transition: all 0.5;
 }
