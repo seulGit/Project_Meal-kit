@@ -259,12 +259,17 @@ input[type=text]:focus {
 }
 
 /* 아이템 내부 이미지*/
-.container section:nth-child(3) .item .item_img_1 {
+.container > section:nth-child(3) > .item > div:nth-child(1) > .item_img_1 {
+    width: 100%;
+    height: 100%;
+    margin-top: 11px;
+    /* border: 2px solid black; */
+}
+
+.container > section:nth-child(3) > .item > div:nth-child(1){
     width: 95%;
     height: 66%;
     position: relative;
-    margin-top: 11px;
-    /* border: 2px solid black; */
     overflow: hidden;
 }
 
@@ -272,13 +277,14 @@ input[type=text]:focus {
     cursor: pointer;
 }
 
+/* ==================================아이템 컨테이너 안쪽 아이콘 ===================================== */
 /* 아이템 이미지 hover 시 아이콘 상단으로 올라오기 */
-.item_img_1:hover span {
+.container > section:nth-child(3) > .item > div:nth-child(1):hover span {
     transform: translateY(0);
 }
 
 /* 아이템 이미지 안쪽 아이콘 */
-.item_img_1 .material-symbols-outlined {
+.item .material-symbols-outlined {
     /* 22/07/21 성선규 수정 : 검색창 돋보기와 중복되어 수정 */
     position: absolute;
     bottom: 0;
@@ -289,23 +295,25 @@ input[type=text]:focus {
     /* 22/07/21 성선규 추가 : 하단으로 내려서 안보이게 처리 */
 }
 
-.item_img_1 .material-symbols-outlined:nth-child(1) {
+.container > section:nth-child(3) > .item > div:nth-child(1) > .favorite {
     right: 0;
     padding: 4px;
     font-size: 3rem;
 }
 
-.item_img_1 .material-symbols-outlined:nth-child(2) {
+.container > section:nth-child(3) > .item > div:nth-child(1) > .shopping {
     right: 48px;
     padding: 4px;
     font-size: 3rem;
 }
 
-.item_img_1 .material-symbols-outlined:hover {
+.container > section:nth-child(3) > .item > div:nth-child(1) .material-symbols-outlined:hover {
     color: var(--point);
     cursor: pointer;
 }
+/* ================================== 아이템 컨테이너 안쪽 아이콘 ===================================== */
 
+/* ================================== 아이템 컨테이너 안쪽 제목 및 가격 ================================== */
 /* 아이템 타이틀 */
 .title {
     width: 95%;
@@ -369,6 +377,7 @@ input[type=text]:focus {
     font-size: 2rem;
     color: black;
 }
+/* ================================== 아이템 컨테이너 안쪽 제목 및 가격 ================================== */
 
 /* 22/02/24 성선규 추가 */
 /* 최상단 이동 버튼 */
