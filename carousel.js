@@ -147,9 +147,9 @@ let swiperReview = new Swiper(".mySwiperReview", {
 let swiperBlog = new Swiper(".mySwiperBlog", {
     slidesPerView: 1,           // 아이템 갯수
     loop: true,                 // 무한 루프
-    // autoplay: {                 // 자동 캐러셀 시작
-    //     delay: 3000,            // 캐로셀 이동시간
-    //     disableOnInteraction: false,  // 자동 캐러셀 이외 동작 이후도 자동 적용 // true시에는 클릭이동 후 정지
-    //     pauseOnMouseEnter: true,      // 마우스오버시 자동 캐러셀 멈춤
-    // }
+     autoplay: {                 // 자동 캐러셀 시작
+         delay: 3000,            // 캐로셀 이동시간
+         disableOnInteraction: false,  // 자동 캐러셀 이외 동작 이후도 자동 적용 // true시에는 클릭이동 후 정지
+         pauseOnMouseEnter: true,      // 마우스오버시 자동 캐러셀 멈춤
+     }
 });
