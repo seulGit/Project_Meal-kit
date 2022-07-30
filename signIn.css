@@ -49,7 +49,9 @@ body{
    
 }
 .wrapContainer{
-    margin-bottom: 300px;
+    /* margin-bottom: 300px; */
+    padding: 16vh 39vw 24vh 39vw;
+    
 }
 
 .logoContainer{
