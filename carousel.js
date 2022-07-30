@@ -115,7 +115,7 @@ $(function () {
     })
 });
 
-// 22/07/30
+// 22/07/30 김정치 상품 카테고리 스와이퍼 오토 캐러셀 시작
 
 let swiper = new Swiper(".mySwiper", {
 
@@ -133,6 +133,7 @@ let swiper = new Swiper(".mySwiper", {
     },
 });
 
+// 22/07/30 김정치 리뷰 카테고리 스와이퍼 오토 캐러셀 시작
 let swiperReview = new Swiper(".mySwiperReview", {
     slidesPerView: 4,           // 아이템 갯수
     spaceBetween: 30,           // 아이템 사이 간격 유지
@@ -147,6 +148,8 @@ let swiperReview = new Swiper(".mySwiperReview", {
         prevEl: ".prev",
     },
 });
+
+// 22/07/30 김정치 블로그 카테고리 스와이퍼 오토 캐러셀 시작
 let swiperBlog = new Swiper(".mySwiperBlog", {
     slidesPerView: 1,           // 아이템 갯수
     loop: true,                 // 무한 루프
