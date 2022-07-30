@@ -14,7 +14,7 @@ let pw = document.querySelector('#pw'); // input 비밀번호
 let loginBtn = document.querySelector('.loginBtn'); // 로그인 버튼
 let signUpBtn = document.querySelector('.signUpBtn'); // 회원가입 버튼
 
-const idInput = /^[a-zA-Z0-9]*$/;
+const idInput = /^[a-zA-Z0-9]*$/; 
 // 아이디 영문(대,소문자 상관없이), 숫자 작성해야함
 const pwInput = /(?=.*\d)+(?=.*[~`!@#$%\^&*()-+=])+(?=.*[a-z])(?=.*[A-Z])+.{1,}$/;
 // 비밀번호 - 영문(대,소문자), 특수문자, 숫자 1개 이상 작성해야함

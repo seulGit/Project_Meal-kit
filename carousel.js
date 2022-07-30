@@ -5,7 +5,7 @@
 */
 
 //22/07/28 성선규 추가
-// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언
+// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언 
 let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length;
 let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
 let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;

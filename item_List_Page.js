@@ -335,7 +335,7 @@ _$(document).ready(function () {
 
                 const recent_item = document.querySelector(".recent_item"); // 최근 본 상품
                 const select_item = document.querySelector(".select_item"); // 찜한 상품
-                const like_item = document.querySelector(".like_item"); // 장바구니
+                const like_item = document.querySelector(".like_item"); // 장바구니 
 
 
 

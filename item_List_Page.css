@@ -294,7 +294,7 @@ input[type=text]:focus {
     transition: all 0.3s;
     user-select: none;
     /* 22/07/21 성선규 추가 : 사용자 드래그 불가 처리 */
-    transform: translateY(50px);
+    transform: translateY(50px); 
     /* 22/07/21 성선규 추가 : 하단으로 내려서 안보이게 처리 */
 }
 

@@ -39,7 +39,7 @@
     margin: 0;
     box-sizing: border-box;
     /* 라인 보려고 적용해둔 보더라인. */
-    /* border: 1px solid royalblue; */
+    /* border: 1px solid royalblue; */ 
     text-decoration: none;
 }
 
