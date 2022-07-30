@@ -10,7 +10,7 @@
        댓글눌렀을 때 드롭다운 효과
 220724 댓글 기능 수정, 상단 메뉴 드롭다운 공부, 애니메이션 추가
 220725 상단 메뉴 아이콘 수정, 이미지 opacity 효과 수정,
-       다크모드 시 header 글자 색 수정
+       다크모드 시 header 글자 색 수정 
 ===============================================================
  */
 
@@ -130,7 +130,7 @@ body{
 /* 220730 다크 모드 시 답글생성 창 색 */
 .container.dark #inputTextBox{
     width: 90%;
-    height: 50px;
+    height: auto;
     background-color:  #404246;
     color: white;
     margin: 5px 0 5px;
@@ -623,7 +623,7 @@ input{
 /* 220730 답글 기능에 추가될 div 박스 스타일 */
 #inputTextBox{
     width: 90%;
-    height: 50px;
+    height: auto;
     background-color:  rgb(233, 233, 233);
     margin: 5px 0 5px;
     padding: 10px;

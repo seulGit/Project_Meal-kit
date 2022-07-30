@@ -11,7 +11,7 @@
     font-style: normal;
 }
 
-/* 세방고딕 BOLD */
+/* 세방고딕 BOLD */ 
 @font-face {
     font-family: 'SEBANG_Gothic_Bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
@@ -49,7 +49,9 @@ body{
    
 }
 .wrapContainer{
-    margin-bottom: 300px;
+    /* margin-bottom: 300px; */
+    padding: 16vh 39vw 24vh 39vw;
+    
 }
 
 .logoContainer{

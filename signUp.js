@@ -17,7 +17,7 @@ let birth = document.querySelector('#birth'); // 생년월일 날짜
 let phone = document.querySelector('#phone'); // input 핸드폰 번호
 let address = document.querySelector('#address'); // input 주소
 let email = document.querySelector('#email'); // input 이메일
-let btn = document.querySelector('.btn'); // 가입하기 버튼
+let btn = document.querySelector('.btn'); // 가입하기 버튼 
 
 
 const idInput = /^[a-zA-Z0-9]*$/;

@@ -23,7 +23,7 @@ window.addEventListener('scroll', function () {
         nav.style.position = '';
          // ==================================
         // 22/07/21 노현 수정
-        // 네비바 움직일때 & 서있을때 밑줄 추가
+        // 네비바 움직일때 & 서있을때 밑줄 추가 
         // ==================================
         nav.style.borderBottom='3px solid rgb(255, 69, 0)'; // 스크롤 내렸다가 다시 돌아왔을때 네비바 포인트색상 사라져서 추가. 
         nav.style.boxShadow='none'; // 가만히 있을때 포인트색상(boderbottom)이랑 겹쳐있어서 none 넣었음.

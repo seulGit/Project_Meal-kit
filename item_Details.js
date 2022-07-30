@@ -9,12 +9,22 @@
             성선규작업 코드 추가(로컬스토리지)
 ===========================*/
 
-let index = location.href.slice(location.href.indexOf("index") + 6, location.href.indexOf("index") + 7);
+let index = location.href.slice(location.href.indexOf("index") + 6);
 //22/07/28 성선규 추가
-// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언
-let recent_item_count = Number(location.href.slice(location.href.indexOf("recent") + 7, location.href.indexOf("recent") + 8));
-let select_item_count = Number(location.href.slice(location.href.indexOf("select") + 7, location.href.indexOf("select") + 8));
-let like_item_count = Number(location.href.slice(location.href.indexOf("favorite") + 9, location.href.indexOf("favorite") + 10));
+// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언 
+let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length;
+let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
+let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;
+
+if(recent_item_count == 0){
+    recent_item_count = 1;
+}
+if(select_item_count == 0){
+    select_item_count = 1;
+}
+if(like_item_count == 0){
+    like_item_count = 1;
+}
 
 //22/07/29 성선규 추가
 // 장바구니 로컬 스터리지를 위한 배열 선언
@@ -31,7 +41,7 @@ if (window.localStorage.getItem("recent") === null) { // 만약 페이지를 처
 }
 
 //22/07/30 성선규 추가
-// 찜하기 로컬 스터리지를 위한 배열 선언
+// 최근 본 상품 로컬 스터리지를 위한 배열 선언
 let favorite_Array = new Array();
 if (window.localStorage.getItem("favorite") === null) { // 만약 페이지를 처음 방문한다면 null값으로 되어 있어 확인 후
     window.localStorage.setItem("favorite", JSON.stringify(favorite_Array)); // 첫 방문이라면 빈 배열로 초기화

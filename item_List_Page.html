@@ -32,27 +32,30 @@
     22/07/28 성선규
     장바구니 컨테이너에 요소 추가할 div 추가
     ================================================
+    22/07/30 성선규 추가
+    아이템 검색 시 하나도 안나올 경우 해당 영역 출력
+    ================================================
  -->
     <!-- 네비게이션 바 -->
     <!-- 헤더부분 -->
     <div class="header">
         <!-- 로고 -->
-        <a href="" class="logo">
+        <a href="mainpage.html" class="logo">
             <img src="logo.png" alt="로고">
         </a>
         <!-- 네비바 메뉴 -->
         <div class="navbar">
             <a href="">전체메뉴</a>
             <a href="">신상품</a>
-            <a href="">한 식</a>
+            <a href="item_List_Page.html">한 식</a>
             <a href="">양 식</a>
             <a href="">일 식</a>
             <a href="">중 식</a>
         </div>
         <!-- 우측 상단 로그인 회원가입 -->
         <div class="login">
-            <a href="">로그인</a>
-            <a href="">회원가입</a>
+            <a href="signIn.html">로그인</a>
+            <a href="signUp.html">회원가입</a>
         </div>
     </div>
     <!-- 사이드 바 이동루트-->
@@ -185,6 +188,15 @@
                     <span></span>
                     <h4></h4>
                 </div> -->
+
+                <!-- 22/07/30 성선규 추가 -->
+                <!-- 아이템 검색 시 하나도 안나올 경우 해당 영역 출력 -->
+                <div class="empty_item">
+                    <div>
+                        <h1>검색하신 상품은 존재하지 않습니다!</h1>
+                        <span>다른 상품을 찾아보세요</span>
+                    </div>
+                </div>
         </section>
 
 
