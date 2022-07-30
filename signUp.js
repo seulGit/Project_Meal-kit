@@ -143,12 +143,67 @@ var radios = document.querySelectorAll('input[name="gender"]'); // 라디오버�
 
      
 // 생년월일
+//     if(birth.value.length==1){  // 글자 1개 입력했을 때
+//         birth.nextElementSibling.innerHTML="생년월일 8자리를 입력하세요";
+//         birth.nextElementSibling.style.color='red';
+//         flag[5] = 'fail';
+//     } else if(birthDay.test(birth.value) !== true){
+//         birth.nextElementSibling.innerHTML="생년월일 8자리를 입력하세요";
+//         birth.nextElementSibling.style.color='red';
+//         flag[5] = 'fail';
+    
+//     } else if(birthDay.test(birth.value) == true){
+//         birth.nextElementSibling.innerHTML="생년월일 입력 확인되었습니다";
+//         birth.nextElementSibling.style.color='blue';
+//         flag[5] = 'pass';
+//     }
+// });
+
+// 생년월일 입력 시 생년월일을 아무렇게나 입력해도 사용가능이 되어서
+// 조원(성선규)의 도움으로 생년월일에 맞게 입력할 수 있도록 변경하였음
 birth.addEventListener("keyup",function(){
-    if(birth.value.length==1){  // 글자 1개 입력했을 때
+    // slice는 배열의 시작 인덱스부터 끝 인덱스까지 에 대한 새로운 배열객체로 반환해준다.
+    // slice에서 문자열을 객체로 반환하기 때문에 숫자로 변환
+    let birth_year1_slice = Number(String(birth.value).slice(0, 1)); 
+    let birth_year2_slice = Number(String(birth.value).slice(1, 2));
+    let birth_month1_slice = Number(String(birth.value).slice(4, 5));
+    let birth_month2_slice = Number(String(birth.value).slice(5, 6));
+    let birth_day1_slice = Number(String(birth.value).slice(6, 7));
+    let birth_day2_slice = Number(String(birth.value).slice(7, 8));
+
+
+    if(birth.value.length == 1){  // 글자 1개 입력했을 때
         birth.nextElementSibling.innerHTML="생년월일 8자리를 입력하세요";
         birth.nextElementSibling.style.color='red';
         flag[5] = 'fail';
-    } else if(birthDay.test(birth.value) !== true){
+
+    } else if(birth_year1_slice == 1 && birth_year2_slice == 0){
+          // 년도 중 앞 2자리가 1이거나 0일 때 예를들어 1094 년생은 이 세상에 없으니
+          // 제한을 주어 정상적인 년도를 적을 수 있도록 함
+        birth.nextElementSibling.innerHTML="정확하지 않은 생년월일입니다.";
+        birth.nextElementSibling.style.color='red';
+        flag[5] = 'fail';
+
+    } else if(birth_year1_slice == 2 && birth_year1_slice == 9){
+        // (1,2) 년도 중 뒤 2자리가 2거나 9일 때  1024년생도 안되니
+        // 정상적인 년도를 적을 수 있도록 함
+        birth.nextElementSibling.innerHTML="정확하지 않은 생년월일입니다.";
+        birth.nextElementSibling.style.color='red';
+        flag[5] = 'fail';
+    }
+    else if(birth_month1_slice == 1 && birth_month2_slice <= 9 && birth_month2_slice >= 3){
+        // 월은 1월 ~12월까지 있으니까 13이상으로 적으면 안됨
+        birth.nextElementSibling.innerHTML="정확하지 않은 생년월일입니다.";
+        birth.nextElementSibling.style.color='red';
+        flag[5] = 'fail';
+
+    } else if(birth_day1_slice >= 3 && birth_day1_slice <= 9 && birth_day2_slice >= 2){
+        // 일은 1~ 31일까지 있으니 그 이상으로 적으면 적지 못함
+        birth.nextElementSibling.innerHTML="정확하지 않은 생년월일입니다.";
+        birth.nextElementSibling.style.color='red';
+        flag[5] = 'fail';
+    }
+    else if(birthDay.test(birth.value) !== true){
         birth.nextElementSibling.innerHTML="생년월일 8자리를 입력하세요";
         birth.nextElementSibling.style.color='red';
         flag[5] = 'fail';
@@ -158,8 +213,6 @@ birth.addEventListener("keyup",function(){
         birth.nextElementSibling.style.color='blue';
         flag[5] = 'pass';
     }
-
-
 });
 
 
