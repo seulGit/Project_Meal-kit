@@ -9,7 +9,6 @@
             성선규작업 코드 추가(로컬스토리지)
 ===========================*/
 
-
 let index = location.href.slice(location.href.indexOf("index") + 6, location.href.indexOf("index") + 7);
 //22/07/28 성선규 추가
 // 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언
