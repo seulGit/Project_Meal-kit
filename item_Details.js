@@ -109,10 +109,10 @@ $(function () {
             for (let i = 0; i < Cart_Array.length; i++) { // 받아온 아이템 갯수만큼 반복
                 const select_item = document.querySelector(".select_item"); // 장바구니 안쪽 div 요소 정보 할당
                 let select_box_div = document.createElement("div"); // 새로운 div 생성
-                let close_icon = document.createElement("img"); // 새로운 img 생성
-                close_icon.setAttribute("class", "close_icon"); // 위에서 만든 img에 클래스 부여
-                close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img 속성 src에 이미지가 저장되어 있는 주소 부여
-                select_box_div.append(close_icon); // img를 새로 만든 div 안에 자식요소로 이동
+                let close_icon = document.createElement("span"); // 새로운 span 생성
+                close_icon.setAttribute("class", "material-symbols-outlined close_icon"); //span에 클래스명 부여
+                close_icon.innerHTML = "close"; //구글폰트 아이콘 쓴거라 span에 아이콘명을 텍스트로 넣어줘야 했음 
+                select_box_div.append(close_icon); // div 안쪽에 위에서 생성한 span 태그 추가
                 select_item.append(select_box_div); // img가 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
 
                 // 새로 만든 div에 로컬스터리지에 저장되어 있던 상품의 index값을 가져와 index값에 맞는 이미지 할당
@@ -125,9 +125,9 @@ $(function () {
             for (let i = 0; i < recent_Array.length; i++) { // 받아온 아이템 갯수만큼 반복
                 const recent_item = document.querySelector(".recent_item"); // 장바구니 안쪽 div 요소 정보 할당
                 let recent_box_div = document.createElement("div"); // 새로운 div 생성
-                let close_icon = document.createElement("img"); // 새로운 img 생성
-                close_icon.setAttribute("class", "close_icon"); // 위에서 만든 img에 클래스 부여
-                close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img 속성 src에 이미지가 저장되어 있는 주소 부여
+                let close_icon = document.createElement("span"); // 새로운 span 생성
+                close_icon.setAttribute("class", "material-symbols-outlined close_icon"); //span에 클래스명 부여
+                close_icon.innerHTML = "close"; //구글폰트 아이콘 쓴거라 span에 아이콘명을 텍스트로 넣어줘야 했음 
                 recent_box_div.append(close_icon); // img를 새로 만든 div 안에 자식요소로 이동
                 recent_item.append(recent_box_div); // img가 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
 
@@ -141,9 +141,9 @@ $(function () {
             for (let i = 0; i < favorite_Array.length; i++) { // 받아온 아이템 갯수만큼 반복
                 const like_item = document.querySelector(".like_item"); // 장바구니 안쪽 div 요소 정보 할당
                 let favorite_box_div = document.createElement("div"); // 새로운 div 생성
-                let close_icon = document.createElement("img"); // 새로운 img 생성
-                close_icon.setAttribute("class", "close_icon"); // 위에서 만든 img에 클래스 부여
-                close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img 속성 src에 이미지가 저장되어 있는 주소 부여
+                let close_icon = document.createElement("span"); // 새로운 span 생성
+                close_icon.setAttribute("class", "material-symbols-outlined close_icon"); //span에 클래스명 부여
+                close_icon.innerHTML = "close"; //구글폰트 아이콘 쓴거라 span에 아이콘명을 텍스트로 넣어줘야 했음 
                 favorite_box_div.append(close_icon); // img를 새로 만든 div 안에 자식요소로 이동
                 like_item.append(favorite_box_div); // img가 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
 
@@ -219,6 +219,7 @@ $(function () {
                     });
                 } else if (data["korean_food"][index].main_img2 == "") { //받아오는 json메인이미지데이터가 없을 시(=이미지주소가 공백일 시)
                     subImgBox.style.display = 'none'; //서브이미지를 담고있는 div를 숨김 (메인이미지만 중앙정렬로 보여주기 위해서)
+                    mainDetailsImg.style.height = "50vh";
                 }
             };
 
