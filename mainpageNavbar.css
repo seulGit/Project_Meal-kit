@@ -28,9 +28,12 @@
     font-weight: normal;
     font-style: normal;
 }
+:root {
+    --point: orangered;
+    --color: rgb(255, 218, 71);
+}
 
 * {
-    /* background-color: black; */
     /* 세방고딕BOLD체 */
     font-family: 'SEBANG_Gothic_Bold', sans-serif;
     margin: 0;
@@ -100,7 +103,7 @@ justify-content: space-between; 로 바꿈.
     
 /* 22/07/21 노현
     네비바 아래 밑줄 추가. */
-    border-bottom: 3px solid rgb(255, 69, 0);
+    border-bottom: 3px solid var(--point);
     /* box-shadow: 0 3px 2px 0 rgba(192, 192, 192, 0.6); */
 }
 
@@ -111,7 +114,7 @@ justify-content: space-between; 로 바꿈.
 /* 22/07/20 노현
 수정
 밑에 간격 벌리려고 쓴 마진은 주석처리
-사유는 읽는 위치 기준 위로 25번째줄에 주석 달아둠. */
+사유는 읽는 위치 기준 위로 30번째줄에 주석 달아둠. */
 .header>.navbar>a {
     /* margin: 0 5.8vw;  */
     font-size: 23px;
@@ -178,11 +181,3 @@ a태그 글씨색깔 검정 */
 .navbar>a:last-child {
     margin-right: 10vw;
 }
-
-/* 22/07/21 노현
-    보류 .. */
-/* .navbar>a:hover{
-    transition: all 0.3s;
-    border-bottom: 5px solid rgb(255, 69, 0);
-     color: rgb(255, 69, 0); 
-} */

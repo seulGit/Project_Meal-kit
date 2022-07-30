@@ -26,6 +26,11 @@
     font-weight: normal;
     font-style: normal;
 }
+:root {
+    --point: orangered;
+    --color: rgb(255, 218, 71);
+}
+
 
 * {
     /* border: 1px solid royalblue; */
@@ -73,7 +78,7 @@ body {
 로고 밑 포인트 라인 생성 */
 .borderLine{
     height: 3.5vh;
-    border-bottom: 2.5px solid rgb(255, 69, 0);
+    border-bottom: 2.5px solid var(--point);
 }
 
 /* input 감싼 div */
@@ -108,13 +113,14 @@ body {
 /* 눈깔 아이콘 */
 .inputContainer>label>i[class$=o] {
     margin-top: 3px;
-    color: rgb(255, 69, 0);
+    color: var(--point);
     position: absolute;
     right: 1px;
     font-size: 30px;
     cursor: pointer;
 
 }
+
 /* 성별 div(radio라 싸놨음) */
 .genderBox {
     
@@ -129,7 +135,7 @@ body {
 }
 /* radio  */
 .genderBox>input[type=radio] {
-    accent-color: rgb(255, 69, 0);
+    accent-color: var(--point);
     margin-top: 10px;
     margin-left: 10px;
     
@@ -149,7 +155,7 @@ body {
     font-family: 'BBTreeGR';
     margin-top: 20px;
     font-weight: bolder;
-    color: rgb(255, 69, 0);
+    color: var(--point);
     font-size: 18px;
     background-color: white;
     border: 1px solid gainsboro;
@@ -162,6 +168,6 @@ body {
 /* 버튼 호버 */
 .btn:hover {
     transition: all 0.4s;
-    background-color: rgb(255, 69, 0);
+    background-color: var(--point);
     color: white;
 }
