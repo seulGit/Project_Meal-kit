@@ -22,6 +22,10 @@
      220723 오슬기 리뷰부분 이미지미리보기 div 삭제(테이블폼만 남겨두는걸로 결정)/클래스명 조정
      220725 오슬기 본문내비바 구성 변경, 클래스명 조정, js,json 스크립트 적용
      220726 오슬기 블로그 부분 캐러셀로 변경, footer 추가(병합)
+     220727 리뷰,블로그 레이아웃 수정 
+     220728 오슬기 본문네비바 클래스명 추가지정
+     220729 블로그부분 블로거정보 추가 
+     220730 태그 및 텍스트 일부 수정 
 -->
     <!-- 헤더부분 -->
     <div class="header">
@@ -48,7 +52,7 @@
 
 
 
-    <!-- 220719 오슬기 사이드바(성선규) 붙여넣기 -->
+    <!-- 사이드바 장바구니 박스(성선규 작업) -->
     <!-- 사이드 바 이동루트-->
     <!-- 사이드 바 컨테이너 -->
     <div class="basket_box">
@@ -119,15 +123,20 @@
     </div>
 
 
+
+
+
+    <!-- 아이템 상세 페이지 본문 (오슬기 파트 시작)-->
     <div class="main_container">
-        <!-- 슬기 파트 시작-->
         <div class="mainbody">
             <!-- 상품사진,정보 및 가격 부분 div -->
             <div class="top">
                 <!-- 상품사진(메인사진+추가사진) div) -->
                 <div class="topleft">
                     <!-- 상품사진(메인사진) -->
-                    <div class="main_details_img"></div>
+                    <div class="main_details_img">
+                        <span class="xi-refresh"></span>
+                    </div>
                     <!-- 상품사진(추가사진) div -->
                     <div class="subimgbox">
                         <!-- 상품사진(추가사진 -->
@@ -257,7 +266,7 @@
                                 <i class="xi-new"></i>
                             </td>
                             <td>김정치</td>
-                            <td>2022.07.20</td>
+                            <td>2022.07.30</td>
                         </tr>
                         <tr>
                             <td>
@@ -268,7 +277,7 @@
                             </td>
                             <td>대량구매했슴돠 많이파십쇼</td>
                             <td>노현</td>
-                            <td>2022.07.22</td>
+                            <td>2022.07.29</td>
                         </tr>
                         <tr>
                             <td>
@@ -278,7 +287,7 @@
                             </td>
                             <td>혼자 4인분 먹었습니다 더 매운맛 좀 출시해주세요</td>
                             <td>성선규</td>
-                            <td>2022.07.22</td>
+                            <td>2022.07.28</td>
                         </tr>
                         <tr>
                             <td>
@@ -286,7 +295,7 @@
                             </td>
                             <td>퉤퉤퉤 별 한개도 아깝네요 ㅡㅡ</td>
                             <td>오슬기</td>
-                            <td>2022.07.22</td>
+                            <td>2022.07.27</td>
                         </tr>
                         <tr>
                             <td>
@@ -298,7 +307,7 @@
                             </td>
                             <td>매콤달콤 졸맛탱>_&lt; 블로그에 내돈내산 후기 남겼으니 보러오세요!!</td>
                             <td>이은지</td>
-                            <td>2022.07.22</td>
+                            <td>2022.07.26</td>
                         </tr>
                         <tr>
                             <td>
@@ -310,7 +319,7 @@
                             </td>
                             <td>딸래미 사줬는데 잘 먹네요 많이 파세요</td>
                             <td>은지맘</td>
-                            <td>2022.07.22</td>
+                            <td>2022.07.25</td>
                         </tr>
                         <tr>
                             <td>
@@ -320,9 +329,9 @@
                                 <i class="xi-star"></i>
                                 <i class="xi-star"></i>
                             </td>
-                            <td>어? 맛있다</td>
+                            <td>어? 맛있다.</td>
                             <td>김형준</td>
-                            <td>2022.07.22</td>
+                            <td>2022.07.24</td>
                         </tr>
                     </table>
                 </div>
@@ -337,87 +346,88 @@
             <!-- 본문 내용4(블로그) div -->
             <div class="middlebox middleboxBlog">
                 <!-- 본문 내용4(블로그) 목록 -->
-                    <div class="blogPlus"><a href="blog.html"><i class="xi-plus-square"></i> 더보기</a></div>
-                    <div class="blogSwiperArea">
-                        <div class="section Blogs swiper mySwiperBlog">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <!-- 상품 박스 -->
-                                    <div class="slide">
-                                        <div class="imgBox">
-                                            <img src="blogImg/완료.png" alt="완료 이미지"><!-- 상품 이미지 -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- 상품 박스 -->
-                                    <div class="slide">
-                                        <div class="imgBox">
-                                            <img src="blogImg/냄비.png" alt="냄비 이미지"> <!-- 상품 이미지 -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- 상품 박스 -->
-                                    <div class="slide">
-                                        <div class="imgBox">
-                                            <img src="blogImg/떡볶이.png" alt="떡볶이 이미지"> <!-- 상품 이미지 -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- 상품 박스 -->
-                                    <div class="slide">
-                                        <div class="imgBox">
-                                            <img src="blogImg/완료.png" alt="완료 이미지">
-                                            <!--상품 이미지-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- 상품 박스 -->
-                                    <div class="slide">
-                                        <div class="imgBox">
-                                            <img src="blogImg/젓가락.png" alt="젓가락 이미지"> <!-- 상품 이미지 -->
-                                        </div>
+                <div class="blogPlus"><a href="blog.html"><i class="xi-plus-square"></i> 더보기</a></div>
+                <div class="blogSwiperArea">
+                    <div class="section Blogs swiper mySwiperBlog">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <!-- 상품 박스 -->
+                                <div class="slide">
+                                    <div class="imgBox">
+                                        <img src="blogImg/완료.png" alt="완료 이미지"><!-- 상품 이미지 -->
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="blogReviewText">
-                            <div class="itemText">
-                                <!-- 상품 이름 및 가격 정보 -->
-                                <div class="blogerContents">
-                                    <h3 class="itemTitle">우정분식 아찔떡볶잉 먹은 후기</h3>
-                                    <p class="itemInfor">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        A, consequuntur placeat nisi reiciendis quae illo nobis, a.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Ex soluta quod ad vel ipsam. Porro in perspiciatis beatae eaque exercitationem
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum nulla minus
-                                        delectus maiores necessitatibus
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Ex soluta quod ad vel ipsam.
-                                </div>
-                                <div class="blogerInfo">
-                                    <div class="blogerName"><span>파워블로거</span>
-                                        <h4>푸드파이터이은지</h4>
-                                    </div>
-                                    <div class="blogerImg">
-                                        <span class="material-symbols-outlined">
-                                            face_3
-                                        </span>
+                            <div class="swiper-slide">
+                                <!-- 상품 박스 -->
+                                <div class="slide">
+                                    <div class="imgBox">
+                                        <img src="blogImg/냄비.png" alt="냄비 이미지"> <!-- 상품 이미지 -->
                                     </div>
                                 </div>
-                                </p>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- 상품 박스 -->
+                                <div class="slide">
+                                    <div class="imgBox">
+                                        <img src="blogImg/떡볶이.png" alt="떡볶이 이미지"> <!-- 상품 이미지 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- 상품 박스 -->
+                                <div class="slide">
+                                    <div class="imgBox">
+                                        <img src="blogImg/완료.png" alt="완료 이미지">
+                                        <!--상품 이미지-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- 상품 박스 -->
+                                <div class="slide">
+                                    <div class="imgBox">
+                                        <img src="blogImg/젓가락.png" alt="젓가락 이미지"> <!-- 상품 이미지 -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-            </div> 
-        </div>
-        <!-- 오슬기 파트 끝 -->
+                    <div class="blogReviewText">
+                        <div class="itemText">
+                            <!-- 상품 이름 및 가격 정보 -->
+                            <div class="blogerContents">
+                                <h3 class="itemTitle">우정분식 아찔떡볶잉 먹은 후기</h3>
+                                <p class="itemInfor">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    A, consequuntur placeat nisi reiciendis quae illo nobis, a.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Ex soluta quod ad vel ipsam. Porro in perspiciatis beatae eaque exercitationem
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum nulla minus
+                                    delectus maiores necessitatibus
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Ex soluta quod ad vel ipsam.
+                            </div>
+                            <div class="blogerInfo">
+                                <div class="blogerName"><span>파워블로거</span>
+                                    <h4>푸드파이터이은지</h4>
+                                </div>
+                                <div class="blogerImg">
+                                    <span class="material-symbols-outlined">
+                                        face_3
+                                    </span>
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- mainbody end-->
     </div>
+    <!-- 아이템 상세페이지 (오슬기 파트) 끝 -->
 
 
+    <!-- footer -->
     <div class="footer">
         <div class="footerImg"><img class="footerLogo" src="logo.png" alt="로고"></div>
         <div>
@@ -431,6 +441,8 @@
             </p>
         </div>
     </div>
+
+    <!-- script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="item_Details.js"></script>
