@@ -235,9 +235,11 @@ const price_search = document.querySelector("#price_value");
 
 price_value.oninput = function () {
     let value = Math.ceil(this.value / 10) * 10; // 가격 input value를 1의 자리에서 올림
-    if (value < 10000) { // value가 10000 이하라면 앞의 자릿수 하나 + 나머지 뒤의 자릿수를 출력
+    if (value < 1000) { // value가 10000 이하라면 앞의 자릿수 하나 + 나머지 뒤의 자릿수를 출력
+        price_search.innerHTML = value;
+    } else if (value < 10000){
         price_search.innerHTML = String(value).slice(0, 1) + "," + String(value).slice(-3);
-    } else { // value가 10000 이상이라면 앞의 자릿수 두개 + 나머지 뒤의 자릿수를 출력
+    } else{ // value가 10000 이상이라면 앞의 자릿수 두개 + 나머지 뒤의 자릿수를 출력
         price_search.innerHTML = String(value).slice(0, 2) + "," + String(value).slice(-3);
     }
     search_value(this.value); // 가격 검색 input의 값이 변경 시 검색 함수 호출
@@ -272,6 +274,19 @@ function search_value(value) {
             search_item[i].style.display = "flex";
         } else {
             search_item[i].style.display = "none";
+        }
+    }
+    // 22/07/30 성선규
+    // 아이템 검색시 결과가 없을 경우 empty_item 보이기
+    let empty_count = 0; // 아이템을 카운팅하기 위해서
+    for(let i = 0; i < search_item.length; i++){ // 아이템 갯수만큼 반복
+        if(search_item[i].style.display == "none"){ // 인덱스 0번째 아이템부터 끝까지 스타일 display가 none인지
+            empty_count++; // display가 none이라면 카운트 증가
+            if(empty_count == search_item.length){ // empty_count가 아이템 갯수와 같다면
+                document.querySelector(".empty_item").style.display = "flex"; // empty_item 보이기
+            }
+        } else{ // empty_count가 아이템 갯수와 같지 않다면
+            document.querySelector(".empty_item").style.display = "none"; // empty_item 숨기기
         }
     }
 }
@@ -322,11 +337,11 @@ _$(document).ready(function () {
                 for (let i = 0; i < Cart_Array.length; i++) { // 받아온 아이템 갯수만큼 반복
                     const select_item = document.querySelector(".select_item"); // 장바구니 안쪽 div 요소 정보 할당
                     let select_box_div = document.createElement("div"); // 새로운 div 생성
-                    let close_icon = document.createElement("img"); // 새로운 img 생성
-                    close_icon.setAttribute("class", "close_icon"); // 위에서 만든 img에 클래스 부여
-                    close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img 속성 src에 이미지가 저장되어 있는 주소 부여
-                    select_box_div.append(close_icon); // img를 새로 만든 div 안에 자식요소로 이동
-                    select_item.append(select_box_div); // img가 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
+                    let close_icon = document.createElement("span"); // 새로운 span 생성
+                    close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 위에서 만든 span에 클래스 부여
+                    close_icon.innerHTML = "close";
+                    select_box_div.append(close_icon); // span을 새로 만든 div 안에 자식요소로 이동
+                    select_item.append(select_box_div); // span이 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
 
                     // 새로 만든 div에 로컬스터리지에 저장되어 있던 상품의 index값을 가져와 index값에 맞는 이미지 할당
                     select_box_div.style.background = `url(${data["korean_food"][Cart_Array[i]].main_img}) 50% 50%/100% no-repeat`;
@@ -338,11 +353,11 @@ _$(document).ready(function () {
                 for (let i = 0; i < recent_Array.length; i++) { // 받아온 아이템 갯수만큼 반복
                     const recent_item = document.querySelector(".recent_item"); // 장바구니 안쪽 div 요소 정보 할당
                     let recent_box_div = document.createElement("div"); // 새로운 div 생성
-                    let close_icon = document.createElement("img"); // 새로운 img 생성
-                    close_icon.setAttribute("class", "close_icon"); // 위에서 만든 img에 클래스 부여
-                    close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img 속성 src에 이미지가 저장되어 있는 주소 부여
-                    recent_box_div.append(close_icon); // img를 새로 만든 div 안에 자식요소로 이동
-                    recent_item.append(recent_box_div); // img가 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
+                    let close_icon = document.createElement("span"); // 새로운 img 생성
+                    close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 위에서 만든 span에 클래스 부여
+                    close_icon.innerHTML = "close";
+                    recent_box_div.append(close_icon); // span을 새로 만든 div 안에 자식요소로 이동
+                    recent_item.append(recent_box_div); // span이 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
 
                     // 새로 만든 div에 로컬스터리지에 저장되어 있던 상품의 index값을 가져와 index값에 맞는 이미지 할당
                     recent_box_div.style.background = `url(${data["korean_food"][recent_Array[i]].main_img}) 50% 50%/100% no-repeat`;
@@ -354,11 +369,11 @@ _$(document).ready(function () {
                 for (let i = 0; i < favorite_Array.length; i++) { // 받아온 아이템 갯수만큼 반복
                     const like_item = document.querySelector(".like_item"); // 장바구니 안쪽 div 요소 정보 할당
                     let favorite_box_div = document.createElement("div"); // 새로운 div 생성
-                    let close_icon = document.createElement("img"); // 새로운 img 생성
-                    close_icon.setAttribute("class", "close_icon"); // 위에서 만든 img에 클래스 부여
-                    close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img 속성 src에 이미지가 저장되어 있는 주소 부여
-                    favorite_box_div.append(close_icon); // img를 새로 만든 div 안에 자식요소로 이동
-                    like_item.append(favorite_box_div); // img가 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
+                    let close_icon = document.createElement("span"); // 새로운 span 생성
+                    close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 위에서 만든 span 클래스 부여
+                    close_icon.innerHTML = "close";
+                    favorite_box_div.append(close_icon); // span에 새로 만든 div 안에 자식요소로 이동
+                    like_item.append(favorite_box_div); // span이 들어있는 div를 장바구니 안쪽 div의 자식요소로 이동
 
                     // 새로 만든 div에 로컬스터리지에 저장되어 있던 상품의 index값을 가져와 index값에 맞는 이미지 할당
                     favorite_box_div.style.background = `url(${data["korean_food"][favorite_Array[i]].main_img}) 50% 50%/100% no-repeat`;
@@ -380,10 +395,10 @@ _$(document).ready(function () {
                     // 아이템 클릭 시 해당 아이템 최근 본 상품 박스에 추가
                     item_img_1[i].addEventListener("click", function () {
                         let select_box_div = document.createElement("div"); // 새로운 div 생성
-                        let close_icon = document.createElement("img"); // 새로운 img 태그 생성
-                        close_icon.setAttribute("class", "close_icon"); // 생성한 img에 class 추가
-                        close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img에 이미지 주소 추가
-                        select_box_div.append(close_icon); // div 안쪽에 img 태그 추가
+                        let close_icon = document.createElement("span"); // 새로운 img 태그 생성
+                        close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 생성한 span에 class 추가
+                        close_icon.innerHTML = "close";
+                        select_box_div.append(close_icon); // div 안쪽에 span 태그 추가
                         recent_item.append(select_box_div); // 장바구니 박스에 div 추가
                         const recent_box_div_img = document.querySelector(`.recent_item > div:nth-child(${recent_item_count})`); // div 추가된 요소에 순서를 변수에 저장하여 문서 정보 받기
                         recent_box_div_img.style.background = `url(${data["korean_food"][i].main_img}) 50% 50%/100% no-repeat`; // 장바구니 박스에 넣은 div에 백그라운드 이미지 추가
@@ -395,17 +410,18 @@ _$(document).ready(function () {
                         window.localStorage.setItem('recent', JSON.stringify(recent_Array)); // 배열을 JSON으로 변환 후 localStorage의 'recent'에 저장
 
 
-                        // location.href = "item_Details.html?index=" + i;  // 22/07/28 성선규 : 주소값 뒤에 i값을 키:벨류 형태로 전달
+                        // 22/07/28 성선규 : 주소값 뒤에 i값을 키:벨류 형태로 전달
+                        location.href = "item_Details.html?index=" + i + "recent=" + recent_item_count + "select=" + select_item_count + "favorite=" + like_item_count;  
                     })
 
                     // 22/07/28 성선규 추가
                     // 장바구니 아이콘 클릭 시 해당 아이템 장바구니 박스에 추가
                     shopping_icon[i].addEventListener("click", function () {
                         let select_box_div = document.createElement("div"); // 새로운 div 생성
-                        let close_icon = document.createElement("img"); // 새로운 img 태그 생성
-                        close_icon.setAttribute("class", "close_icon"); // 생성한 img에 class 추가
-                        close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img에 이미지 주소 추가
-                        select_box_div.append(close_icon); // div 안쪽에 img 태그 추가
+                        let close_icon = document.createElement("span"); // 새로운 span 태그 생성
+                        close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 생성한 span에 class 추가
+                        close_icon.innerHTML = "close";
+                        select_box_div.append(close_icon); // div 안쪽에 span 태그 추가
                         select_item.append(select_box_div); // 장바구니 박스에 div 추가
                         const select_box_div_img = document.querySelector(`.select_item > div:nth-child(${select_item_count})`); // div 추가된 요소에 순서를 변수에 저장하여 문서 정보 받기
                         select_box_div_img.style.background = `url(${data["korean_food"][i].main_img}) 50% 50%/100% no-repeat`; // 장바구니 박스에 넣은 div에 백그라운드 이미지 추가
@@ -423,10 +439,10 @@ _$(document).ready(function () {
                     // 찜하기 아이콘 클릭 시 해당 아이템 찜한 상품 박스에 추가
                     favorite_icon[i].addEventListener("click", function () {
                         let select_box_div = document.createElement("div"); // 새로운 div 생성
-                        let close_icon = document.createElement("img"); // 새로운 img 태그 생성
-                        close_icon.setAttribute("class", "close_icon"); // 생성한 img에 class 추가
-                        close_icon.setAttribute("src", "icon/close_FILL0_wght400_GRAD0_opsz48.png"); // img에 이미지 주소 추가
-                        select_box_div.append(close_icon); // div 안쪽에 img 태그 추가
+                        let close_icon = document.createElement("span"); // 새로운 span 태그 생성
+                        close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 생성한 span에 class 추가
+                        close_icon.innerHTML = "close";
+                        select_box_div.append(close_icon); // div 안쪽에 span 태그 추가
                         like_item.append(select_box_div); // 장바구니 박스에 div 추가
                         const like_box_div_img = document.querySelector(`.like_item > div:nth-child(${like_item_count})`); // div 추가된 요소에 순서를 변수에 저장하여 문서 정보 받기
                         like_box_div_img.style.background = `url(${data["korean_food"][i].main_img}) 50% 50%/100% no-repeat`; // 찜하기 박스에 넣은 div에 백그라운드 이미지 추가

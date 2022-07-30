@@ -214,5 +214,6 @@ for(let i=0; i<answerBtn.length; i++){
         // 배열이기 때문에 3번째 요소에 div2를 넣겠다는 의미
         this.parentNode.children[0].value = '';
         // input 내용을 초기화 해줌
-});
+
 }
+

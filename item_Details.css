@@ -5,11 +5,12 @@
 220722 오슬기 세부 디자인 조정 
 220723 오슬기 버튼 간격 및 속성 수정/페이지본문 영역구분선설정/리뷰테이블폼 정렬수정/일부div 너비,높이 px->%로 변경
 220725 오슬기 상세페이지 내 이미지 너비,높이 단위변경(vw,vh), 본문내비바 구성 변경 및 디자인 조정, 이미지 클릭시 변경되는 js구현, json 이미지데이터 적용 1차 완료
-220726 오슬기 블로그캐러셀 적용 및 페이지에 맞게 일부 속성 수정, 페이지 레이아웃 및 디자인 작업 최종 완료
-220727 오슬기 
-220728 오슬기 본문 네비바 색상 별도지정 수정해야함!!
+220726 오슬기 블로그캐러셀 적용 및 페이지에 맞게 일부 속성 수정, 페이지 레이아웃 및 디자인 작업 완료
+220727 오슬기 리뷰,블로그 디자인 세부조정 
+220728 오슬기 본문 네비바 영역별 색상 별도 지정
+220729 오슬기 블로그후기(블로거정보) 디자인 수정 
+220730 오슬기 세부디자인 조정 마지막 작업 
 ===========================*/
-
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 
 /* 컨셉컬러 미리 설정  */
@@ -52,6 +53,22 @@
 .main_details_img { /*220720 오슬기 수정: 메인페이지에 중복되는 클래스명이 있어서 수정*/
     width: 25vw;
     height: 35vh;
+    position: relative;
+}
+
+/* 메인사진으로 다시 보이게 하는 새로고침 아이콘 */
+.main_details_img>span{
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.512);
+    border-radius: 10%;
+    color: var(--point);
+    position: absolute;
+    right:0;
+    bottom: 0;  
+    cursor: pointer;
+    opacity: 0;
 }
 
 /* 상품사진(추가사진) div */
@@ -227,42 +244,42 @@
 }
 
 /* 네비메뉴바 뷰포트 이동 시 해당 네비메뉴바 속성 설정 */
-/* 네비메뉴바(적용부분:상품디테일) 클릭시 해당 div 배경색 나타나게 구현 예정*/
+/* 네비메뉴바(적용부분:상품디테일) 색상 별도 지정*/
 .mainbody>.menubox_one>.detail{
     background-color: rgba(0, 0, 0, 0.030);
 }
 
-/* 네비메뉴바(적용부분:상품디테일) 클릭시 폰트 컬러 강조기능 구현 예정 */
+/* 네비메뉴바(적용부분:상품디테일) 색상 별도 지정 */
 .mainbody>.menubox_one>.detail>span{
     color: black;
 }
 
-/* 네비메뉴바(적용부분:배송정보) 클릭시 해당 div 배경색 나타나게 구현 예정*/
+/* 네비메뉴바(적용부분:배송정보) 색상 별도 지정*/
 .mainbody>.menubox_two>.info{
     background-color: rgba(0, 0, 0, 0.030);
 }
 
-/* 네비메뉴바(적용부분:배송정보) 클릭시 폰트 컬러 강조기능 구현 예정 */
+/* 네비메뉴바(적용부분:배송정보) 색상 별도 지정 */
 .mainbody>.menubox_two>.info>span{
     color: black;
 }
 
-/* 네비메뉴바(적용부분:리뷰) 클릭시 해당 div 배경색 나타나게 구현 예정*/
+/* 네비메뉴바(적용부분:리뷰) 색상 별도 지정*/
 .mainbody>.menubox_three>.review{
     background-color: rgba(0, 0, 0, 0.030);
 }
 
-/* 네비메뉴바(적용부분:리뷰) 클릭시 폰트 컬러 강조기능 구현 예정 */
+/* 네비메뉴바(적용부분:리뷰) 색상 별도 지정 */
 .mainbody>.menubox_three>.review>span{
     color: black;
 }
 
-/* 네비메뉴바(적용부분:블로그) 클릭시 해당 div 배경색 나타나게 구현 예정*/
+/* 네비메뉴바(적용부분:블로그) 색상 별도 지정*/
 .mainbody>.menubox_four>.blog{
     background-color: rgba(0, 0, 0, 0.030);
 }
 
-/* 네비메뉴바(적용부분:블로그) 클릭시 폰트 컬러 강조기능 구현 예정 */
+/* 네비메뉴바(적용부분:블로그) 색상 별도 지정 */
 .mainbody>.menubox_four>.blog>span{
     color: black;
 }
@@ -293,6 +310,7 @@
     justify-content: center;
 }
 
+/* 본문 내용- 상세정보 이미지 기본 속성 */
 .detailimg {
     display: flex;
     flex-direction: column;
@@ -300,6 +318,7 @@
     width: 100%;
 }
 
+/* 본문 내용- 배송정보 이미지 기본 속성 */
 .infoimg {
     display: flex;
     flex-direction: column;
@@ -527,6 +546,7 @@
     height: 8%;
     bottom: 20px;
     left: 20px;
+    /* padding: 10px; */
     z-index: 1000; /* 0729 오슬기 수정: 알람 뜰 시 추가된 제품이미지에 가려져버려서 숫자증가시킴*/
     display: flex;
     align-items: center;
@@ -549,7 +569,7 @@
     opacity: 0;
 }
 .like_alarm > div{
-    width: 100%; /* 22/07/27 성선규 추가 : 넓이 추가하여 컨텐츠 사이에 여백 추가 */
+    width: 80%; /* 22/07/27 성선규 추가 : 넓이 추가하여 컨텐츠 사이에 여백 추가 */
     display: flex;
     flex-direction: row;
     justify-content: space-between; /* 22/07/27 성선규 수정 : 컨텐츠 사이 여백  */
@@ -579,6 +599,8 @@
 .alarm div span{
     display: inline-block;
     width: 70%;
+    font-family: 'SEBANG_Gothic_Regular', sans-serif;
+    font-size: 15px;
     /* border: 1px solid red; */
 }
 
@@ -601,13 +623,15 @@
 /* 0730 오슬기 추가  */
 /* 장바구니 박스 내 x 아이콘  */
 .close_icon {
-    color: var(--point);
+    color: black;
     position: absolute;
     font-size: 40px;
     font-weight: bolder;
     top: 0;
     right: 0;
     cursor: pointer;
+    background-color: var(--color);
+    border-radius: 10%;
 }
 
 
