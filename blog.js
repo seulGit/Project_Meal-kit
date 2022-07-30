@@ -208,4 +208,4 @@ for(let k=0; k<answerBtn.length; k++){
         this.parentNode.children[0].value = '';
         // input 내용을 초기화 해줌
 });
-}`
+}
