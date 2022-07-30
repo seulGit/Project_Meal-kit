@@ -205,11 +205,6 @@ max-width가 1300px 이하로 내려갈경우 나타나기 */
     height: 100px;
     position: relative;
 }
-.recent_box > .recent_item > div > img{
-    position: absolute;
-    width: 30px;
-    right: 0;
-}
 /* 장바구니 아이템 */
 .select_box > .select_item{
     width: 100%;
@@ -224,11 +219,6 @@ max-width가 1300px 이하로 내려갈경우 나타나기 */
     width: 100px;
     height: 100px;
     position: relative;
-}
-.select_box > .select_item > div > img{
-    position: absolute;
-    width: 30px;
-    right: 0;
 }
 /* 찜한 상품 아이템 */
 .like_box > .like_item{
@@ -245,12 +235,21 @@ max-width가 1300px 이하로 내려갈경우 나타나기 */
     height: 100px;
     position: relative;
 }
-.like_box > .like_item > div > img{
-    position: absolute;
-    width: 30px;
-    right: 0;
-}
 
+/* 0730 오슬기 추가  */
+/* 장바구니 박스 내 x 아이콘  */
+.close_icon {
+    user-select: none;
+    color: black;
+    position: absolute;
+    font-size: 40px;
+    font-weight: bolder;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background-color: rgb(255, 218, 71);
+    border-radius: 10%;
+}
 
 @media only screen and (max-width : 1300px) {
     .basket_box{
