@@ -130,7 +130,7 @@ body{
 /* 220730 다크 모드 시 답글생성 창 색 */
 .container.dark #inputTextBox{
     width: 90%;
-    height: 50px;
+    height: auto;
     background-color:  #404246;
     color: white;
     margin: 5px 0 5px;
