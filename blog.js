@@ -215,5 +215,6 @@ for(let i=0; i<answerBtn.length; i++){
         this.parentNode.children[0].value = '';
         // input 내용을 초기화 해줌
 
+});
 }
 
