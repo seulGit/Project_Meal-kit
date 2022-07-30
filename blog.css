@@ -623,7 +623,7 @@ input{
 /* 220730 답글 기능에 추가될 div 박스 스타일 */
 #inputTextBox{
     width: 90%;
-    height: 50px;
+    height: auto;
     background-color:  rgb(233, 233, 233);
     margin: 5px 0 5px;
     padding: 10px;
