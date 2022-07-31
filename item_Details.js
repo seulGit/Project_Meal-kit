@@ -10,11 +10,7 @@
 ===========================*/
 
 let index = location.href.slice(location.href.indexOf("index") + 6);
-//22/07/28 성선규 추가
-// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언 
-let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length;
-let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
-let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;
+
 
 //22/07/29 성선규 추가
 // 장바구니 로컬 스터리지를 위한 배열 선언
@@ -37,6 +33,11 @@ if (window.localStorage.getItem("favorite") === null) { // 만약 페이지를 �
     window.localStorage.setItem("favorite", JSON.stringify(favorite_Array)); // 첫 방문이라면 빈 배열로 초기화
 }
 
+//22/07/28 성선규 추가
+// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언 
+let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length;
+let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
+let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;
 
 
 
