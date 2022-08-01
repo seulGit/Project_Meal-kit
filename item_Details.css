@@ -571,7 +571,7 @@
     opacity: 0;
 }
 .like_alarm > div{
-    width: 80%; /* 22/07/27 성선규 추가 : 넓이 추가하여 컨텐츠 사이에 여백 추가 */
+    width: 100%; /* 22/07/27 성선규 추가 : 넓이 추가하여 컨텐츠 사이에 여백 추가 */
     display: flex;
     flex-direction: row;
     justify-content: space-between; /* 22/07/27 성선규 수정 : 컨텐츠 사이 여백  */

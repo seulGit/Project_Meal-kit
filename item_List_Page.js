@@ -32,22 +32,6 @@
 $.noConflict();
 let _$ = jQuery;
 
-//22/07/28 성선규 추가
-// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언
-let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length;
-let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
-let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;
-
-if(recent_item_count == 0){
-    recent_item_count = 1;
-}
-if(select_item_count == 0){
-    select_item_count = 1;
-}
-if(like_item_count == 0){
-    like_item_count = 1;
-}
-
 //22/07/29 성선규 추가
 // 장바구니 로컬 스터리지를 위한 배열 선언
 let Cart_Array = new Array();
@@ -68,6 +52,13 @@ let favorite_Array = new Array();
 if (window.localStorage.getItem("favorite") === null) { // 만약 페이지를 처음 방문한다면 null값으로 되어 있어 확인 후
     window.localStorage.setItem("favorite", JSON.stringify(favorite_Array)); // 첫 방문이라면 빈 배열로 초기화
 }
+
+//22/07/28 성선규 추가
+// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언
+let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length;
+let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
+let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;
+
 
 
 // 22/07/22 성선규 html 아이템 박스를 동적으로 생성하기 위한 선언
@@ -403,6 +394,7 @@ _$(document).ready(function () {
                     // 아이템 클릭 시 해당 아이템 최근 본 상품 박스에 추가
                     item_img_1[i].addEventListener("click", function (e) {
                         console.log(recent_item_count)
+                        recent_item_count++; // 순서 증가
                         let select_box_div = document.createElement("div"); // 새로운 div 생성
                         let close_icon = document.createElement("span"); // 새로운 img 태그 생성
                         close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 생성한 span에 class 추가
@@ -412,7 +404,6 @@ _$(document).ready(function () {
                         console.dir(recent_item)
                         const recent_box_div_img = document.querySelector(`.recent_item > div:nth-child(${recent_item_count})`); // div 추가된 요소에 순서를 변수에 저장하여 문서 정보 받기
                         recent_box_div_img.style.background = `url(${data["korean_food"][i].main_img}) 50% 50%/100% no-repeat`; // 장바구니 박스에 넣은 div에 백그라운드 이미지 추가
-                        recent_item_count++; // 순서 증가
 
 
                         //22/07/30 성선규 추가
@@ -427,6 +418,7 @@ _$(document).ready(function () {
                     // 22/07/28 성선규 추가
                     // 장바구니 아이콘 클릭 시 해당 아이템 장바구니 박스에 추가
                     shopping_icon[i].addEventListener("click", function () {
+                        select_item_count++; // 순서 증가
                         let select_box_div = document.createElement("div"); // 새로운 div 생성
                         let close_icon = document.createElement("span"); // 새로운 span 태그 생성
                         close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 생성한 span에 class 추가
@@ -437,7 +429,6 @@ _$(document).ready(function () {
                         select_box_div_img.style.background = `url(${data["korean_food"][i].main_img}) 50% 50%/100% no-repeat`; // 장바구니 박스에 넣은 div에 백그라운드 이미지 추가
                         const select_check = document.querySelector("#select");
                         select_check.checked = true; // 요소가 추가될 경우 radio 체크되면서 view 전환
-                        select_item_count++; // 순서 증가
 
                         //22/07/30 성선규 추가
                         Cart_Array.push(i); // 상품 클릭 시 해당 인덱스 값을 배열에 추가
@@ -448,6 +439,7 @@ _$(document).ready(function () {
                     //22/07/28 성선규 추가
                     // 찜하기 아이콘 클릭 시 해당 아이템 찜한 상품 박스에 추가
                     favorite_icon[i].addEventListener("click", function () {
+                        like_item_count++; // 순서 증가
                         let select_box_div = document.createElement("div"); // 새로운 div 생성
                         let close_icon = document.createElement("span"); // 새로운 span 태그 생성
                         close_icon.setAttribute("class", "material-symbols-outlined close_icon"); // 생성한 span에 class 추가
@@ -458,7 +450,6 @@ _$(document).ready(function () {
                         like_box_div_img.style.background = `url(${data["korean_food"][i].main_img}) 50% 50%/100% no-repeat`; // 찜하기 박스에 넣은 div에 백그라운드 이미지 추가
                         const like_check = document.querySelector("#like");
                         like_check.checked = true; // 요소가 추가될 경우 radio 체크되면서 view 전환
-                        like_item_count++; // 순서 증가
 
                         //22/07/30 성선규 추가
                         favorite_Array.push(i); // 상품 클릭 시 해당 인덱스 값을 배열에 추가

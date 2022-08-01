@@ -10,21 +10,7 @@
 ===========================*/
 
 let index = location.href.slice(location.href.indexOf("index") + 6);
-//22/07/28 성선규 추가
-// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언 
-let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length;
-let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
-let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;
 
-if(recent_item_count == 0){
-    recent_item_count = 1;
-}
-if(select_item_count == 0){
-    select_item_count = 1;
-}
-if(like_item_count == 0){
-    like_item_count = 1;
-}
 
 //22/07/29 성선규 추가
 // 장바구니 로컬 스터리지를 위한 배열 선언
@@ -47,6 +33,11 @@ if (window.localStorage.getItem("favorite") === null) { // 만약 페이지를 �
     window.localStorage.setItem("favorite", JSON.stringify(favorite_Array)); // 첫 방문이라면 빈 배열로 초기화
 }
 
+//22/07/28 성선규 추가
+// 최근 본 상품, 찜한상품, 장바구니 박스 컨트롤을 위한 변수 선언 
+let recent_item_count = JSON.parse(window.localStorage.getItem("recent")).length;
+let select_item_count = JSON.parse(window.localStorage.getItem("Cart")).length;
+let like_item_count = JSON.parse(window.localStorage.getItem("favorite")).length;
 
 
 
@@ -260,6 +251,8 @@ $(function () {
             // 장바구니 아이콘 클릭 시 해당 아이템 장바구니 박스에 추가
             shopping_cart.addEventListener("click", function () {
                 let select_box_div = document.createElement("div"); // 새로운 div 생성
+                select_item_count++; // 순서 증가
+                console.log(select_item_count)
                 // let close_icon = document.createElement("img"); // 새로운 img 태그 생성
                 let close_icon = document.createElement("span"); //0730 오슬기 수정 에러 해결과정에서 span 태그가 다루기 쉬울 것 같아서.. span으로 수정헀음 
 
@@ -272,11 +265,10 @@ $(function () {
                 select_box_div_img.style.background = `url(${data["korean_food"][index].main_img}) 50% 50%/100% no-repeat`; // 장바구니 박스에 넣은 div에 백그라운드 이미지 추가
                 const select_check = document.querySelector("#select");
                 select_check.checked = true; // 요소가 추가될 경우 radio 체크되면서 view 전환
-                select_item_count++; // 순서 증가
 
 
                 //22/07/30 성선규 추가
-                Cart_Array.push(index); // 상품 클릭 시 해당 인덱스 값을 배열에 추가
+                Cart_Array.push(Number(index)); // 상품 클릭 시 해당 인덱스 값을 배열에 추가
                 window.localStorage.setItem('Cart', JSON.stringify(Cart_Array)); // 배열을 JSON으로 변환 후 localStorage의 'Cart'에 저장
             })
 
@@ -284,6 +276,7 @@ $(function () {
             //22/07/28 성선규 추가
             // 찜하기 아이콘 클릭 시 해당 아이템 찜한 상품 박스에 추가
             favorite.addEventListener("click", function () {
+                like_item_count++;
                 let select_box_div = document.createElement("div");
                 // let close_icon = document.createElement("img");
                 let close_icon = document.createElement("span");
@@ -297,10 +290,9 @@ $(function () {
                 like_box_div_img.style.background = `url(${data["korean_food"][index].main_img}) 50% 50%/100% no-repeat`;
                 const like_check = document.querySelector("#like");
                 like_check.checked = true;
-                like_item_count++;
 
                 //22/07/30 성선규 추가
-                favorite_Array.push(index); // 상품 클릭 시 해당 인덱스 값을 배열에 추가
+                favorite_Array.push(Number(index)); // 상품 클릭 시 해당 인덱스 값을 배열에 추가
                 window.localStorage.setItem('favorite', JSON.stringify(favorite_Array)); // 배열을 JSON으로 변환 후 localStorage의 'favorite'에 저장
             })
 
